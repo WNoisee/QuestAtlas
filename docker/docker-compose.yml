@@ -6,6 +6,7 @@ services:
       - "5173:5173"
     volumes:
       - ../frontend/quest-atlas-frontend:/app
+      - /app/node_modules
     networks:
       - quest-atlas
 
@@ -16,6 +17,7 @@ services:
       - "8000:8000"
     volumes:
       - ../backend/quest-atlas-api:/var/www
+      - /var/www/vendor
     depends_on:
       - postgres
     networks:
