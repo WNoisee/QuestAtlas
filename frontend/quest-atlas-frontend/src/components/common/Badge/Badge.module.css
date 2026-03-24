@@ -1,0 +1,39 @@
+.badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 12px 20px 12px 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 16px) 0,
+    100% 50%,
+    calc(100% - 16px) 100%,
+    0 100%
+  );
+  box-shadow: var(--shadow-card);
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 6px;
+  height: 6px;
+  background: #d8b0d8;
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+.arrow {
+  color: #b9aa9c;
+  font-size: 0.95rem;
+}
+
+.value {
+  color: #ffffff;
+  font-weight: 700;
+}

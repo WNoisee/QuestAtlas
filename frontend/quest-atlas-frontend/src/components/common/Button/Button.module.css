@@ -1,0 +1,152 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+  gap: 5px;
+}
+
+.primary {
+  background: var(--gold);
+  color: #231c17;
+  box-shadow: var(--shadow-soft);
+}
+
+.primary:hover {
+  background: var(--gold-dark);
+}
+
+.secondary {
+  background: var(--pink);
+  color: var(--text);
+}
+
+.outline {
+  border-radius: 999px;
+  background: var(--dusty-pink);
+}
+
+.outline:hover {
+  background: var(--dusty-pink-dark);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2f2721;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.iconGlyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: Move 1.8s ease-in-out infinite;
+}
+
+@keyframes Move {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(2px, -1px) rotate(20deg);
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 999px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2f2721;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.iconGlyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  overflow: visible;
+
+  transition: transform 0.25s ease;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(45, 36, 29, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button:hover::before {
+  animation: wave 1.2s ease-out infinite;
+}
+
+.button:hover::after {
+  animation: wave 1.2s ease-out 0.4s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+

@@ -1,0 +1,47 @@
+.page-wrapper {
+  min-height: 100vh;
+  background-color: var(--page-bg);
+  background-image: radial-gradient(#d8c7b4 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.app-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg);
+  border-left: 1px solid var(--border-soft);
+  border-right: 1px solid var(--border-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.quest-app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.quest-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(140, 110, 80, 0.18) 0.7px,
+    transparent 0.7px
+  );
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.content-shell {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 760px) {
+  .content-shell {
+    padding: 0 20px;
+  }
+}

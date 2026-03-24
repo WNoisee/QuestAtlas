@@ -1,0 +1,45 @@
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #5e554c;
+  min-height: var(--header-height);
+  transition: color 0.2s ease;
+}
+
+.navLink::before,
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navLink::before {
+  top: 8px;
+  left: 8px;
+  border-top: 1.5px solid var(--gold);
+  border-left: 1.5px solid var(--gold);
+}
+
+.navLink::after {
+  right: 8px;
+  bottom: 8px;
+  border-bottom: 1.5px solid var(--blue-accent);
+  border-right: 1.5px solid var(--blue-accent);
+}
+
+.navLink:hover::before,
+.navLink:hover::after,
+.active::before,
+.active::after {
+  opacity: 1;
+}
+
+.navLink:hover,
+.active {
+  color: var(--text);
+}
