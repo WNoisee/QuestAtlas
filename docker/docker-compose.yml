@@ -1,0 +1,52 @@
+services:
+  frontend:
+    build:
+      context: ../frontend/quest-atlas-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../frontend/quest-atlas-frontend:/app
+    networks:
+      - quest-atlas
+
+  app:
+    build:
+      context: ../backend/quest-atlas-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../backend/quest-atlas-api:/var/www
+    depends_on:
+      - postgres
+    networks:
+      - quest-atlas
+
+  ai-service:
+    build:
+      context: ../ai-service
+    ports:
+      - "8001:8001"
+    volumes:
+      - ../ai-service:/app
+    networks:
+      - quest-atlas
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: quest_atlas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - quest-atlas
+
+volumes:
+  postgres_data:
+
+networks:
+  quest-atlas:
+    driver: bridge
