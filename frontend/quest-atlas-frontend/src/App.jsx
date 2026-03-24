@@ -6,7 +6,6 @@ import Header from "./components/Header/Header";
 import HeroSection from "./components/HeroSection/HeroSection";
 import MapPanel from "./components/MapPanel/MapPanel";
 import Badge from "./components/common/Badge/Badge";
-import { destinations } from "./data/destination";
 
 import styles from "./App.module.css";
 
@@ -22,7 +21,7 @@ function App() {
 
           <main className={styles.hero}>
             <HeroSection />
-            <MapPanel destinations={destinations} />
+            <MapPanel/>
           </main>
         </div>
       </div>

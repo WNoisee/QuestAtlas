@@ -1,0 +1,150 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mapImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% center;
+}
+
+.stopLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.stopButton {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.stopDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #d38b16;
+  border: 3px solid #2f2721;
+  box-shadow: 0 8px 18px rgba(47, 39, 33, 0.18);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.stopDuration {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 250, 242, 0.96);
+  color: #3d2f24;
+  border: 1px solid rgba(120, 90, 60, 0.2);
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(47, 39, 33, 0.08);
+}
+
+.stopButton:hover .stopDot {
+  transform: scale(1.15);
+  box-shadow: 0 10px 24px rgba(47, 39, 33, 0.26);
+}
+
+.active .stopDot {
+  background: #d38b16;
+  box-shadow: 0 0 0 6px rgba(236, 48, 0, 0.25), 0 10px 24px rgba(47, 39, 33, 0.3);
+  animation: blinkPulse 1.2s ease-in-out infinite;
+}
+
+.active .stopDot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgb(230, 37, 37);
+  animation: ripple 1.2s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.infoCard {
+  position: absolute;
+  z-index: 3;
+  width: 220px;
+  background: rgba(255, 248, 241, 0.96);
+  border: 1px solid rgba(172, 144, 116, 0.45);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 18px 40px rgba(62, 45, 28, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.right-center {
+  transform: translate(18px, -50%);
+}
+
+.left-center {
+  transform: translate(calc(-100% - 18px), -50%);
+}
+
+.right-top {
+  transform: translate(18px, calc(-100% - 10px));
+}
+
+.left-top {
+  transform: translate(calc(-100% - 18px), calc(-100% - 18px));
+}
+
+.right-bottom {
+  transform: translate(15px, 2px);
+}
+
+.left-bottom {
+  transform: translate(calc(-100% - 18px), 18px);
+}
+
+.infoCard strong {
+  display: block;
+  font-size: 16px;
+  color: #2f2721;
+  margin-bottom: 4px;
+}
+
+.infoCard small {
+  display: block;
+  font-size: 13px;
+  color: #8b735e;
+  margin-bottom: 8px;
+}
+
+.infoCard p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5c4b3f;
+}
