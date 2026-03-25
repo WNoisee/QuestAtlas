@@ -12,13 +12,13 @@ export default function Header() {
         </div>
 
         <nav className={styles.nav}>
-          <NavLink active>Home</NavLink>
-          <NavLink>Plugins</NavLink>
-          <NavLink>Insights</NavLink>
-          <NavLink>Consulting</NavLink>
+          <NavLink active>Trang chủ</NavLink>
+          <NavLink>Khám phá</NavLink>
+          <NavLink>Cộng đồng</NavLink>
+          <NavLink>Danh hiệu</NavLink>
         </nav>
 
-        <Button variant="outline" icon={<ArrowRightToLine size={18} />}>Sign in</Button>
+        <Button variant="outline" icon={<ArrowRightToLine size={18} />}>Đăng nhập</Button>
       </div>
     </header>
   );

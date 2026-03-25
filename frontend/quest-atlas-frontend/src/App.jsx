@@ -17,7 +17,7 @@ function App() {
           <div className="quest-grid" />
 
           <Header />
-          <Badge />
+          <Badge label="Phiên Bản Atlas" value="v1" arrow="›" indicator="indicator"/>
 
           <main className={styles.hero}>
             <HeroSection />

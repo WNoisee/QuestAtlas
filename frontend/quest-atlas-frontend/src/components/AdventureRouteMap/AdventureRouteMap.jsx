@@ -16,43 +16,24 @@ function getCardPosition(stop) {
   return `${horizontal}-${vertical}`;
 }
 
-export default function AdventureRouteMap({
-  mapImage = "/maps/vietnam-adventure.png",
-  stops = defaultStops,
-  activeStopId: controlledActiveStopId,
-  onSelectStop,
-}) {
-  const [internalActiveStopId, setInternalActiveStopId] = useState(stops[0]?.id);
-
-  const activeStopId =
-    controlledActiveStopId !== undefined
-      ? controlledActiveStopId
-      : internalActiveStopId;
+export default function AdventureRouteMap() {
+  const [activeStopId, setActiveStopId] = useState(defaultStops[0]?.id);
 
   const activeStop = useMemo(
-    () => stops.find((stop) => stop.id === activeStopId) || stops[0],
-    [stops, activeStopId]
+    () => defaultStops.find((stop) => stop.id === activeStopId) || defaultStops[0],
+    [activeStopId]
   );
-
-  const handleSelect = (id) => {
-    if (onSelectStop) {
-      onSelectStop(id);
-      return;
-    }
-
-    setInternalActiveStopId(id);
-  };
 
   return (
     <div className={styles.wrapper}>
       <img
-        src={mapImage}
+        src="/maps/vietnam-adventure.png"
         alt="Vietnam adventure route map"
         className={styles.mapImage}
       />
 
       <div className={styles.stopLayer}>
-        {stops.map((stop) => {
+        {defaultStops.map((stop) => {
           const isActive = stop.id === activeStopId;
 
           return (
@@ -61,7 +42,7 @@ export default function AdventureRouteMap({
               type="button"
               className={`${styles.stopButton} ${isActive ? styles.active : ""}`}
               style={{ left: stop.x, top: stop.y }}
-              onClick={() => handleSelect(stop.id)}
+              onClick={() => setActiveStopId(stop.id)}
               aria-label={stop.name}
             >
               <span className={styles.stopDot} />
@@ -71,16 +52,16 @@ export default function AdventureRouteMap({
         })}
       </div>
 
-        {activeStop && (
+      {activeStop && (
         <div
-            className={`${styles.infoCard} ${styles[getCardPosition(activeStop)]}`}
-            style={{ left: activeStop.x, top: activeStop.y }}
+          className={`${styles.infoCard} ${styles[getCardPosition(activeStop)]}`}
+          style={{ left: activeStop.x, top: activeStop.y }}
         >
-            <strong>{activeStop.name}</strong>
-            <small>{activeStop.type}</small>
-            <p>{activeStop.description}</p>
+          <strong>{activeStop.name}</strong>
+          <small>{activeStop.type}</small>
+          <p>{activeStop.description}</p>
         </div>
-        )}
+      )}
     </div>
   );
 }

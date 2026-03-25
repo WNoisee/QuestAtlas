@@ -7,18 +7,18 @@ export default function HeroSection() {
     <div>
       <section className={styles.heroCopy}>
 
-      <h1>Khám phá hành trình bằng bản đồ trực quan</h1>
+      <h1>Khám phá hành trình trên bản đồ thông minh</h1>
 
       <p>
-        Lên kế hoạch hành trình, khám phá điểm đến và theo dõi thời tiết
-        trực tiếp trên một bản đồ trực quan, thông minh.
+        Lên kế hoạch chuyến đi, khám phá điểm đến và theo dõi thời tiết
+        trong một trải nghiệm trực quan, liền mạch.
       </p>
 
       <div className={styles.ctaRow}>
         <Button variant="primary" icon={<Rocket size={18} />}>
-          Get Started
+          Khám phá ngay
         </Button>
-        <Button variant="secondary" icon={<Map size={18}/>}>View Trips</Button>
+        <Button variant="secondary" icon={<Map size={18}/>}>Xem hành trình</Button>
       </div>
 
       <div className={styles.stats}>
@@ -29,7 +29,7 @@ export default function HeroSection() {
               <MapPin className={styles.iconGlow} size={16} />
             </span>
           </strong>
-          <span className={styles.statLabel}>Explore Destinations</span>
+          <span className={styles.statLabel}>Điểm đến</span>
         </div>
 
         <div className={styles.statCard}>
@@ -39,7 +39,7 @@ export default function HeroSection() {
               <Compass className={styles.iconGlow} size={16} />
             </span>
           </strong>
-          <span className={styles.statLabel}>Plan Smart Routes</span>
+          <span className={styles.statLabel}>Lộ trình thông minh</span>
         </div>
 
         <div className={styles.statCard}>
@@ -49,7 +49,7 @@ export default function HeroSection() {
               <CloudSun className={styles.iconGlow} size={16} />
             </span>
           </strong>
-          <span className={styles.statLabel}>Track Weather</span>
+          <span className={styles.statLabel}>Theo dõi thời tiết</span>
         </div>
       </div>
       </section>
