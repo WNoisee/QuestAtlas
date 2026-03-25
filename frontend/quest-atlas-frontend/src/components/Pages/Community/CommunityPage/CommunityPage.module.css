@@ -1,0 +1,33 @@
+.communityPage {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 36px 0 64px;
+}
+
+.communityBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.feedColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebarColumn {
+  position: sticky;
+  top: 24px;
+}
+
+@media (max-width: 1024px) {
+  .communityBody {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebarColumn {
+    position: static;
+  }
+}

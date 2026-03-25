@@ -1,0 +1,95 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: #f7efe5;
+  border: 1px solid #d7c2aa;
+  border-radius: 28px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(76, 52, 35, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cardHeader h3 {
+  margin: 0;
+  color: #2f241d;
+  font-size: 20px;
+}
+
+.cardHeader span {
+  color: #8a7766;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem,
+.destinationItem {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #f1e5d7;
+  border: 1px solid #dcc7af;
+  border-radius: 20px;
+  padding: 14px;
+}
+
+.rank {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #3a2b22;
+  color: #fff8ef;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.itemContent,
+.destinationItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemContent strong,
+.destinationItem strong {
+  color: #2f241d;
+  font-size: 15px;
+}
+
+.itemContent span,
+.destinationItem span {
+  color: #7a6858;
+  font-size: 13px;
+}
+
+.destinationItem {
+  justify-content: space-between;
+}
+
+.destinationItem button {
+  border: none;
+  background: #d89b2b;
+  color: #2f241d;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}

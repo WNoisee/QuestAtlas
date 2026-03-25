@@ -1,0 +1,97 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.content {
+  padding: 28px 8px 8px 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #3a2b22;
+  color: #fff8ef;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 24px rgba(58, 43, 34, 0.14);
+}
+
+.content h1 {
+  margin: 0 0 14px;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.05;
+  color: #2f241d;
+}
+
+.content p {
+  margin: 0;
+  max-width: 720px;
+  color: #756455;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.heroCard {
+  background: #f7efe5;
+  border: 1px solid #d7c2aa;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 14px 32px rgba(76, 52, 35, 0.08);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroCardTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #2f241d;
+  font-weight: 700;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d89b2b;
+  box-shadow: 0 0 0 6px rgba(216, 155, 43, 0.14);
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.statItem {
+  background: #f1e5d7;
+  border: 1px solid #dcc7af;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.statItem strong {
+  display: block;
+  color: #2f241d;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.statItem span {
+  color: #7a6858;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
