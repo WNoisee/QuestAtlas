@@ -1,0 +1,54 @@
+.header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #3a261b 0%, #4a3022 100%);
+  color: #fffaf4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d9ab53 0%, #c68831 100%);
+  color: #2f1b10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.meta h4 {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.meta span {
+  font-size: 12px;
+  color: rgba(255, 250, 244, 0.74);
+}
+
+.closeBtn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  color: #fffaf4;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255,255,255,0.18);
+}

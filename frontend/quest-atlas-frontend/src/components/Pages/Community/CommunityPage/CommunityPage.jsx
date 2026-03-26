@@ -4,6 +4,7 @@ import CommunityTabs from "../CommunityTabs/CommunityTabs";
 import PostComposer from "../Post/PostComposer/PostComposer";
 import PostFeed from "../Post/PostFeed/PostFeed";
 import CommunitySidebar from "../CommunitySidebar/CommunitySidebar";
+import ChatDock from "../Chat/ChatDock/ChatDock";
 
 export default function CommunityPage() {
   return (
@@ -21,6 +22,8 @@ export default function CommunityPage() {
           <CommunitySidebar />
         </aside>
       </section>
+
+      <ChatDock />
     </main>
   );
 }

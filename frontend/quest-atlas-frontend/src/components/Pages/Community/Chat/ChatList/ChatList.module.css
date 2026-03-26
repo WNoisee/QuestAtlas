@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: rgba(157, 125, 101, 0.3);
+  border-radius: 999px;
+}
