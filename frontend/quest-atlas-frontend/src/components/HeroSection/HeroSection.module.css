@@ -2,10 +2,6 @@
   padding-right: 10px;
 }
 
-.badge {
-  margin-top: 20px;
-}
-
 .heroCopy h1 {
   font-size: clamp(3rem, 4vw, 4.1rem);
   line-height: 1.25;

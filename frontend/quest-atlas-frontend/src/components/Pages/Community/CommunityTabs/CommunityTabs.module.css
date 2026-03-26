@@ -4,26 +4,3 @@
   gap: 12px;
   margin-bottom: 20px;
 }
-
-.tab {
-  border: 1px solid #d7c2aa;
-  background: #f6eee3;
-  color: #7a6858;
-  padding: 12px 18px;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.tab:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(76, 52, 35, 0.08);
-}
-
-.active {
-  background: #3a2b22;
-  color: #fff8ef;
-  border-color: #3a2b22;
-}

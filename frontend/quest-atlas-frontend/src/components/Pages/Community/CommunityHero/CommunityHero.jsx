@@ -5,7 +5,7 @@ export default function CommunityHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <span className={styles.badge}>Cộng đồng lữ hành</span>
+        <Badge label="Cộng đồng lữ hành" className="previewBadge"/>
 
         <h1>Chia sẻ hành trình cùng những người yêu khám phá</h1>
 
@@ -17,7 +17,10 @@ export default function CommunityHero() {
 
       <div className={styles.heroCard}>
         <div className={styles.heroCardTop}>
-          <Badge label="Nhật ký hành trình nổi bật" className="previewBadge"/>
+          <Badge label="Tổng quan cộng đồng" className="previewBadge"/>
+          <p>
+            “Hàng nghìn hành trình đang được chia sẻ mỗi ngày”
+          </p>
         </div>
 
         <div className={styles.heroStats}>
@@ -30,7 +33,7 @@ export default function CommunityHero() {
             <span>Nhà lữ hành</span>
           </div>
           <div className={styles.statItem}>
-            <strong>48</strong>
+            <strong>48+</strong>
             <span>Điểm đến hot</span>
           </div>
         </div>

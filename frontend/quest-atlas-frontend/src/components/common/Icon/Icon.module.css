@@ -1,0 +1,95 @@
+.starIcon {
+    color: var(--icon-star);
+}
+
+.star {
+  color: var(--gold); 
+  position: relative;
+  display: inline-flex;
+}
+
+.star svg {
+  animation: stamp 0.6s ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes stamp {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px var(--dark-gold));
+  }
+
+  40% {
+    transform: scale(2);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px var(--dark-gold))
+            drop-shadow(0 0 24px var(--dark-gold));
+  }
+
+  70% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 8px var(--dark-gold));
+  }
+
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px var(--dark-gold));
+  }
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #fff, transparent);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.star::before {
+  top: -6px;
+  left: -4px;
+  animation: sparkleBurst 0.6s ease-out forwards;
+}
+
+.star::after {
+  bottom: -6px;
+  right: -4px;
+  animation: sparkleBurst 0.6s ease-out forwards;
+}
+
+@keyframes sparkleBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+.comment {
+  color: var(--icon-comment);
+}
+
+.heart {
+  color: var(--icon-heart);
+}
+
+.location {
+  color: var(--icon-location);
+}
+
+.camera {
+  color: var(--icon-camera);
+}

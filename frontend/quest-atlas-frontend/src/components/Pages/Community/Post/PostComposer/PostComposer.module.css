@@ -43,20 +43,3 @@
   flex-wrap: wrap;
   gap: 12px;
 }
-
-.actions button {
-  border: 1px solid #dcc7af;
-  background: #f1e5d7;
-  color: #5e4d40;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.actions button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(76, 52, 35, 0.08);
-}

@@ -3,6 +3,8 @@ import {
   topTravelers,
   trendingDestinations,
 } from "../../../../data/communityData";
+import Button from "../../../common/Button/Button";
+import Icon from "../../../common/Icon/Icon";
 
 export default function CommunitySidebar() {
   return (
@@ -20,8 +22,9 @@ export default function CommunitySidebar() {
 
               <div className={styles.itemContent}>
                 <strong>{traveler.name}</strong>
-                <span>
-                  ⭐ {traveler.stars} · {traveler.badge}
+                <span className={styles.itemContent}>
+                  <Icon symbol="star" size="13" color="primary"></Icon> 
+                  <div>{traveler.stars} · {traveler.badge}</div>
                 </span>
               </div>
             </div>
@@ -43,7 +46,7 @@ export default function CommunitySidebar() {
                 <span>{destination.weather}</span>
               </div>
 
-              <button type="button">Xem</button>
+              <Button type="button" variant="action">Xem</Button>
             </div>
           ))}
         </div>

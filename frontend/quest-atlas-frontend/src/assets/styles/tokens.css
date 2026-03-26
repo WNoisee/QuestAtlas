@@ -19,8 +19,16 @@
   --blue-accent: #9db7ff;
   --dusty-pink: #e7b3b3;
   --dusty-pink-dark: #cf9a9a;
+  --dark-pink: #b784b7;
 
   --highlight:#d8b0d8;
+
+  --icon-star: #19c1ab;   
+  --icon-dark-star: #47a7a0;
+  --icon-comment: #6366f1;  
+  --icon-heart: #f43f5e;    
+  --icon-location: #fb7185; 
+  --icon-camera: #0ea5e9; 
 
   --badge-bg: #2f2721;
   --badge-text: #f5ede3;

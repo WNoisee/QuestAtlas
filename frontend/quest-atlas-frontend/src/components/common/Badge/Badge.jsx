@@ -4,7 +4,7 @@ export default function Badge({
   label = "",
   value = "",
   arrow = "",
-  className = "badgeVersion",
+  className = "",
   indicator = "",
 }) {
   return (

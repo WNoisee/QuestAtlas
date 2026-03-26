@@ -83,13 +83,3 @@
 .destinationItem {
   justify-content: space-between;
 }
-
-.destinationItem button {
-  border: none;
-  background: #d89b2b;
-  color: #2f241d;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
-}

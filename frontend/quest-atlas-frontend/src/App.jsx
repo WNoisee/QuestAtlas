@@ -31,7 +31,7 @@ function App() {
           <div className="quest-grid" />
 
           <Header />
-          <Badge label={getBadgeLabel()} value="v1" arrow="›" indicator="indicator"/>
+          <Badge className="badge" label={getBadgeLabel()} value="v1" arrow="›" indicator="indicator"/>
 
           <main className={styles.pageContent}>
             <Routes>

@@ -1,4 +1,4 @@
-.badgeVersion {
+.badge {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -36,13 +36,13 @@
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  border-radius: 999px;
+  border-radius: 10px;
   background: #2f241d;
   color: #fffaf3;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.01em;
-  box-shadow: 0 6px 16px rgba(47, 36, 29, 0.18);
+  margin-bottom: 16px;
 }
 
 .previewDot {
@@ -82,4 +82,16 @@
 .value {
   color: #ffffff;
   font-weight: 700;
+}
+
+.hashtags {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #efe5d6;
+  border: 1px solid #dcc7af;
+  color: #7a6858;
+  font-size: 13px;
+  font-weight: 600;
 }
