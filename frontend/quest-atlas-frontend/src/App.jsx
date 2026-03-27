@@ -9,7 +9,7 @@ import Badge from "./components/common/Badge/Badge";
 
 import HomePage from "./components/Pages/Home/HomePage";
 import CommunityPage from "./components/Pages/Community/CommunityPage/CommunityPage";
-import ExplorePage from "./components/Pages/Explore/ExplorePage";
+import ExplorePage from "../src/components/Pages/Explore/ExplorePage/ExplorePage";
 import AwardsPage from "./components/Pages/Awards/AwardsPage";
 
 import styles from "./App.module.css";

@@ -1,8 +1,7 @@
 export const communityTabs = [
   "Mới nhất",
-  "Nổi bật",
-  "Theo dõi",
-  "Ảnh đẹp",
+  "Đang theo dõi",
+  "Nổi bật"
 ];
 
 export const communityPosts = [

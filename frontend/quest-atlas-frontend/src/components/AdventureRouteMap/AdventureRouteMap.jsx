@@ -1,67 +1,214 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 import styles from "./AdventureRouteMap.module.css";
 import { defaultStops } from "../../data/defaultStops";
 
-function getCardPosition(stop) {
-  const x = parseFloat(stop.x);
-  const y = parseFloat(stop.y);
+function createMarkerElement(stop, isActive = false) {
+  const el = document.createElement("button");
+  el.type = "button";
+  el.className = `${styles.marker} ${isActive ? styles.markerActive : ""}`;
+  el.setAttribute("aria-label", stop.name);
 
-  let horizontal = "right";
-  let vertical = "center";
+  const dot = document.createElement("span");
+  dot.className = styles.markerDot;
 
-  if (x > 70) horizontal = "left";
-  if (y > 72) vertical = "top";
-  else if (y < 18) vertical = "bottom";
+  const duration = document.createElement("span");
+  duration.className = styles.markerDuration;
+  duration.textContent = stop.duration;
 
-  return `${horizontal}-${vertical}`;
+  el.appendChild(dot);
+  el.appendChild(duration);
+
+  return el;
 }
 
-export default function AdventureRouteMap() {
-  const [activeStopId, setActiveStopId] = useState(defaultStops[0]?.id);
+function buildPopupHtml(stop) {
+  return `
+    <div class="${styles.popupCard}">
+      <strong>${stop.name}</strong>
+      <small>${stop.type} • ${stop.duration}</small>
+      <p>${stop.description}</p>
+    </div>
+  `;
+}
 
-  const activeStop = useMemo(
-    () => defaultStops.find((stop) => stop.id === activeStopId) || defaultStops[0],
-    [activeStopId]
-  );
+export default function AdventureRouteMap({
+  selectedStopId,
+  onSelectStop,
+  stops = defaultStops,
+}) {
+  const mapContainerRef = useRef(null);
+  const mapRef = useRef(null);
+  const markersRef = useRef([]);
+  const popupRef = useRef(null);
+
+  const [internalActiveStopId, setInternalActiveStopId] = useState(stops[0]?.id);
+
+  const activeStopId = selectedStopId ?? internalActiveStopId;
+
+  const activeStop = useMemo(() => {
+    return stops.find((stop) => stop.id === activeStopId) || stops[0] || null;
+  }, [activeStopId, stops]);
+
+  useEffect(() => {
+    if (!selectedStopId && stops?.length) {
+      setInternalActiveStopId(stops[0].id);
+    }
+  }, [selectedStopId, stops]);
+
+  useEffect(() => {
+    if (!mapContainerRef.current || mapRef.current || !stops?.length) return;
+
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+
+    const styleUrl = isLocalhost
+      ? "https://tiles.stadiamaps.com/styles/alidade_smooth.json"
+      : "https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=YOUR_STADIA_API_KEY";
+
+    const map = new maplibregl.Map({
+      container: mapContainerRef.current,
+      style: styleUrl,
+      center: [106.2, 16.2],
+      zoom: 4.8,
+      minZoom: 4,
+      maxZoom: 12,
+      attributionControl: false,
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), "bottom-right");
+
+    map.on("load", () => {
+      const bounds = new maplibregl.LngLatBounds();
+      stops.forEach((stop) => bounds.extend([stop.lng, stop.lat]));
+      map.fitBounds(bounds, { padding: 80, duration: 0 });
+
+      const layers = map.getStyle()?.layers || [];
+
+      layers.forEach((layer) => {
+        const { id, type } = layer;
+        const layerId = id.toLowerCase();
+
+        const isPoi =
+          layerId.includes("poi") ||
+          layerId.includes("airport") ||
+          layerId.includes("transit") ||
+          layerId.includes("housenumber") ||
+          layerId.includes("address");
+
+        const isBuilding =
+          layerId.includes("building") ||
+          layerId.includes("indoor");
+
+        const isMinorRoad =
+          layerId.includes("minor") ||
+          layerId.includes("service") ||
+          layerId.includes("path") ||
+          layerId.includes("track") ||
+          layerId.includes("pedestrian");
+
+        const isBoundary =
+          layerId.includes("boundary") ||
+          layerId.includes("admin") ||
+          layerId.includes("border");
+
+        const isRoad =
+          layerId.includes("road") ||
+          layerId.includes("street") ||
+          layerId.includes("highway");
+
+        if (isPoi || isBuilding || isMinorRoad) {
+          try {
+            map.setLayoutProperty(id, "visibility", "none");
+          } catch {}
+        }
+
+        if (isBoundary && type === "line") {
+          try {
+            map.setPaintProperty(id, "line-color", "#8f7c67");
+            map.setPaintProperty(id, "line-width", 1.35);
+            map.setPaintProperty(id, "line-opacity", 0.9);
+          } catch {}
+        }
+
+        if (isRoad && type === "line") {
+          try {
+            map.setPaintProperty(id, "line-color", "#d5c1a4");
+            map.setPaintProperty(id, "line-opacity", 0.45);
+          } catch {}
+        }
+      });
+    });
+
+    mapRef.current = map;
+
+    return () => {
+      markersRef.current.forEach(({ marker }) => marker.remove());
+      markersRef.current = [];
+      popupRef.current?.remove();
+      map.remove();
+      mapRef.current = null;
+    };
+  }, [stops]);
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    markersRef.current.forEach(({ marker }) => marker.remove());
+    markersRef.current = [];
+
+    stops.forEach((stop) => {
+      const isActive = stop.id === activeStopId;
+      const markerEl = createMarkerElement(stop, isActive);
+
+      markerEl.addEventListener("click", () => {
+        setInternalActiveStopId(stop.id);
+        onSelectStop?.(stop.id);
+      });
+
+      const marker = new maplibregl.Marker({
+        element: markerEl,
+        anchor: "bottom",
+      })
+        .setLngLat([stop.lng, stop.lat])
+        .addTo(mapRef.current);
+
+      markersRef.current.push({
+        id: stop.id,
+        marker,
+      });
+    });
+  }, [stops, activeStopId, onSelectStop]);
+
+  useEffect(() => {
+    if (!mapRef.current || !activeStop) return;
+
+    mapRef.current.flyTo({
+      center: [activeStop.lng, activeStop.lat],
+      zoom: 6.2,
+      speed: 0.8,
+      essential: true,
+    });
+
+    popupRef.current?.remove();
+
+    popupRef.current = new maplibregl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+      offset: 22,
+    })
+      .setLngLat([activeStop.lng, activeStop.lat])
+      .setHTML(buildPopupHtml(activeStop))
+      .addTo(mapRef.current);
+  }, [activeStop]);
 
   return (
     <div className={styles.wrapper}>
-      <img
-        src="/maps/vietnam-adventure.png"
-        alt="Vietnam adventure route map"
-        className={styles.mapImage}
-      />
-
-      <div className={styles.stopLayer}>
-        {defaultStops.map((stop) => {
-          const isActive = stop.id === activeStopId;
-
-          return (
-            <button
-              key={stop.id}
-              type="button"
-              className={`${styles.stopButton} ${isActive ? styles.active : ""}`}
-              style={{ left: stop.x, top: stop.y }}
-              onClick={() => setActiveStopId(stop.id)}
-              aria-label={stop.name}
-            >
-              <span className={styles.stopDot} />
-              <span className={styles.stopDuration}>{stop.duration}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {activeStop && (
-        <div
-          className={`${styles.infoCard} ${styles[getCardPosition(activeStop)]}`}
-          style={{ left: activeStop.x, top: activeStop.y }}
-        >
-          <strong>{activeStop.name}</strong>
-          <small>{activeStop.type}</small>
-          <p>{activeStop.description}</p>
-        </div>
-      )}
+      <div ref={mapContainerRef} className={styles.mapCanvas} />
+      <div className={styles.textureOverlay} />
+      <div className={styles.gradientOverlay} />
     </div>
   );
 }

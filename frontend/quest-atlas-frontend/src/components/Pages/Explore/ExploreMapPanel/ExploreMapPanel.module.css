@@ -1,0 +1,178 @@
+.panel {
+  flex: 1;
+  min-width: 0;
+  background: #fff9f1;
+  border: 1px solid #dccdb7;
+  border-radius: 34px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(85, 56, 34, 0.06);
+}
+
+.panelHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #5d3b25;
+  color: #fff7ef;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #2b1b11;
+}
+
+.description {
+  margin: 12px 0 0;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6d5949;
+}
+
+.previewButton {
+  flex-shrink: 0;
+  height: 46px;
+  border: none;
+  border-radius: 16px;
+  padding: 0 18px;
+  background: #5a3924;
+  color: #fff8ef;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mapWrap {
+  position: relative;
+  height: 720px;
+  overflow: hidden;
+  border: 1px solid #d9c8b0;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.28), transparent 30%),
+    linear-gradient(180deg, #ead7b9 0%, #e4cfae 100%);
+}
+
+.mapTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(rgba(113, 85, 58, 0.12) 0.7px, transparent 0.7px),
+    radial-gradient(rgba(113, 85, 58, 0.08) 0.6px, transparent 0.6px);
+  background-size: 24px 24px, 18px 18px;
+  background-position: 0 0, 10px 10px;
+  pointer-events: none;
+}
+
+.routeLineOne,
+.routeLineTwo {
+  position: absolute;
+  border: 3px dashed #c2732d;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.routeLineOne {
+  width: 340px;
+  height: 500px;
+  top: 7%;
+  left: 42%;
+  border-radius: 220px 220px 200px 220px;
+  border-left: none;
+  border-top: none;
+  transform: rotate(8deg);
+}
+
+.routeLineTwo {
+  width: 240px;
+  height: 260px;
+  bottom: 10%;
+  left: 46%;
+  border-radius: 180px;
+  border-right: none;
+  border-bottom: none;
+  transform: rotate(12deg);
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.markerDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #c26f26;
+  border: 3px solid #fff6eb;
+  box-shadow: 0 8px 18px rgba(90, 57, 36, 0.18);
+}
+
+.markerLabel {
+  white-space: nowrap;
+  background: rgba(255, 248, 239, 0.92);
+  border: 1px solid #d7c6ae;
+  color: #39261b;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.markerActive .markerDot {
+  width: 18px;
+  height: 18px;
+  background: #a6451a;
+}
+
+.popup {
+  position: absolute;
+  width: 280px;
+  background: rgba(255, 248, 239, 0.97);
+  border: 1px solid #d9c7ad;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 18px 36px rgba(73, 47, 29, 0.12);
+}
+
+.popupTitle {
+  margin: 0;
+  font-size: 22px;
+  color: #281911;
+}
+
+.popupMeta {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #7d6856;
+  font-weight: 600;
+}
+
+.popupDescription {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5c493a;
+}
