@@ -7,7 +7,7 @@ export default function PostComposer() {
   return (
     <section className={styles.composer}>
       <div className={styles.header}>
-        <Avatar className="avatar">QA</Avatar>
+        <Avatar>QA</Avatar>
 
         <div className={styles.inputMock}>
           Bạn vừa khám phá điều gì trên hành trình của mình?

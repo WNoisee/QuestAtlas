@@ -9,7 +9,7 @@ export default function PostCard({ post }) {
     <article className={styles.card}>
       <div className={styles.header}>
         <div className={styles.user}>
-          <Avatar className="avatar">{post.avatar}</Avatar>
+          <Avatar>{post.avatar}</Avatar>
 
           <div className={styles.meta}>
             <div className={styles.nameRow}>

@@ -24,4 +24,28 @@ export const chatConversations = [
       { id: 1, sender: "them", text: "Gửi lịch trình rồi nhé", time: "08:20" },
     ],
   },
+  {
+    id: 2,
+    name: "Tín",
+    avatar: "BT",
+    status: "offline",
+    lastMessage: "Gửi lịch trình rồi nhé",
+    lastTime: "1 giờ",
+    unread: 0,
+    messages: [
+      { id: 1, sender: "them", text: "Gửi lịch trình rồi nhé", time: "08:20" },
+    ],
+  },
+  {
+    id: 2,
+    name: "Núi To",
+    avatar: "BT",
+    status: "offline",
+    lastMessage: "Gửi lịch trình rồi nhé",
+    lastTime: "1 giờ",
+    unread: 0,
+    messages: [
+      { id: 1, sender: "them", text: "Gửi lịch trình rồi nhé", time: "08:20" },
+    ],
+  },
 ];

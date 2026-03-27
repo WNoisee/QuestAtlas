@@ -13,18 +13,6 @@
   margin-bottom: 16px;
 }
 
-.avatar {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #d89b2b, #e5c178);
-  color: #2f241d;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  border: 2px solid rgba(47, 36, 29, 0.08);
-}
-
 .inputMock {
   flex: 1;
   min-height: 52px;

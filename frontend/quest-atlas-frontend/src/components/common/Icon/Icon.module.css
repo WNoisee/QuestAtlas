@@ -93,3 +93,62 @@
 .camera {
   color: var(--icon-camera);
 }
+
+.phone{
+  color: var(--icon-phone);
+  transition: all 0.25s ease;
+}
+
+.phone:hover{
+  transform: translateY(-1px) scale(1.2);
+  filter: drop-shadow(0 6px 10px rgba(76, 175, 125, 0.35));
+}
+
+.close{
+  display: flex;
+}
+
+.message{
+  display: flex;
+}
+
+.sparkle {
+  transition: all 0.2s ease;
+}
+
+.sparkle svg {
+  color: var(--icon-comment);
+  animation: sparkle 1.1s ease-in-out infinite;
+}
+
+.sparkle:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 2px var(--highlight));
+  }
+
+  50% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 6px var(--highlight))
+      drop-shadow(0 0 10px var(--highlight));
+  }
+
+  70% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 3px var(--highlight));
+  }
+  
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px var(--highlight));
+  }
+}
+
+.send{
+  display: flex;
+}

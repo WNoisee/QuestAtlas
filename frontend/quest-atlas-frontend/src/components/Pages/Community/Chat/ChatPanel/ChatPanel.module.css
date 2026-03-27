@@ -1,40 +1,100 @@
 .panel {
   width: 320px;
-  height: 440px;
+  height: 460px;
   background: rgba(255, 250, 244, 0.96);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(214, 190, 165, 0.8);
   border-radius: 28px;
-  padding: 16px;
+  overflow: hidden;
   box-shadow:
     0 22px 40px rgba(44, 28, 18, 0.12),
     0 8px 20px rgba(44, 28, 18, 0.08);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
-.panel h3 {
-  margin: 0 0 14px;
-  font-size: 20px;
+.panelHeader {
+  padding: 16px 16px 14px;
+  background:
+    linear-gradient(135deg, #3a261b 0%, #4d3225 100%);
+  color: #fffaf4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fffaf4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.headerContent h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
   font-weight: 800;
-  color: #241710;
   letter-spacing: -0.02em;
 }
 
-.search {
-  width: 100%;
-  height: 46px;
+.headerContent p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 250, 244, 0.72);
+}
+
+.searchWrap {
+  padding: 14px 16px 12px;
+  background: rgba(255, 248, 241, 0.98);
+  border-bottom: 1px solid rgba(224, 205, 184, 0.7);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
   border: 1px solid #ead7c1;
   background: #fff;
   border-radius: 16px;
   padding: 0 14px;
-  outline: none;
-  font-size: 14px;
-  color: #2a1a12;
-  margin-bottom: 14px;
+  box-shadow: 0 6px 16px rgba(62, 38, 23, 0.04);
 }
 
-.search::placeholder {
+.searchIcon {
+  color: #9e8270;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.searchBox input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #2a1a12;
+}
+
+.searchBox input::placeholder {
   color: #aa8c78;
+}
+
+.listWrap {
+  flex: 1;
+  min-height: 0;
+  padding: 12px;
+  background: linear-gradient(180deg, #fdf8f2 0%, #faf2e8 100%);
 }

@@ -1,9 +1,10 @@
+import Avatar from "../../../../common/Avatar/Avatar";
 import styles from "./ChatItem.module.css";
 
 export default function ChatItem({ chat, onClick }) {
   return (
     <div className={styles.item} onClick={onClick}>
-      <div className={styles.avatar}>{chat.avatar}</div>
+      <Avatar>{chat.avatar}</Avatar>
 
       <div className={styles.content}>
         <div className={styles.topRow}>

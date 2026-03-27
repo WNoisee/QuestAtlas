@@ -74,7 +74,6 @@
 
 .button:hover {
   transform: translateY(-0.5px);
-  box-shadow: 0 8px 18px rgba(76, 52, 35, 0.08);
 }
 
 .tab {
@@ -91,7 +90,6 @@
 
 .tab:hover {
   transform: translateY(-0.5px);
-  box-shadow: 0 8px 18px rgba(76, 52, 35, 0.08);
 }
 
 .active {
@@ -104,10 +102,78 @@
   border: 1px solid #dcc7af;
   background: #f1e5d7;
   color: #5e4d40;
-  padding: 10px 14px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.closeBtn {
+  background: rgba(255,255,255,0.12);
+  color: #f6eee3;
+}
+
+.launcher {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #3a261b 0%, #5a3a2a 100%);
+  color: #fffaf4;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 18px 30px rgba(58, 38, 27, 0.22),
+    0 6px 12px rgba(58, 38, 27, 0.12);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.launcher:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 22px 36px rgba(58, 38, 27, 0.26),
+    0 10px 16px rgba(58, 38, 27, 0.14);
+}
+
+.launcher:active {
+  transform: translateY(0);
+}
+
+.sendBtn {
+  min-width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #3a261b 0%, #5a3a2a 100%);
+  color: #fffaf4;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 12px 20px rgba(58, 38, 27, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sendBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 24px rgba(58, 38, 27, 0.2);
+}
+
+.toolBtn {
+  border: none;
+  background: #f7ede1;
+  color: #6a4f41;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.toolBtn:hover {
+  background: #f1e2d0;
+  transform: translateY(-1px);
 }

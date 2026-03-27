@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./MessageInput.module.css";
+import Button from "../../../../common/Button/Button";
+import Icon from "../../../../common/Icon/Icon";
 
 export default function MessageInput({ onSendMessage }) {
   const [text, setText] = useState("");
@@ -22,9 +24,9 @@ export default function MessageInput({ onSendMessage }) {
     <div className={styles.wrapper}>
       <div className={styles.composer}>
         <div className={styles.tools}>
-          <button className={styles.toolBtn} type="button">Ảnh</button>
-          <button className={styles.toolBtn} type="button">Địa điểm</button>
-          <button className={styles.toolBtn} type="button">Lịch trình</button>
+          <Button variant="toolBtn" type="button">Ảnh</Button>
+          <Button variant="toolBtn" type="button">Địa điểm</Button>
+          <Button variant="toolBtn" type="button">Lịch trình</Button>
         </div>
 
         <div className={styles.inputRow}>
@@ -37,9 +39,9 @@ export default function MessageInput({ onSendMessage }) {
             onKeyDown={handleKeyDown}
           />
 
-          <button className={styles.sendBtn} onClick={handleSend} type="button">
-            ➤
-          </button>
+          <Button variant="sendBtn" onClick={handleSend} type="button">
+            <Icon symbol="send" size="18" color="primary"></Icon>
+          </Button>
         </div>
       </div>
     </div>

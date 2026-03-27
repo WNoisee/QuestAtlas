@@ -20,18 +20,6 @@
   min-width: 0;
 }
 
-.avatar {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #d6b4dc, #efdaf3);
-  color: #2f241d;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  flex-shrink: 0;
-}
-
 .meta {
   min-width: 0;
 }
