@@ -23,11 +23,31 @@ function createMarkerElement(stop, isActive = false) {
   return el;
 }
 
+function createWeatherElement(weather = "sunny") {
+  const el = document.createElement("div");
+  el.className = `${styles.weatherMarker} ${styles[weather] || styles.sunny}`;
+
+  const particleLayer = document.createElement("div");
+  particleLayer.className = styles.weatherParticleLayer;
+
+  for (let i = 0; i < 12; i += 1) {
+    const particle = document.createElement("span");
+    particle.className = styles.weatherParticle;
+    particle.style.setProperty("--delay", `${(i % 6) * 0.18}s`);
+    particle.style.setProperty("--x", `${(i % 4) * 18 - 24}px`);
+    particle.style.setProperty("--y", `${Math.floor(i / 4) * 16 - 20}px`);
+    particleLayer.appendChild(particle);
+  }
+
+  el.appendChild(particleLayer);
+  return el;
+}
+
 function buildPopupHtml(stop) {
   return `
     <div class="${styles.popupCard}">
       <strong>${stop.name}</strong>
-      <small>${stop.type} • ${stop.duration}</small>
+      <small>${stop.type} • ${stop.duration} • ${stop.weather || "clear"}</small>
       <p>${stop.description}</p>
     </div>
   `;
@@ -42,6 +62,7 @@ export default function AdventureRouteMap({
   const mapRef = useRef(null);
   const markersRef = useRef([]);
   const popupRef = useRef(null);
+  const weatherMarkerRef = useRef(null);
 
   const [internalActiveStopId, setInternalActiveStopId] = useState(stops[0]?.id);
 
@@ -148,6 +169,7 @@ export default function AdventureRouteMap({
       markersRef.current.forEach(({ marker }) => marker.remove());
       markersRef.current = [];
       popupRef.current?.remove();
+      weatherMarkerRef.current?.remove();
       map.remove();
       mapRef.current = null;
     };
@@ -201,6 +223,18 @@ export default function AdventureRouteMap({
     })
       .setLngLat([activeStop.lng, activeStop.lat])
       .setHTML(buildPopupHtml(activeStop))
+      .addTo(mapRef.current);
+
+    weatherMarkerRef.current?.remove();
+
+    const weatherEl = createWeatherElement(activeStop.weather);
+
+    weatherMarkerRef.current = new maplibregl.Marker({
+      element: weatherEl,
+      anchor: "center",
+      offset: [0, -10],
+    })
+      .setLngLat([activeStop.lng, activeStop.lat])
       .addTo(mapRef.current);
   }, [activeStop]);
 

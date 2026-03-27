@@ -19,7 +19,7 @@ function ExploreToolbar({
         />
       </div>
 
-      <div className={styles.filters}>
+      <div className={styles.filtersRow}>
         {filters.map((filter) => (
           <button
             key={filter}
@@ -33,10 +33,6 @@ function ExploreToolbar({
           </button>
         ))}
       </div>
-
-      <button type="button" className={styles.aiButton}>
-        Gợi ý AI
-      </button>
     </section>
   );
 }

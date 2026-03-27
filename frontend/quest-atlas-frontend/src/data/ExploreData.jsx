@@ -54,6 +54,16 @@ export const destinations = [
     weather: "20°C",
     position: { top: "67%", left: "56%" },
   },
+  {
+    id: 5,
+    name: "Phú Quốc",
+    category: "Chill",
+    duration: "3 ngày",
+    description: "Khu biển đảo du lịch hiện đại, kiến trúc Châu Âu.",
+    badge: "Thư giãn",
+    weather: "20°C",
+    position: { top: "68%", left: "60%" },
+  },
 ];
 
 export const routes = [
@@ -80,6 +90,16 @@ export const routes = [
     duration: "2 ngày 1 đêm",
     description: "Lịch trình nhẹ, phù hợp nghỉ ngắn ngày và thư giãn.",
     badge: "Dễ đi",
+  },
+  {
+    id: 104,
+    name: "Phú Quốc",
+    type: "Chill",
+    duration: "3 ngày",
+    description: "Khu biển đảo du lịch hiện đại, kiến trúc Châu Âu",
+    lng: 104.01,
+    lat: 10.29,
+    weather: "sunny",
   },
 ];
 

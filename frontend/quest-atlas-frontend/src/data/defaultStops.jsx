@@ -7,6 +7,7 @@ export const defaultStops = [
     description: "Cung đường săn mây, đèo núi và bản làng vùng cao.",
     lng: 104.9836,
     lat: 22.8025,
+    weather: "rain",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const defaultStops = [
     description: "Non nước hữu tình, chèo thuyền và khám phá hang động.",
     lng: 105.9744,
     lat: 20.2506,
+    weather: "cloudy",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const defaultStops = [
     description: "Dấu ấn cố đô với nhịp sống chậm và chiều sâu văn hóa.",
     lng: 107.5909,
     lat: 16.4637,
+    weather: "storm",
   },
   {
     id: 4,
@@ -34,5 +37,16 @@ export const defaultStops = [
     description: "Rừng thông, cà phê, khí hậu mát và những cung đường nhẹ nhàng.",
     lng: 108.4419,
     lat: 11.9404,
+    weather: "fog",
+  },
+  {
+    id: 5,
+    name: "Phú Quốc",
+    type: "Chill",
+    duration: "3 ngày",
+    description: "Khu biển đảo du lịch hiện đại, kiến trúc Châu Âu",
+    lng: 104.01,
+    lat: 10.29,
+    weather: "sunny",
   },
 ];

@@ -1,10 +1,63 @@
 .page {
+  position: relative;
   width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.content {
-  margin-top: 28px;
+.mapLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
+}
+
+.topOverlay {
+  position: absolute;
+  top: 138px;
+  left: 18px;
+  right: 18px;
+  height: 120px;
+}
+
+.leftOverlay {
+  position: absolute;
+  top: 145px;
+  left: 18px;
+  bottom: 18px;
+  width: 340px;
   display: flex;
-  gap: 24px;
-  align-items: flex-start;
+}
+
+.toolbarDragShell {
+  width: 550px;
+  max-width: 100%;
+}
+
+.toolbarDragHandle {
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(79, 66, 58, 0.92);
+  color: #fffaf3;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: grab;
+  box-shadow: 0 10px 24px rgba(62, 45, 28, 0.12);
+}
+
+.toolbarDragHandle:active {
+  cursor: grabbing;
 }

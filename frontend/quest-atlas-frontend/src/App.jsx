@@ -16,6 +16,7 @@ import styles from "./App.module.css";
 
 function App() {
   const location = useLocation();
+  const isExplorePage = location.pathname === "/explore";
 
   const getBadgeLabel = () => {
     if (location.pathname === "/community") return "Cộng Đồng Atlas";
@@ -27,13 +28,21 @@ function App() {
   return (
     <div className="page-wrapper">
       <div className="app-container">
-        <div className="quest-app">
+        <div className={`${styles.questApp} ${isExplorePage ? styles.exploreShell : ""}`}>
           <div className="quest-grid" />
 
-          <Header />
-          <Badge className="badge" label={getBadgeLabel()} value="v1" arrow="›" indicator="indicator"/>
+          <div className={isExplorePage ? styles.exploreHeaderLayer : "badge"}>
+            <Header />
+            <Badge
+              className="badge"
+              label={getBadgeLabel()}
+              value="v1"
+              arrow="›"
+              indicator="indicator"
+            />
+          </div>
 
-          <main className={styles.pageContent}>
+          <main className={`${styles.pageContent} ${isExplorePage ? styles.explorePageContent : ""}`}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/community" element={<CommunityPage />} />
