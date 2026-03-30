@@ -1,40 +1,58 @@
 import styles from "./CommunityHero.module.css";
 import Badge from "../../../common/Badge/Badge";
+import Text from "../../../common/Text/Text";
 
 export default function CommunityHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <Badge label="Cộng đồng lữ hành" className="previewBadge"/>
+        <Badge label="Cộng đồng lữ hành" variant="soft" />
 
-        <h1>Chia sẻ hành trình cùng những người yêu khám phá</h1>
+        <Text as="h1" size="xl" weight="bold" line="tight">
+          Hàng nghìn hành trình cùng những người yêu khám phá
+        </Text>
 
-        <p>
+        <Text size="md" weight="regular" line="relaxed" color="muted">
           Đăng ảnh, kể lại khoảnh khắc đáng nhớ và kết nối với cộng đồng đam mê
           du lịch qua những điểm đến bạn đã đi qua.
-        </p>
+        </Text>
       </div>
 
       <div className={styles.heroCard}>
-        <div className={styles.heroCardTop}>
-          <Badge label="Tổng quan cộng đồng" className="previewBadge"/>
-          <p>
+        <div>
+          <Badge label="Tổng quan cộng đồng" variant="soft" />
+
+          <Text size="sm" weight="medium" line="normal" color="muted">
             “Hàng nghìn hành trình đang được chia sẻ mỗi ngày”
-          </p>
+          </Text>
         </div>
 
         <div className={styles.heroStats}>
           <div className={styles.statItem}>
-            <strong>1.2K+</strong>
-            <span>Bài chia sẻ</span>
+            <Text as="strong" size="lg" weight="bold" line="tight" className={styles.statValue}>
+              1.2K+
+            </Text>
+            <Text size="sm" weight="medium" line="normal" className={styles.statLabel}>
+              Bài chia sẻ
+            </Text>
           </div>
+
           <div className={styles.statItem}>
-            <strong>320+</strong>
-            <span>Nhà lữ hành</span>
+            <Text as="strong" size="lg" weight="bold" line="tight">
+              320+
+            </Text>
+            <Text size="sm" weight="medium" line="normal" className={styles.statLabel}>
+              Nhà lữ hành
+            </Text>
           </div>
+
           <div className={styles.statItem}>
-            <strong>48+</strong>
-            <span>Điểm đến hot</span>
+            <Text as="strong" size="lg" weight="bold" line="tight">
+              48+
+            </Text>
+            <Text size="sm" weight="medium" line="normal">
+              Điểm đến hot
+            </Text>
           </div>
         </div>
       </div>

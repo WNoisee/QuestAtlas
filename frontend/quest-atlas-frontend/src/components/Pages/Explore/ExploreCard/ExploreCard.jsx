@@ -1,13 +1,15 @@
+import Button from "../../../common/Button/Button";
 import styles from "./ExploreCard.module.css";
 
 function ExploreCard({ item, active = false, onClick }) {
   return (
-    <button
+    <Button
       type="button"
-      className={`${styles.card} ${active ? styles.cardActive : ""}`}
+      variant="exploreCard"
+      active={active}
       onClick={() => onClick?.(item)}
     >
-      <div className={styles.cardTop}>
+      <div className={styles.top}>
         <div>
           <h3 className={styles.title}>{item.name}</h3>
           <p className={styles.meta}>
@@ -20,8 +22,12 @@ function ExploreCard({ item, active = false, onClick }) {
 
       <p className={styles.description}>{item.description}</p>
 
-      {item.weather && <div className={styles.weather}>Thời tiết: {item.weather}</div>}
-    </button>
+      {item.weather && (
+        <div className={styles.weather}>
+          Thời tiết: {item.weather}
+        </div>
+      )}
+    </Button>
   );
 }
 

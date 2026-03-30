@@ -34,11 +34,13 @@ function App() {
           <div className={isExplorePage ? styles.exploreHeaderLayer : "badge"}>
             <Header />
             <Badge
-              className="badge"
               label={getBadgeLabel()}
               value="v1"
-              arrow="›"
-              indicator="indicator"
+              arrow
+              indicator="diamond"
+              variant="default"
+              tone="highlight"
+              glow
             />
           </div>
 

@@ -1,4 +1,5 @@
 import styles from "./MessageBubble.module.css";
+import Text from "../../../../common/Text/Text";
 
 export default function MessageBubble({ message }) {
   const isMe = message.sender === "me";
@@ -10,8 +11,18 @@ export default function MessageBubble({ message }) {
           isMe ? styles.myBubble : styles.theirBubble
         }`}
       >
-        <p className={styles.text}>{message.text}</p>
-        <span className={styles.time}>{message.time}</span>
+        <Text as="p" size="sm" color="message">
+          {message.text}
+        </Text>
+
+        <Text
+          as="span"
+          size="xm"
+          color="muted"
+          className={styles.time}
+        >
+          {message.time}
+        </Text>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import styles from "./ChatHeader.module.css";
 import Avatar from "../../../../common/Avatar/Avatar";
 import Button from "../../../../common/Button/Button";
 import Icon from "../../../../common/Icon/Icon";
+import Text from "../../../../common/Text/Text";
 
 export default function ChatHeader({ chat, onClose }) {
   return (
@@ -11,25 +12,43 @@ export default function ChatHeader({ chat, onClose }) {
 
         <div className={styles.info}>
           <div className={styles.nameRow}>
-            <h4>{chat.name}</h4>
+            <Text as="h4" size="md" weight="semibold">
+              {chat.name}
+            </Text>
 
-            <span
+            <Text
+              as="span"
+              size="xs"
               className={`${styles.status} ${
                 chat.status === "online"
                   ? styles.online
                   : styles.offline
               }`}
             >
-              {chat.status === "online" ? "Đang hoạt động" : "Ngoại tuyến"}
-            </span>
+              {chat.status === "online"
+                ? "Đang hoạt động"
+                : "Ngoại tuyến"}
+            </Text>
           </div>
         </div>
       </div>
 
       <div className={styles.actions}>
-        <Icon symbol="phone" size="25" color="primary"></Icon>
-        <Button variant="closeBtn" onClick={onClose}>
-          <Icon symbol="close" size="15" color="primary"></Icon>
+        <Button
+          variant=""
+          type="button"
+          aria-label="Gọi điện"
+        >
+          <Icon symbol="phone" size="md" />
+        </Button>
+
+        <Button
+          variant=""
+          type="button"
+          onClick={onClose}
+          aria-label="Đóng chat"
+        >
+          <Icon symbol="close" size="md" />
         </Button>
       </div>
     </div>

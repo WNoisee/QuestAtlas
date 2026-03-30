@@ -1,4 +1,5 @@
 import Avatar from "../../../../common/Avatar/Avatar";
+import Text from "../../../../common/Text/Text";
 import styles from "./ChatItem.module.css";
 
 export default function ChatItem({ chat, onClick }) {
@@ -8,14 +9,25 @@ export default function ChatItem({ chat, onClick }) {
 
       <div className={styles.content}>
         <div className={styles.topRow}>
-          <p className={styles.name}>{chat.name}</p>
-          <span className={styles.time}>{chat.lastTime}</span>
+          <Text className={styles.name}>
+            {chat.name || "Người dùng"}
+          </Text>
+
+          <Text className={styles.time} color="chatItemTime">
+            {chat.lastTime || ""}
+          </Text>
         </div>
 
-        <p className={styles.message}>{chat.lastMessage}</p>
+        <Text className={styles.message} color="chatItemMessage">
+          {chat.lastMessage || "Chưa có tin nhắn"}
+        </Text>
       </div>
 
-      {chat.unread > 0 && <span className={styles.unread}>{chat.unread}</span>}
+      {chat.unread > 0 && (
+        <Text className={styles.unread}>
+          {chat.unread}
+        </Text>
+      )}
     </div>
   );
 }

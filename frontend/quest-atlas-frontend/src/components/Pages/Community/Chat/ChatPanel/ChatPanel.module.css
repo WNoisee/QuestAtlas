@@ -42,16 +42,10 @@
 
 .headerContent h3 {
   margin: 0 0 6px;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
 .headerContent p {
   margin: 0;
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(255, 250, 244, 0.72);
 }
 
 .searchWrap {

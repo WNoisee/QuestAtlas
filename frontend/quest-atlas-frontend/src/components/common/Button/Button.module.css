@@ -2,14 +2,73 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 15px;
+  gap: 8px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border: none;
   border-radius: 999px;
-  font-weight: 700;
-  transition: background-color 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease;
-  gap: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
+.button:hover {
+  transform: translateY(-0.5px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* size */
+.xs {
+  min-height: 28px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.sm {
+  min-height: 36px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.md {
+  min-height: 42px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.xm {
+  min-height: 45px;
+  padding: 11px 18px;
+  font-size: 15px;
+}
+
+.lg {
+  min-height: 48px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* variants */
 .primary {
   background: var(--gold);
   color: #231c17;
@@ -30,62 +89,43 @@
 }
 
 .outline {
-  border-radius: 999px;
-  background: var(--dusty-pink);
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #d7c2aa;
 }
 
 .outline:hover {
-  background: var(--dusty-pink-dark);
+  background: var(--dusty-pink);
 }
 
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.engagement {
+  border: 1px solid #dcc7af;
+  background: #f1e5d7;
+  color: #5e4d40;
+  font-size: 13px;
 }
 
-.icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #2f2721;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+.tool {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3e8dc;
+  border: 1px solid #e2d2bf;
+  color: #6b5b4d;
+  font-size: 13px;
+  transition: all 0.2s ease;
 }
 
-.iconGlyph {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: Move 1.8s ease-in-out infinite;
-}
-
-@keyframes Move {
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(2px, -1px) rotate(20deg);
-  }
-}
-
-.button:hover {
-  transform: translateY(-0.5px);
+.tool:hover {
+  background: #eadac7;
+  border-color: #d6c1a9;
 }
 
 .tab {
   border: 1px solid #d7c2aa;
   background: #f6eee3;
   color: #7a6858;
-  padding: 12px 18px;
-  border-radius: 999px;
   font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .tab:hover {
@@ -96,84 +136,4 @@
   background: #3a2b22;
   color: #fff8ef;
   border-color: #3a2b22;
-}
-
-.action {
-  border: 1px solid #dcc7af;
-  background: #f1e5d7;
-  color: #5e4d40;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.closeBtn {
-  background: rgba(255,255,255,0.12);
-  color: #f6eee3;
-}
-
-.launcher {
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #3a261b 0%, #5a3a2a 100%);
-  color: #fffaf4;
-  cursor: pointer;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 18px 30px rgba(58, 38, 27, 0.22),
-    0 6px 12px rgba(58, 38, 27, 0.12);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.launcher:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 22px 36px rgba(58, 38, 27, 0.26),
-    0 10px 16px rgba(58, 38, 27, 0.14);
-}
-
-.launcher:active {
-  transform: translateY(0);
-}
-
-.sendBtn {
-  min-width: 52px;
-  height: 52px;
-  border: none;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #3a261b 0%, #5a3a2a 100%);
-  color: #fffaf4;
-  cursor: pointer;
-  font-size: 16px;
-  box-shadow: 0 12px 20px rgba(58, 38, 27, 0.16);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.sendBtn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 24px rgba(58, 38, 27, 0.2);
-}
-
-.toolBtn {
-  border: none;
-  background: #f7ede1;
-  color: #6a4f41;
-  border-radius: 12px;
-  padding: 8px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.toolBtn:hover {
-  background: #f1e2d0;
-  transform: translateY(-1px);
 }

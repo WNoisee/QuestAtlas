@@ -1,58 +1,113 @@
 import Button from "../common/Button/Button";
+import Icon from "../common/Icon/Icon";
+import Text from "../common/Text/Text";
 import styles from "./HeroSection.module.css";
-import { Rocket, Map, MapPin, Compass, CloudSun } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <div>
-      <section className={styles.heroCopy}>
+    <section className={styles.heroCopy}>
+      <Text as="h1" size="hero" weight="bold" leading="tight">
+        Khám phá hành trình trên bản đồ thông minh
+      </Text>
 
-      <h1>Khám phá hành trình trên bản đồ thông minh</h1>
-
-      <p>
+      <Text
+        as="p"
+        size="lg"
+        color="muted"
+        leading="relaxed"
+        className={styles.description}
+      >
         Lên kế hoạch chuyến đi, khám phá điểm đến và theo dõi thời tiết
         trong một trải nghiệm trực quan, liền mạch.
-      </p>
+      </Text>
 
       <div className={styles.ctaRow}>
-        <Button variant="primary" icon={<Rocket size={18} />}>
+        <Button
+          variant="primary"
+          icon={<Icon symbol="rocket" size="md" />}
+          iconPosition="left"
+          size="lg"
+        >
           Khám phá ngay
         </Button>
-        <Button variant="secondary" icon={<Map size={18}/>}>Xem hành trình</Button>
+
+        <Button
+          variant="secondary"
+          icon={<Icon symbol="map" size="md" />}
+          iconPosition="left"
+          size="lg"
+        >
+          Xem hành trình
+        </Button>
       </div>
 
       <div className={styles.stats}>
         <div className={styles.statCard}>
-          <strong className={styles.statValue}>
+          <Text
+            as="strong"
+            size="lg"
+            weight="bold"
+            className={styles.statValue}
+          >
             24+
             <span className={styles.iconWrapper}>
-              <MapPin className={styles.iconGlow} size={16} />
+              <Icon
+                symbol="location"
+                size="sm"
+                className={styles.iconGlow}
+              />
             </span>
-          </strong>
-          <span className={styles.statLabel}>Điểm đến</span>
+          </Text>
+
+          <Text as="span" size="sm" color="muted" className={styles.statLabel}>
+            Điểm đến
+          </Text>
         </div>
 
         <div className={styles.statCard}>
-          <strong className={styles.statValue}>
+          <Text
+            as="strong"
+            size="lg"
+            weight="bold"
+            className={styles.statValue}
+          >
             12
             <span className={styles.iconWrapper}>
-              <Compass className={styles.iconGlow} size={16} />
+              <Icon
+                symbol="compass"
+                size="sm"
+                className={styles.iconGlow}
+              />
             </span>
-          </strong>
-          <span className={styles.statLabel}>Lộ trình thông minh</span>
+          </Text>
+
+          <Text as="span" size="sm" color="muted" className={styles.statLabel}>
+            Lộ trình thông minh
+          </Text>
         </div>
 
         <div className={styles.statCard}>
-          <strong className={styles.statValue}>
+          <Text
+            as="strong"
+            size="lg"
+            weight="bold"
+            className={styles.statValue}
+          >
             AI
             <span className={styles.iconWrapper}>
-              <CloudSun className={styles.iconGlow} size={16} />
+              <Icon
+                symbol="weather"
+                size="sm"
+                className={styles.iconGlow}
+              />
             </span>
-          </strong>
-          <span className={styles.statLabel}>Theo dõi thời tiết</span>
+          </Text>
+
+          <Text as="span" size="sm" color="muted" className={styles.statLabel}>
+            Theo dõi thời tiết
+          </Text>
         </div>
       </div>
-      </section>
-    </div>
+    </section>
   );
 }

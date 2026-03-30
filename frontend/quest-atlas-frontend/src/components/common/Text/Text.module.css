@@ -1,0 +1,39 @@
+.text {
+  margin: 0;
+}
+
+/* SIZE */
+.xm { font-size: var(--text-xm); }
+.xs { font-size: var(--text-xs); }
+.sm { font-size: var(--text-sm); }
+.md { font-size: var(--text-md); }
+.lg { font-size: var(--text-lg); }
+.xl { font-size: var(--text-xl); }
+.hero { font-size: var(--text-hero); }
+
+/* WEIGHT */
+.regular { font-weight: var(--fw-regular); }
+.medium { font-weight: var(--fw-medium); }
+.semibold { font-weight: var(--fw-semibold); }
+.bold { font-weight: var(--fw-bold); }
+
+/* LINE HEIGHT */
+.tight { line-height: var(--leading-tight); }
+.snug { line-height: var(--leading-snug); }
+.normal { line-height: var(--leading-normal); }
+.relaxed { line-height: var(--leading-relaxed); }
+
+/* LETTER SPACING */
+.tracking-tight { letter-spacing: var(--tracking-tight); }
+.tracking-normal { letter-spacing: var(--tracking-normal); }
+.tracking-wide { letter-spacing: var(--tracking-wide); }
+
+/* COLOR */
+.main { color: var(--text-main); }
+.muted { color: var(--text-muted); }
+.soft { color: var(--text-soft); }
+.inverted { color: var(--text-inverted); }
+.chatHeader { color: var(--text-chat-header); }
+.chatHeaderStrong { color: var(--text-chat-header-strong); }
+.message { color: var(--text-message); }
+.messageInverted { color: var(--text-message-inverted); }

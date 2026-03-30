@@ -5,6 +5,7 @@ import {
 } from "../../../../data/communityData";
 import Button from "../../../common/Button/Button";
 import Icon from "../../../common/Icon/Icon";
+import Badge from "../../../common/Badge/Badge";
 
 export default function CommunitySidebar() {
   return (
@@ -22,10 +23,18 @@ export default function CommunitySidebar() {
 
               <div className={styles.itemContent}>
                 <strong>{traveler.name}</strong>
-                <span className={styles.itemContent}>
-                  <Icon symbol="star" size="13" color="primary"></Icon> 
-                  <div>{traveler.stars} · {traveler.badge}</div>
-                </span>
+
+                <div className={styles.meta}>
+                  <Badge
+                      variant="starBadge"
+                      label={
+                        <>
+                          <Icon symbol="star" size="xs" />
+                          {traveler.stars} · {traveler.badge}
+                        </>
+                      }
+                    />
+                </div>
               </div>
             </div>
           ))}
@@ -46,7 +55,9 @@ export default function CommunitySidebar() {
                 <span>{destination.weather}</span>
               </div>
 
-              <Button type="button" variant="action">Xem</Button>
+              <Button type="button" variant="engagement">
+                Xem
+              </Button>
             </div>
           ))}
         </div>

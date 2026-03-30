@@ -1,8 +1,8 @@
 import Avatar from "../../../../common/Avatar/Avatar";
 import Button from "../../../../common/Button/Button";
-import styles from "./PostCard.module.css";
-import Bagde from "../../../../common/Badge/Badge";
+import Badge from "../../../../common/Badge/Badge";
 import Icon from "../../../../common/Icon/Icon";
+import styles from "./PostCard.module.css";
 
 export default function PostCard({ post }) {
   return (
@@ -14,16 +14,28 @@ export default function PostCard({ post }) {
           <div className={styles.meta}>
             <div className={styles.nameRow}>
               <h3>{post.author}</h3>
-              <Bagde className={styles.starBadge}><Icon symbol="star" size="13" color="primary"></Icon> {post.stars}</Bagde>
+
+              <Badge
+                variant="starBadge"
+                label={
+                  <>
+                    <Icon symbol="star" size="xs" />
+                    {post.stars}
+                  </>
+                }
+              />
             </div>
 
             <p>
-              {post.rank}<Icon symbol="location" size="13" color="primary"></Icon> {post.location} · {post.time}
+              {post.rank} <Icon symbol="location" size="xs" /> {post.location} ·{" "}
+              {post.time}
             </p>
           </div>
         </div>
 
-        <Button type="button" variant="action">•••</Button>
+        <Button type="button" variant="engagement" aria-label="Tùy chọn bài viết">
+          •••
+        </Button>
       </div>
 
       <div className={styles.imageWrap}>
@@ -34,22 +46,36 @@ export default function PostCard({ post }) {
 
       <div className={styles.tags}>
         {post.tags.map((tag) => (
-          <Bagde key={tag} label={`#${tag}`} className="hashtags">
-            #{tag}
-          </Bagde>
+          <Badge
+            key={tag}
+            className={styles.hashtag}
+            variant="soft"
+            label={`#${tag}`}
+          />
         ))}
       </div>
 
       <div className={styles.footer}>
         <div className={styles.stats}>
-          <span><Icon symbol="heart" size="13" color="primary"></Icon> {post.likes}</span>
-          <span><Icon symbol="comment" size="13" color="primary"></Icon> {post.comments}</span>
+          <span>
+            <Icon symbol="heart" size="xs" /> {post.likes}
+          </span>
+
+          <span>
+            <Icon symbol="comment" size="xs" /> {post.comments}
+          </span>
         </div>
 
         <div className={styles.actions}>
-          <Button type="button" variant="action">Yêu thích</Button>
-          <Button type="button" variant="action">Bình luận</Button>
-          <Button type="button" variant="action">Lưu</Button>
+          <Button type="button" variant="engagement">
+            Yêu thích
+          </Button>
+          <Button type="button" variant="engagement">
+            Bình luận
+          </Button>
+          <Button type="button" variant="engagement">
+            Lưu
+          </Button>
         </div>
       </div>
     </article>

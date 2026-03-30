@@ -49,8 +49,12 @@ export default function Header() {
         </nav>
 
         <Button
+          as={NavLink}
+          to="/login"
           variant="outline"
           icon={<ArrowRightToLine size={18} />}
+          iconPosition="right"
+          size="sm"
         >
           Đăng nhập
         </Button>

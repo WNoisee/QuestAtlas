@@ -25,7 +25,7 @@ export const chatConversations = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Tín",
     avatar: "BT",
     status: "offline",
@@ -37,7 +37,7 @@ export const chatConversations = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     name: "Núi To",
     avatar: "BT",
     status: "offline",

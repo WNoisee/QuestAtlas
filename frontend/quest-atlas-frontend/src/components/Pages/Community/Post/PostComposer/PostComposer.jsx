@@ -15,9 +15,17 @@ export default function PostComposer() {
       </div>
 
       <div className={styles.actions}>
-        <Button type="button" variant="action"><Icon symbol="camera" size="13" color="primary"></Icon> Thêm ảnh</Button>
-        <Button type="button" variant="action"><Icon symbol="location" size="13" color="primary"></Icon> Gắn địa điểm</Button>
-        <Button type="button" variant="action"><Icon symbol="starIcon" size="13" color="primary"></Icon> Chia sẻ cột mốc</Button>
+        <Button type="button" variant="tool">
+          <Icon symbol="camera" size="sm" /> Thêm ảnh
+        </Button>
+
+        <Button type="button" variant="tool">
+          <Icon symbol="location" size="sm" /> Gắn địa điểm
+        </Button>
+
+        <Button type="button" variant="tool">
+          <Icon symbol="starIcon" size="sm" /> engagement cột mốc
+        </Button>
       </div>
     </section>
   );
