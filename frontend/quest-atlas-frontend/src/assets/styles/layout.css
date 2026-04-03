@@ -37,11 +37,11 @@
 .content-shell {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--space-2xl);
 }
 
 @media (max-width: 760px) {
   .content-shell {
-    padding: 0 20px;
+    padding: 0 var(--space-lg);
   }
 }

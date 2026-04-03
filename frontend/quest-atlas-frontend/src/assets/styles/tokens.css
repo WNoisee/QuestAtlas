@@ -1,18 +1,33 @@
 :root {
+  /* ========== Colors - Background ========== */
   --bg: #f3e8d8;
   --surface: #efe2d0;
   --surface-2: #f8efe3;
   --page-bg: #fdfaf5;
+  --bg-page: #fdfaf5;
 
+  /* ========== Colors - Text ========== */
   --text: #2d241d;
   --text-strong: #3a2d22;
   --text-primary: #2f241d;
+  --text-main: #2f241d;
+  --text-muted: #6f6256;
+  --text-soft: #7a6858;
+  --text-inverted: #fdfaf5;
   --muted: #6f6256;
 
+  /* ========== Colors - Chat ========== */
+  --text-chat-header: rgba(255, 250, 244, 0.72);
+  --text-chat-header-strong: rgba(255, 250, 244, 0.96);
+  --text-message: #2d241d;
+  --text-message-inverted: #f3e8d8;
+
+  /* ========== Colors - Border ========== */
   --border: #d7c4b1;
   --border-soft: #eadbc8;
   --border-strong: #d9c7b5;
 
+  /* ========== Colors - Semantic ========== */
   --gold: #e6a73c;
   --gold-dark: #c98920;
   --pink: #d7afd7;
@@ -20,67 +35,79 @@
   --dusty-pink: #e7b3b3;
   --dusty-pink-dark: #cf9a9a;
   --dark-pink: #b784b7;
+  --highlight: #d8b0d8;
 
-  --highlight:#d8b0d8;
-
-  --icon-star: #19c1ab;   
+  /* ========== Colors - Icons ========== */
+  --icon-star: #19c1ab;
   --icon-dark-star: #47a7a0;
-  --icon-comment: #6366f1;  
-  --icon-heart: #f43f5e;    
-  --icon-location: #fb7185; 
-  --icon-camera: #0ea5e9; 
+  --icon-comment: #6366f1;
+  --icon-heart: #f43f5e;
+  --icon-location: #fb7185;
+  --icon-camera: #0ea5e9;
   --icon-phone: #4CAF7D;
 
+  /* ========== Colors - Badge ========== */
   --badge-bg: #2f2721;
   --badge-text: #f5ede3;
 
+  /* ========== Shadows ========== */
   --shadow-soft: 0 18px 50px rgba(45, 36, 29, 0.08);
   --shadow-card: 0 6px 20px rgba(45, 36, 29, 0.12);
 
+  /* ========== Border Radius ========== */
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 22px;
   --radius-xl: 28px;
   --radius-2xl: 36px;
+  --radius-full: 999px;
 
+  /* ========== Sizes ========== */
   --container-width: 1400px;
   --content-width: 1280px;
   --header-height: 66px;
 
-  /* typography */
-  --text-xm: 0.625rem;   /* 10px */
-  --text-xs: 0.75rem;     /* 12px */
-  --text-sm: 0.875rem;     /* 14px */
-  --text-md: 1rem;      /* 16px */
-  --text-lg: 1.125rem;  /* 18px */
-  --text-xl: 1.25rem;   /* 20px */
-  --text-2xl: 1.5rem;   /* 24px */
+  /* ========== Typography - Font Family ========== */
+  --font-sans: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* ========== Typography - Font Sizes ========== */
+  --text-xm: 0.625rem;      /* 10px */
+  --text-xs: 0.75rem;        /* 12px */
+  --text-sm: 0.875rem;       /* 14px */
+  --text-md: 1rem;           /* 16px */
+  --text-lg: 1.125rem;       /* 18px */
+  --text-xl: 1.25rem;        /* 20px */
+  --text-2xl: 1.5rem;        /* 24px */
   --text-hero: clamp(3rem, 4vw, 4.1rem);
 
-  /* line height */
+  /* ========== Typography - Line Height ========== */
   --leading-tight: 1.25;
   --leading-snug: 1.4;
   --leading-normal: 1.6;
   --leading-relaxed: 1.8;
 
-  /* font weight */
+  /* ========== Typography - Font Weight ========== */
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  /* letter spacing */
+  /* ========== Typography - Letter Spacing ========== */
   --tracking-normal: 0;
   --tracking-wide: 0.02em;
   --tracking-tight: -0.02em;
 
-  /* text color */
-  --text-main: #2f241d;
-  --text-muted: var(--muted);
-  --text-soft: #7a6858;
-  --text-inverted: #fdfaf5;
-  --text-chat-header: rgba(255, 250, 244, 0.72);
-  --text-chat-header-strong: rgba(255, 250, 244, 0.96);
-  --text-message: #2d241d;
-  --text-message-inverted: #f3e8d8;
+  /* ========== Spacing ========== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-ml: 18px;
+  --space-xl: 20px;
+  --space-2xl: 28px;
+
+  /* ========== Transitions ========== */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }

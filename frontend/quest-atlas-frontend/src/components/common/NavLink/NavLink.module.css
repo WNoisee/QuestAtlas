@@ -5,29 +5,29 @@
   padding: 0 24px;
   color: #5e554c;
   min-height: var(--header-height);
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .navLink::before,
 .navLink::after {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: var(--space-sm);
+  height: var(--space-sm);
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity var(--transition-fast);
 }
 
 .navLink::before {
-  top: 8px;
-  left: 8px;
+  top: var(--space-sm);
+  left: var(--space-sm);
   border-top: 1.5px solid var(--gold);
   border-left: 1.5px solid var(--gold);
 }
 
 .navLink::after {
-  right: 8px;
-  bottom: 8px;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
   border-bottom: 1.5px solid var(--blue-accent);
   border-right: 1.5px solid var(--blue-accent);
 }

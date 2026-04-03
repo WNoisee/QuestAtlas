@@ -1,22 +1,22 @@
 .card {
-  background: #f7efe5;
-  border: 1px solid #d7c2aa;
-  border-radius: 28px;
-  padding: 20px;
-  box-shadow: 0 12px 30px rgba(76, 52, 35, 0.08);
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .user {
   display: flex;
-  gap: 14px;
+  gap: var(--space-md);
   min-width: 0;
 }
 
@@ -27,29 +27,29 @@
 .nameRow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-md);
   flex-wrap: wrap;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-xs);
 }
 
 .nameRow h3 {
   margin: 0;
-  color: #2f241d;
+  color: var(--text-primary);
   font-size: 20px;
 }
 
 .meta p {
   margin: 0;
-  color: #7a6858;
-  font-size: 14px;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
   line-height: 1.5;
 }
 
 .imageWrap {
   overflow: hidden;
-  border-radius: 22px;
-  margin-bottom: 16px;
-  border: 1px solid #dcc7af;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+  border: 1px solid var(--border-soft);
 }
 
 .imageWrap img {
@@ -60,7 +60,7 @@
 }
 
 .caption {
-  margin: 0 0 14px;
+  margin: 0 0 var(--space-md);
   color: #4e3f34;
   font-size: 16px;
   line-height: 1.7;
@@ -69,37 +69,37 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-md);
   flex-wrap: wrap;
   align-items: center;
 }
 
 .stats {
   display: flex;
-  gap: 16px;
+  gap: var(--space-lg);
   color: #5f4d40;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-md);
 }
 
 .hashtag {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: #efe5d6;
-  border: 1px solid #dcc7af;
-  color: #7a6858;
-  font-size: 13px;
-  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
 }

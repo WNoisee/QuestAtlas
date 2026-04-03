@@ -45,21 +45,21 @@
 /* size */
 .sm {
   min-height: 60px;
-  padding: 8px 12px;
-  font-size: 13px;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-xs);
   border-radius: 10px;
 }
 
 .md {
   min-height: 90px;
-  padding: 10px 14px;
-  font-size: 14px;
+  padding: var(--space-md) var(--space-md);
+  font-size: var(--text-sm);
   border-radius: 14px;
 }
 
 .lg {
   min-height: 120px;
-  padding: 12px 18px;
+  padding: var(--space-md) var(--space-ml);
   font-size: 15px;
   border-radius: 18px;
 }

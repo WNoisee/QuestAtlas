@@ -12,7 +12,7 @@
 
 .bubble {
   max-width: 76%;
-  padding: 12px 14px 10px;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(54, 34, 22, 0.05);
 }
@@ -31,8 +31,8 @@
 }
 
 .text {
-  margin: 0 0 6px;
-  font-size: 14px;
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-sm);
   line-height: 1.5;
 }
 

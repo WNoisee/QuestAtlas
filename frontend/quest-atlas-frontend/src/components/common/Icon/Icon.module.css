@@ -103,8 +103,8 @@
 .animateBurst::after {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: var(--space-sm);
+  height: var(--space-sm);
   background: radial-gradient(circle, #fff, transparent);
   border-radius: 50%;
   opacity: 0;

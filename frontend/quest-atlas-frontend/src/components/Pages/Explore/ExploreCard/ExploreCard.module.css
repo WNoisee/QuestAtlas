@@ -1,12 +1,12 @@
 .card {
   width: 100%;
-  border: 1px solid #dccdb7;
-  background: #f8f1e6;
-  border-radius: 22px;
-  padding: 16px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .card:hover {
@@ -25,26 +25,26 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--space-md);
 }
 
 .title {
   margin: 0;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--text-lg);
+  font-weight: var(--fw-bold);
   color: #2c1d12;
 }
 
 .meta {
-  margin: 6px 0 0;
-  font-size: 14px;
+  margin: var(--space-sm) 0 0;
+  font-size: var(--text-sm);
   color: #7a6857;
 }
 
 .description {
-  margin: 12px 0 0;
-  font-size: 14px;
-  line-height: 1.6;
+  margin: var(--space-md) 0 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
   color: #5d4a3c;
 }
 
@@ -54,17 +54,17 @@
   align-items: center;
   justify-content: center;
   min-width: 70px;
-  padding: 8px 12px;
-  border-radius: 999px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
   background: #5a3a24;
   color: #fff7ef;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
 }
 
 .weather {
-  margin-top: 12px;
-  font-size: 13px;
+  margin-top: var(--space-md);
+  font-size: var(--text-xs);
   color: #8a5a36;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }

@@ -1,5 +1,5 @@
 .header {
-  padding: 14px 16px;
+  padding: var(--space-md) var(--space-lg);
   background:
     linear-gradient(135deg, #3a261b 0%, #4a3022 100%);
   color: #fffaf4;
@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-md);
 
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -16,7 +16,7 @@
 .left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-md);
   min-width: 0;
 }
 
@@ -26,15 +26,15 @@
 
 .nameRow h4 {
   margin: 0;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
   color: #fffaf4;
 }
 
 .status {
-  font-size: 9px;
-  font-weight: 600;
-  padding: 4px 8px;
+  font-size: var(--text-xm);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-xs) var(--space-sm);
   border-radius: 8px;
 }
 
@@ -50,7 +50,7 @@
 
 .subtitle {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: rgba(255,255,255,0.6);
 
   white-space: nowrap;
@@ -62,6 +62,6 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--space-xl);
   cursor: pointer;
 }

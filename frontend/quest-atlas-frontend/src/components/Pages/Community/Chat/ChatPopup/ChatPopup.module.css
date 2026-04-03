@@ -4,7 +4,7 @@
   background: rgba(255, 251, 246, 0.98);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(220, 198, 173, 0.9);
-  border-radius: 28px;
+  border-radius: var(--radius-2xl);
   display: flex;
   flex-direction: column;
   overflow: hidden;

@@ -1,15 +1,15 @@
 .heroCopy {
-  padding-right: 10px;
+  padding-right: var(--space-md);
 }
 
 .heroCopy h1 {
-  font-size: clamp(3rem, 4vw, 4.1rem);
-  line-height: 1.25;
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
   letter-spacing: normal;
 }
 
 .heroCopy p {
-  margin-top: 22px;
+  margin-top: var(--space-ml);
   font-size: 1.08rem;
   line-height: 1.8;
   color: var(--muted);
@@ -18,15 +18,15 @@
 
 .ctaRow {
   display: flex;
-  gap: 14px;
+  gap: var(--space-md);
   margin-top: 30px;
   flex-wrap: wrap;
 }
 
 .stats {
   display: flex;
-  gap: 14px;
-  margin-top: 28px;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
   flex-wrap: wrap;
 }
 

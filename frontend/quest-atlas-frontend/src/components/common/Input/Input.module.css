@@ -1,30 +1,30 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--space-sm);
 }
 
 .label {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
   color: #4f3a2c;
 }
 
 .input {
   width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #d7c2aa;
-  border-radius: 14px;
-  background: #fffaf4;
-  color: #3e2c21;
-  font-size: 14px;
+  padding: var(--space-md) var(--space-md);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
   outline: none;
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .input::placeholder {
-  color: #8a7766;
+  color: var(--text-muted);
 }
 
 .input:focus {
@@ -37,11 +37,11 @@
 }
 
 .errorText {
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: #d46b6b;
 }
 
 .helperText {
-  font-size: 12px;
-  color: #8a7766;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
 }

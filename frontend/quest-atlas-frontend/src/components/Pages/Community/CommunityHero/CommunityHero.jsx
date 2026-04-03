@@ -19,9 +19,8 @@ export default function CommunityHero() {
       </div>
 
       <div className={styles.heroCard}>
-        <div>
+        <div className={styles.heroCardTop}>
           <Badge label="Tổng quan cộng đồng" variant="soft" />
-
           <Text size="sm" weight="medium" line="normal" color="muted">
             “Hàng nghìn hành trình đang được chia sẻ mỗi ngày”
           </Text>

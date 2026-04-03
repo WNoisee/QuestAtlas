@@ -1,59 +1,59 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-xl);
 }
 
 .card {
-  background: #f7efe5;
-  border: 1px solid #d7c2aa;
-  border-radius: 28px;
-  padding: 20px;
-  box-shadow: 0 12px 30px rgba(76, 52, 35, 0.08);
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .cardHeader h3 {
   margin: 0;
-  color: #2f241d;
+  color: var(--text-primary);
   font-size: 20px;
 }
 
 .cardHeader span {
-  color: #8a7766;
-  font-size: 14px;
-  font-weight: 600;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-md);
 }
 
 .listItem,
 .destinationItem {
   display: flex;
-  gap: 12px;
+  gap: var(--space-md);
   align-items: center;
-  background: #f1e5d7;
-  border: 1px solid #dcc7af;
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
   border-radius: 20px;
-  padding: 14px;
+  padding: var(--space-md);
 }
 
 .rank {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #3a2b22;
+  background: var(--text-primary);
   color: #fff8ef;
   display: grid;
   place-items: center;
@@ -65,19 +65,19 @@
 .destinationItem div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .itemContent strong,
 .destinationItem strong {
-  color: #2f241d;
+  color: var(--text-primary);
   font-size: 15px;
 }
 
 .itemContent span,
 .destinationItem span {
-  color: #7a6858;
-  font-size: 13px;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
 }
 
 .destinationItem {

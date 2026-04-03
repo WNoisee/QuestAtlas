@@ -31,7 +31,7 @@ function App() {
         <div className={`${styles.questApp} ${isExplorePage ? styles.exploreShell : ""}`}>
           <div className="quest-grid" />
 
-          <div className={isExplorePage ? styles.exploreHeaderLayer : "badge"}>
+          <div className={isExplorePage ? styles.exploreHeaderLayer : styles.OthersHeaderLayer}>
             <Header />
             <Badge
               label={getBadgeLabel()}

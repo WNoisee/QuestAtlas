@@ -1,15 +1,11 @@
-import Button from "../../../common/Button/Button";
+import CardButton from "../../../common/CardButton/CardButton";
+import Badge from "../../../common/Badge/Badge";
 import styles from "./ExploreCard.module.css";
 
-function ExploreCard({ item, active = false, onClick }) {
+export default function ExploreCard({ item, active = false, onClick }) {
   return (
-    <Button
-      type="button"
-      variant="exploreCard"
-      active={active}
-      onClick={() => onClick?.(item)}
-    >
-      <div className={styles.top}>
+    <CardButton active={active} onClick={() => onClick?.(item)}>
+      <div className={styles.cardTop}>
         <div>
           <h3 className={styles.title}>{item.name}</h3>
           <p className={styles.meta}>
@@ -17,7 +13,13 @@ function ExploreCard({ item, active = false, onClick }) {
           </p>
         </div>
 
-        {item.badge && <span className={styles.badge}>{item.badge}</span>}
+        {item.badge && (
+          <Badge
+            label={item.badge}
+            variant="soft"
+            tone="highlight"
+          />
+        )}
       </div>
 
       <p className={styles.description}>{item.description}</p>
@@ -27,8 +29,6 @@ function ExploreCard({ item, active = false, onClick }) {
           Thời tiết: {item.weather}
         </div>
       )}
-    </Button>
+    </CardButton>
   );
 }
-
-export default ExploreCard;

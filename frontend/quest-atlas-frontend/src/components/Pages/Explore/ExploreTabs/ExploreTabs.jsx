@@ -1,20 +1,20 @@
 import styles from "./ExploreTabs.module.css";
+import Button from "../../../common/Button/Button"; 
 
-function ExploreTabs({ tabs = [], activeTab, onChange }) {
+export default function ExploreTabs({ tabs = [], activeTab, onChange }) {
   return (
     <div className={styles.tabs}>
       {tabs.map((tab) => (
-        <button
+        <Button
           key={tab.id}
-          type="button"
-          className={`${styles.tab} ${activeTab === tab.id ? styles.active : ""}`}
+          variant="tab"    
+          size="sm"        
+          active={activeTab === tab.id}
           onClick={() => onChange(tab.id)}
         >
           {tab.label}
-        </button>
+        </Button>
       ))}
     </div>
   );
 }
-
-export default ExploreTabs;

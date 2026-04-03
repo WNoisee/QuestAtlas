@@ -85,9 +85,7 @@ export default function AdventureRouteMap({
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1";
 
-    const styleUrl = isLocalhost
-      ? "https://tiles.stadiamaps.com/styles/alidade_smooth.json"
-      : "https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=YOUR_STADIA_API_KEY";
+    const styleUrl = "https://tiles.stadiamaps.com/styles/alidade_smooth.json";
 
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
@@ -106,61 +104,67 @@ export default function AdventureRouteMap({
       stops.forEach((stop) => bounds.extend([stop.lng, stop.lat]));
       map.fitBounds(bounds, { padding: 80, duration: 0 });
 
-      const layers = map.getStyle()?.layers || [];
+      map.on("load", () => {
+        const style = map.getStyle();
 
-      layers.forEach((layer) => {
-        const { id, type } = layer;
-        const layerId = id.toLowerCase();
+        if (!style || !style.layers) return;
 
-        const isPoi =
-          layerId.includes("poi") ||
-          layerId.includes("airport") ||
-          layerId.includes("transit") ||
-          layerId.includes("housenumber") ||
-          layerId.includes("address");
+        const layers = style.layers;
 
-        const isBuilding =
-          layerId.includes("building") ||
-          layerId.includes("indoor");
+            layers.forEach((layer) => {
+              const { id, type } = layer;
+              const layerId = id.toLowerCase();
 
-        const isMinorRoad =
-          layerId.includes("minor") ||
-          layerId.includes("service") ||
-          layerId.includes("path") ||
-          layerId.includes("track") ||
-          layerId.includes("pedestrian");
+              const isPoi =
+                layerId.includes("poi") ||
+                layerId.includes("airport") ||
+                layerId.includes("transit") ||
+                layerId.includes("housenumber") ||
+                layerId.includes("address");
 
-        const isBoundary =
-          layerId.includes("boundary") ||
-          layerId.includes("admin") ||
-          layerId.includes("border");
+              const isBuilding =
+                layerId.includes("building") ||
+                layerId.includes("indoor");
 
-        const isRoad =
-          layerId.includes("road") ||
-          layerId.includes("street") ||
-          layerId.includes("highway");
+              const isMinorRoad =
+                layerId.includes("minor") ||
+                layerId.includes("service") ||
+                layerId.includes("path") ||
+                layerId.includes("track") ||
+                layerId.includes("pedestrian");
 
-        if (isPoi || isBuilding || isMinorRoad) {
-          try {
-            map.setLayoutProperty(id, "visibility", "none");
-          } catch {}
-        }
+              const isBoundary =
+                layerId.includes("boundary") ||
+                layerId.includes("admin") ||
+                layerId.includes("border");
 
-        if (isBoundary && type === "line") {
-          try {
-            map.setPaintProperty(id, "line-color", "#8f7c67");
-            map.setPaintProperty(id, "line-width", 1.35);
-            map.setPaintProperty(id, "line-opacity", 0.9);
-          } catch {}
-        }
+              const isRoad =
+                layerId.includes("road") ||
+                layerId.includes("street") ||
+                layerId.includes("highway");
 
-        if (isRoad && type === "line") {
-          try {
-            map.setPaintProperty(id, "line-color", "#d5c1a4");
-            map.setPaintProperty(id, "line-opacity", 0.45);
-          } catch {}
-        }
-      });
+              if (isPoi || isBuilding || isMinorRoad) {
+                try {
+                  map.setLayoutProperty(id, "visibility", "none");
+                } catch {}
+              }
+
+              if (isBoundary && type === "line") {
+                try {
+                  map.setPaintProperty(id, "line-color", "#8f7c67");
+                  map.setPaintProperty(id, "line-width", 1.35);
+                  map.setPaintProperty(id, "line-opacity", 0.9);
+                } catch {}
+              }
+
+              if (isRoad && type === "line") {
+                try {
+                  map.setPaintProperty(id, "line-color", "#d5c1a4");
+                  map.setPaintProperty(id, "line-opacity", 0.45);
+                } catch {}
+              }
+            });
+          });
     });
 
     mapRef.current = map;

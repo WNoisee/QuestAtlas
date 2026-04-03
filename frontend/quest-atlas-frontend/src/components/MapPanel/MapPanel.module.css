@@ -1,8 +1,8 @@
 .mapPanel {
   background: rgba(255, 248, 241, 0.52);
   border: 1px solid var(--border);
-  border-radius: 36px;
-  padding: 18px;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-ml);
   box-shadow: var(--shadow-soft);
 }
 
@@ -10,8 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  padding: 8px 8px 18px;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-sm) var(--space-ml);
 }
 
 .mapHeader h3 {
@@ -21,7 +21,7 @@
 }
 
 .mapHeader p {
-  margin: 4px 0 0;
+  margin: var(--space-xs) 0 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -29,7 +29,7 @@
 .mapCanvas {
   position: relative;
   height: 640px;
-  border-radius: 28px;
+  border-radius: var(--radius-2xl);
   overflow: hidden;
   border: 1px solid rgba(172, 144, 116, 0.45);
   background: linear-gradient(180deg, #efe2d0 0%, #ead8c0 100%);

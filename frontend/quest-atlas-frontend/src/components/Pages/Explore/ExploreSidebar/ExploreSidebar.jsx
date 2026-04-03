@@ -1,6 +1,8 @@
 import ExploreTabs from "../ExploreTabs/ExploreTabs";
 import ExploreCard from "../ExploreCard/ExploreCard";
 import styles from "./ExploreSidebar.module.css";
+import Badge from "../../../common/Badge/Badge"
+import Text from "../../../common/Text/Text";
 
 function ExploreSidebar({
   tabs,
@@ -13,8 +15,10 @@ function ExploreSidebar({
   return (
     <aside className={styles.sidebar}>
       <div className={styles.header}>
-        <span className={styles.label}>Danh mục khám phá</span>
-        <h2 className={styles.title}>Lựa chọn hành trình</h2>
+        <Badge label="Danh mục khám phá" variant="soft"/>
+        <Text as="h3" size="lg" weight="bold" leading="tight">
+          Gợi hành trình cho bạn
+        </Text>
       </div>
 
       <ExploreTabs tabs={tabs} activeTab={activeTab} onChange={onTabChange} />

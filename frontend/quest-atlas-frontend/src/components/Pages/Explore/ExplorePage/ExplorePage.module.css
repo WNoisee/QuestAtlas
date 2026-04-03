@@ -26,14 +26,14 @@
 .topOverlay {
   position: absolute;
   top: 138px;
-  left: 18px;
-  right: 18px;
+  left: var(--space-ml);
+  right: var(--space-ml);
   height: 120px;
 }
 
 .leftOverlay {
   position: absolute;
-  top: 145px;
+  top: 130px;
   left: 18px;
   bottom: 18px;
   width: 340px;

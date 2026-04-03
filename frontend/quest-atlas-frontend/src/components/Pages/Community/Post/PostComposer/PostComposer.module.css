@@ -1,16 +1,16 @@
 .composer {
-  background: #f7efe5;
-  border: 1px solid #d7c2aa;
-  border-radius: 28px;
-  padding: 20px;
-  box-shadow: 0 12px 30px rgba(76, 52, 35, 0.08);
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
 }
 
 .header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .inputWrapper {
