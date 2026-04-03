@@ -37,6 +37,20 @@
   --dark-pink: #b784b7;
   --highlight: #d8b0d8;
 
+  /* ========== Colors - Adventure Theme ========== */
+  --adventure-forest: #2d5016;
+  --adventure-forest-light: #4a7c2a;
+  --adventure-ocean: #1e5a5e;
+  --adventure-ocean-light: #2ba39d;
+  --adventure-sunset: #e07a3f;
+  --adventure-sunset-bright: #ff8c42;
+  
+  /* ========== Colors - Rarity System ========== */
+  --rarity-common: #8b7355;
+  --rarity-rare: #2ba39d;
+  --rarity-epic: #9b59b6;
+  --rarity-legendary: #e6a73c;
+
   /* ========== Colors - Icons ========== */
   --icon-star: #19c1ab;
   --icon-dark-star: #47a7a0;

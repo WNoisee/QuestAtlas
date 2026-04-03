@@ -3,4 +3,7 @@
   flex-wrap: wrap;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--border-soft);
+  position: relative;
 }

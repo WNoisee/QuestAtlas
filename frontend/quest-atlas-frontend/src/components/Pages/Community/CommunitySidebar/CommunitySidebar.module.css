@@ -5,11 +5,18 @@
 }
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1.5px solid var(--border-soft);
   border-radius: var(--radius-2xl);
   padding: var(--space-xl);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4px 12px rgba(45, 36, 29, 0.08);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #2d7a4d;
+  box-shadow: 0 12px 24px rgba(45, 122, 77, 0.12);
 }
 
 .cardHeader {
@@ -23,13 +30,22 @@
 .cardHeader h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cardHeader span {
   color: var(--text-muted);
   font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
+  padding: 4px 12px;
+  background: linear-gradient(135deg, rgba(45, 122, 77, 0.1) 0%, rgba(69, 186, 109, 0.05) 100%);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(45, 122, 77, 0.2);
 }
 
 .list {
@@ -43,22 +59,34 @@
   display: flex;
   gap: var(--space-md);
   align-items: center;
-  background: var(--surface-2);
+  background: var(--surface-3);
   border: 1px solid var(--border-soft);
   border-radius: 20px;
   padding: var(--space-md);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.listItem:hover,
+.destinationItem:hover {
+  transform: translateX(4px);
+  border-color: #2d7a4d;
+  background: linear-gradient(135deg, var(--surface-2) 0%, rgba(45, 122, 77, 0.08) 100%);
+  box-shadow: 0 4px 12px rgba(45, 122, 77, 0.1);
 }
 
 .rank {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--text-primary);
-  color: #fff8ef;
+  background: linear-gradient(135deg, #2d7a4d 0%, #45ba6d 100%);
+  color: white;
   display: grid;
   place-items: center;
   font-weight: 800;
+  font-size: 14px;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(45, 122, 77, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .itemContent,
@@ -71,13 +99,21 @@
 .itemContent strong,
 .destinationItem strong {
   color: var(--text-primary);
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .itemContent span,
 .destinationItem span {
   color: var(--text-muted);
   font-size: var(--text-xs);
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.listItem:hover .itemContent span,
+.destinationItem:hover span {
+  color: #2d7a4d;
 }
 
 .destinationItem {

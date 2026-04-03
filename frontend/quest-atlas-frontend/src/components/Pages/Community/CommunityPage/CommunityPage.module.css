@@ -20,6 +20,26 @@
 .sidebarColumn {
   position: sticky;
   top: 24px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+
+/* Smooth scrollbar for sidebar */
+.sidebarColumn::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebarColumn::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebarColumn::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 3px;
+}
+
+.sidebarColumn::-webkit-scrollbar-thumb:hover {
+  background: #b5a175;
 }
 
 @media (max-width: 1024px) {
@@ -29,5 +49,10 @@
 
   .sidebarColumn {
     position: static;
+    max-height: none;
+  }
+
+  .sidebarColumn::-webkit-scrollbar {
+    display: none;
   }
 }

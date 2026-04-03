@@ -1,9 +1,140 @@
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1.5px solid var(--border-soft);
   border-radius: var(--radius-2xl);
   padding: var(--space-xl);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4px 12px rgba(45, 36, 29, 0.08);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' fill='%23efe2d0' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #2d7a4d;
+  box-shadow: 0 20px 40px rgba(45, 122, 77, 0.12), 0 0 30px rgba(45, 122, 77, 0.08);
+}
+
+/* Tier System with Adventure Colors */
+.card.tier-common {
+  border-color: rgba(139, 115, 85, 0.3);
+}
+
+.card.tier-rare {
+  border-color: rgba(45, 122, 77, 0.3);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(45, 122, 77, 0.06) 100%);
+}
+
+.card.tier-rare:hover {
+  box-shadow: 0 20px 40px rgba(45, 122, 77, 0.15), 0 0 25px rgba(45, 122, 77, 0.1);
+  border-color: rgba(45, 122, 77, 0.6);
+}
+
+.card.tier-epic {
+  border-color: rgba(78, 109, 200, 0.3);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(78, 109, 200, 0.06) 100%);
+}
+
+.card.tier-epic:hover {
+  box-shadow: 0 20px 40px rgba(78, 109, 200, 0.15), 0 0 25px rgba(78, 109, 200, 0.1);
+  border-color: rgba(78, 109, 200, 0.6);
+}
+
+.card.tier-legendary {
+  border-color: rgba(255, 140, 66, 0.4);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(255, 140, 66, 0.1) 100%);
+  box-shadow: 0 0 25px rgba(255, 140, 66, 0.15), 0 4px 12px rgba(45, 36, 29, 0.08);
+}
+
+.card.tier-legendary:hover {
+  box-shadow: 0 20px 40px rgba(255, 140, 66, 0.2), 0 0 30px rgba(255, 140, 66, 0.15);
+  border-color: #ff8c42;
+}
+
+.card.hot {
+  border-color: rgba(255, 107, 107, 0.4);
+  animation: hotCardGlow 2s ease-in-out infinite;
+}
+
+/* Badges Container */
+.tieredBadges {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  display: flex;
+  gap: var(--space-xs);
+  z-index: 10;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.journeyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(45, 122, 77, 0.15) 0%, rgba(88, 195, 123, 0.1) 100%);
+  color: #1a4d2e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(45, 122, 77, 0.3);
+  box-shadow: 0 2px 8px rgba(45, 122, 77, 0.1);
+}
+
+.tierBadge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+}
+
+.tierBadge.tier-common {
+  background: rgba(139, 115, 85, 0.15);
+  color: #5f4d40;
+  border-color: rgba(139, 115, 85, 0.3);
+}
+
+.tierBadge.tier-rare {
+  background: rgba(45, 122, 77, 0.15);
+  color: #1a4d2e;
+  border-color: rgba(45, 122, 77, 0.4);
+}
+
+.tierBadge.tier-epic {
+  background: rgba(78, 109, 200, 0.15);
+  color: #1e40af;
+  border-color: rgba(78, 109, 200, 0.4);
+}
+
+.tierBadge.tier-legendary {
+  background: linear-gradient(135deg, rgba(255, 140, 66, 0.2) 0%, rgba(255, 174, 97, 0.1) 100%);
+  color: #a94400;
+  border-color: rgba(255, 140, 66, 0.5);
+  box-shadow: 0 0 8px rgba(255, 140, 66, 0.3);
+}
+
+.hotBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
+  animation: pulse 2s infinite;
 }
 
 .header {
@@ -12,6 +143,7 @@
   align-items: flex-start;
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
+  margin-top: 50px;
 }
 
 .user {
@@ -26,16 +158,72 @@
 
 .nameRow {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-md);
   flex-wrap: wrap;
   margin-bottom: var(--space-xs);
+  justify-content: space-between;
 }
 
-.nameRow h3 {
+.explorerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.explorerInfo h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.explorerLevel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2d7a4d;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: rgba(45, 122, 77, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  width: fit-content;
+}
+
+.metaInfo {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.rank {
+  font-weight: 700;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #2d7a4d 0%, #45ba6d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.metaSeparator {
+  color: var(--border-soft);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(45, 122, 77, 0.15);
+  color: #1a4d2e;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .meta p {
@@ -50,20 +238,69 @@
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-lg);
   border: 1px solid var(--border-soft);
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .imageWrap img {
   display: block;
   width: 100%;
-  height: 380px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .imageWrap img {
+  transform: scale(1.05);
+}
+
+.locationBadge {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  color: #1a4d2e;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .caption {
-  margin: 0 0 var(--space-md);
+  margin: 0 0 var(--space-lg);
   color: #4e3f34;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
+  font-weight: 500;
+}
+
+/* Journey Metadata */
+.journeyMetadata {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.metaItem svg {
+  color: #2d7a4d;
+  flex-shrink: 0;
 }
 
 .tags {
@@ -71,6 +308,107 @@
   flex-wrap: wrap;
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
+}
+
+/* Achievement Banner */
+.achievementBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: linear-gradient(135deg, rgba(45, 122, 77, 0.1) 0%, rgba(88, 195, 123, 0.05) 100%);
+  border: 1px solid rgba(45, 122, 77, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.achievementBanner svg {
+  color: #2d7a4d;
+  flex-shrink: 0;
+}
+
+.achievementBanner > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.achievementBanner strong {
+  color: #1a4d2e;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.achievementBanner span {
+  color: #2d7a4d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Engagement Bar */
+.engagementBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.engagementTrack {
+  height: 8px;
+  background: var(--surface-3);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  position: relative;
+}
+
+.engagementFill {
+  height: 100%;
+  background: linear-gradient(90deg, #2d7a4d 0%, #45ba6d 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.engagementFill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+  animation: shimmer 2s infinite;
+}
+
+.engagementFill.tier-rare {
+  background: linear-gradient(90deg, #2d7a4d 0%, #45ba6d 100%);
+}
+
+.engagementFill.tier-epic {
+  background: linear-gradient(90deg, #4e6dc8 0%, #7c95e8 100%);
+}
+
+.engagementFill.tier-legendary {
+  background: linear-gradient(90deg, #ff8c42 0%, #ffb380 50%, #ff8c42 100%);
+  animation: legendaryShine 2.5s infinite;
+}
+
+.engagementShimmer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+  animation: shimmer 2s infinite;
+}
+
+.engagementText {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: right;
 }
 
 .footer {
@@ -88,6 +426,19 @@
   font-weight: var(--fw-bold);
 }
 
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stat:hover {
+  color: #2d7a4d;
+  transform: scale(1.1);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -102,4 +453,134 @@
   color: var(--text-muted);
   font-size: var(--text-xs);
   font-weight: var(--fw-semibold);
+  transition: all 0.3s ease;
+}
+
+.hashtag:hover {
+  background: rgba(45, 122, 77, 0.1);
+  border-color: rgba(45, 122, 77, 0.3);
+  color: #1a4d2e;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes hotCardGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.2), 0 4px 12px rgba(45, 36, 29, 0.08);
+    border-color: rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 107, 0.35), 0 4px 12px rgba(45, 36, 29, 0.08);
+    border-color: rgba(255, 107, 107, 0.6);
+  }
+}
+
+@keyframes legendaryShine {
+  0%, 100% {
+    background: linear-gradient(90deg, #ff8c42 0%, #ffb380 50%, #ff8c42 100%);
+  }
+  50% {
+    background: linear-gradient(90deg, #ffa652 0%, #ffc7a0 50%, #ffa652 100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-md);
+  }
+
+  .tieredBadges {
+    top: 8px;
+    right: 8px;
+    gap: 4px;
+  }
+
+  .journeyBadge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+
+  .hotBadge {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .header {
+    margin-top: 40px;
+  }
+
+  .imageWrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .locationBadge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .stats {
+    gap: var(--space-md);
+  }
+
+  .actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-md);
+  }
+
+  .explorerLevel {
+    font-size: 0.65rem;
+  }
+
+  .journeyMetadata {
+    gap: var(--space-md);
+  }
+
+  .metaItem {
+    font-size: 13px;
+  }
+
+  .caption {
+    font-size: 14px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .stats {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .actions {
+    width: 100%;
+  }
 }

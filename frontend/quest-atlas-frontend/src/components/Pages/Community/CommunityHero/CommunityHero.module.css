@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 24px;
+  margin-bottom: var(--space-2xl);
 }
 
 .content {
@@ -11,30 +12,82 @@
   gap: 10px;
 }
 
-.content h1 {
+.heading {
   margin: 0 0 10px;
   font-size: clamp(34px, 4vw, 56px);
   line-height: 1.05;
   color: #2f241d;
+  background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4d 50%, #2f241d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.content p {
+.subheading {
   margin: 0;
   max-width: 720px;
   color: #756455;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #2d7a4d 0%, #45ba6d 100%);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px rgba(45, 122, 77, 0.25);
+  margin-top: var(--space-md);
+}
+
+.ctaButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(45, 122, 77, 0.35);
+}
+
+.ctaButton:active {
+  transform: translateY(-2px);
 }
 
 .heroCard {
   display: flex;
   flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1.5px solid var(--border-soft);
   border-radius: var(--radius-2xl);
   padding: 24px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 8px 24px rgba(45, 36, 29, 0.1);
   min-height: 220px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(45, 122, 77, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroCard:hover {
+  transform: translateY(-4px);
+  border-color: #2d7a4d;
+  box-shadow: 0 16px 40px rgba(45, 122, 77, 0.15);
 }
 
 .heroCardTop {
@@ -42,43 +95,96 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.quote {
+  font-style: italic;
+  color: #2d7a4d;
+  font-weight: 500;
 }
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #d89b2b;
-  box-shadow: 0 0 0 6px rgba(216, 155, 43, 0.14);
+  background: #2d7a4d;
+  box-shadow: 0 0 0 6px rgba(45, 122, 77, 0.14);
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 .heroStats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .statItem {
-  background: var(--surface-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-3);
   border: 1px solid var(--border-soft);
   border-radius: 20px;
   padding: var(--space-lg);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-align: center;
 }
 
-.statItem strong {
+.statItem:hover {
+  transform: translateY(-4px);
+  border-color: #2d7a4d;
+  background: linear-gradient(135deg, var(--surface-2) 0%, rgba(45, 122, 77, 0.08) 100%);
+  box-shadow: 0 8px 16px rgba(45, 122, 77, 0.1);
+}
+
+.statIcon {
+  color: #2d7a4d;
+  width:24px;
+  height: 24px;
+}
+
+.statValue {
   display: block;
-  color: #2f241d;
+  background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 24px;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
-.statItem span {
-  color: #7a6858;
-  font-size: 14px;
+.statLabel {
+  color: #2d7a4d;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(45, 122, 77, 0.14);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(45, 122, 77, 0.08);
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .heroCard::before {
+    width: 150px;
+    height: 150px;
   }
 }
