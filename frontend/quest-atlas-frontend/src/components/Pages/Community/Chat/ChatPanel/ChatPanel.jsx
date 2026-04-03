@@ -5,6 +5,7 @@ import Badge from "../../../../common/Badge/Badge";
 import Button from "../../../../common/Button/Button";
 import Icon from "../../../../common/Icon/Icon";
 import Text from "../../../../common/Text/Text";
+import Input from "../../../../common/Input/Input";
 
 export default function ChatPanel({ conversations, onSelectChat }) {
   const [search, setSearch] = useState("");
@@ -44,11 +45,15 @@ export default function ChatPanel({ conversations, onSelectChat }) {
       <div className={styles.searchWrap}>
         <div className={styles.searchBox}>
           <span className={styles.searchIcon}>⌕</span>
-          <input
+
+          <Input
+            id="chat-search"
             type="text"
             placeholder="Tìm bạn đồng hành..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            containerClassName={styles.inputWrapper}
+            className={styles.searchInput}
           />
         </div>
       </div>

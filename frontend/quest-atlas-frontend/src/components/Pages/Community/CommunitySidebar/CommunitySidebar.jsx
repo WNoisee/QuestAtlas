@@ -1,4 +1,4 @@
-import styles from "./CommunitySide.module.css";
+import styles from "./CommunitySidebar.module.css";
 import {
   topTravelers,
   trendingDestinations,

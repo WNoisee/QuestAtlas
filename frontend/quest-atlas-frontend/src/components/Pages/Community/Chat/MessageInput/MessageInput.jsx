@@ -55,7 +55,8 @@ export default function MessageInput({ onSendMessage }) {
           />
 
           <Button
-            variant="sendBtn"
+            className="sendBtn"
+            variant=""
             type="button"
             onClick={handleSend}
             aria-label="Gửi"

@@ -1,4 +1,6 @@
 import styles from "./ExploreToolbar.module.css";
+import Input from "../../../common/Input/Input";
+import Button from "../../../common/Button/Button";
 
 function ExploreToolbar({
   searchValue,
@@ -10,27 +12,29 @@ function ExploreToolbar({
   return (
     <section className={styles.toolbar}>
       <div className={styles.searchWrap}>
-        <input
+        <Input
+          id="explore-search"
           type="text"
           value={searchValue}
           onChange={(e) => onSearchChange(e.target.value)}
-          className={styles.searchInput}
           placeholder="Tìm địa điểm, hành trình, khu vực..."
+          containerClassName={styles.inputWrapper}
+          className={styles.searchInput}
         />
       </div>
 
       <div className={styles.filtersRow}>
         {filters.map((filter) => (
-          <button
+          <Button
             key={filter}
             type="button"
+            variant="chip"
+            size="sm"
+            active={activeFilter === filter}
             onClick={() => onFilterChange(filter)}
-            className={`${styles.filterChip} ${
-              activeFilter === filter ? styles.filterChipActive : ""
-            }`}
           >
             {filter}
-          </button>
+          </Button>
         ))}
       </div>
     </section>

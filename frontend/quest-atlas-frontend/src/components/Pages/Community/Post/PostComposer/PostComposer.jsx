@@ -1,7 +1,8 @@
 import Avatar from "../../../../common/Avatar/Avatar";
 import Button from "../../../../common/Button/Button";
-import styles from "./PostComposer.module.css";
 import Icon from "../../../../common/Icon/Icon";
+import Input from "../../../../common/Input/Input";
+import styles from "./PostComposer.module.css";
 
 export default function PostComposer() {
   return (
@@ -9,9 +10,11 @@ export default function PostComposer() {
       <div className={styles.header}>
         <Avatar>QA</Avatar>
 
-        <div className={styles.inputMock}>
-          Bạn vừa khám phá điều gì trên hành trình của mình?
-        </div>
+        <Input
+          id="post-composer"
+          placeholder="Bạn vừa khám phá điều gì trên hành trình của mình?"
+          containerClassName={styles.inputWrapper}
+        />
       </div>
 
       <div className={styles.actions}>

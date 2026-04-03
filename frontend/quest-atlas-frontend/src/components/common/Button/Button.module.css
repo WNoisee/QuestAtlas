@@ -137,3 +137,28 @@
   color: #fff8ef;
   border-color: #3a2b22;
 }
+
+.chip {
+  border: 1px solid #d8c8b2;
+  background: #fff9f1;
+  color: #4a3527;
+
+  border-radius: 999px;
+  padding: 7px 12px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  background: #f8efe3;
+}
+
+.active.chip {
+  background: #e9d6bc;
+  border-color: #b89066;
+  color: #3a271b;
+}
