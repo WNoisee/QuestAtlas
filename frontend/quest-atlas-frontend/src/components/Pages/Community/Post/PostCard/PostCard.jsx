@@ -3,7 +3,7 @@ import Button from "../../../../common/Button/Button";
 import Badge from "../../../../common/Badge/Badge";
 import Icon from "../../../../common/Icon/Icon";
 import styles from "./PostCard.module.css";
-import { Heat, MapPin, Navigation2, Clock, Award } from "lucide-react";
+import { Flame, MapPin, Navigation2, Clock, Award } from "lucide-react";
 
 const journeyTypeEmojis = {
   mountain: "⛰️",
@@ -28,7 +28,7 @@ export default function PostCard({ post }) {
         </div>
         {post.isHot && (
           <div className={styles.hotBadge}>
-            <Heat size={14} /> Đang Hot
+            <Flame size={14} /> Đang Hot
           </div>
         )}
         <span className={`${styles.tierBadge} ${styles[`tier-${tier}`]}`}>
