@@ -2,9 +2,27 @@ import CardButton from "../../../../components/common/CardButton/CardButton";
 import Badge from "../../../../components/common/Badge/Badge";
 import styles from "./ExploreCard.module.css";
 
+const getCategoryClass = (category) => {
+  const categoryMap = {
+    "Núi": "mountain",
+    "Biển": "beach",
+    "Thiên nhiên": "beach",
+    "Văn hóa": "culture",
+    "Chill": "chill",
+    "Phiêu lưu": "adventure",
+  };
+  return categoryMap[category] || "default";
+};
+
 export default function ExploreCard({ item, active = false, onClick }) {
+  const categoryClass = getCategoryClass(item.category);
+  
   return (
-    <CardButton active={active} onClick={() => onClick?.(item)}>
+    <CardButton 
+      active={active} 
+      onClick={() => onClick?.(item)}
+      className={styles[`category-${categoryClass}`]}
+    >
       <div className={styles.cardTop}>
         <div>
           <h3 className={styles.title}>{item.name}</h3>

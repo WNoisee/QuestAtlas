@@ -25,3 +25,105 @@ button {
   cursor: pointer;
   border: none;
 }
+
+/* ========== Page-Specific Accent Colors ========== */
+
+/**
+ * Each page has its own accent color theme for visual distinction
+ * and feature highlighting
+ */
+
+/* EXPLORE PAGE - Gold accent (Adventure & Discovery) */
+.page-accent-explore {
+  --current-accent: var(--page-accent-explore);
+  --current-accent-light: var(--page-accent-explore-light);
+  --current-accent-glow: var(--page-accent-explore-glow);
+}
+
+/* COMMUNITY PAGE - Adventure & Gamification Theme (Earthy + Gold + Purple) */
+.page-accent-community {
+  --current-accent: var(--page-accent-community);
+  --current-accent-hover: var(--page-accent-community-hover);
+  --current-accent-secondary: var(--page-accent-community-secondary);
+  --current-accent-gold: var(--page-accent-community-gold);
+  --current-accent-glow: var(--page-accent-community-glow);
+}
+
+.page-accent-community [class*="badge"] {
+  background: linear-gradient(135deg, rgba(107, 92, 231, 0.15), rgba(233, 230, 255, 0.1)) !important;
+  border-color: rgba(107, 92, 231, 0.3) !important;
+  color: #6C5CE7 !important;
+}
+
+.page-accent-community .badge-explorer {
+  background: #E9E6FF !important;
+  border-color: rgba(107, 92, 231, 0.2) !important;
+  color: #6C5CE7 !important;
+}
+
+.page-accent-community .badge-advanced {
+  background: #FFF4D6 !important;
+  border-color: rgba(244, 183, 64, 0.2) !important;
+  color: #F4B740 !important;
+}
+
+.page-accent-community button[variant="engagement"],
+.page-accent-community [class*="engagement"] {
+  color: #7B4F2C;
+  border-color: rgba(123, 79, 44, 0.3);
+}
+
+.page-accent-community button[type="button"]:not(:disabled):hover {
+  border-color: rgba(123, 79, 44, 0.5);
+  color: #5E3B1F;
+}
+
+.page-accent-community [class*="cta"],
+.page-accent-community [class*="primary"],
+.page-accent-community [class*="reward"] {
+  background: linear-gradient(135deg, #7B4F2C, #F4B740) !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.page-accent-community [class*="cta"]:hover,
+.page-accent-community [class*="primary"]:hover {
+  background: linear-gradient(135deg, #5E3B1F, #D89A2A) !important;
+  box-shadow: 0 8px 20px rgba(123, 79, 44, 0.4) !important;
+}
+
+/* AWARDS PAGE - Purple accent (Achievement & Prestige) */
+.page-accent-awards {
+  --current-accent: var(--page-accent-awards);
+  --current-accent-light: var(--page-accent-awards-light);
+  --current-accent-glow: var(--page-accent-awards-glow);
+}
+
+.page-accent-awards [class*="badge"] {
+  background: linear-gradient(135deg, #9b59b6, #c896d8) !important;
+  border-color: #9b59b6 !important;
+  color: #fff !important;
+}
+
+.page-accent-awards [class*="soft"] {
+  background: linear-gradient(135deg, #9b59b6, #c896d8) !important;
+  color: #fff !important;
+}
+
+.page-accent-awards button[variant="engagement"],
+.page-accent-awards [class*="engagement"] {
+  color: #9b59b6;
+  border-color: #9b59b6;
+}
+
+.page-accent-awards button[type="button"]:not(:disabled):hover {
+  border-color: #9b59b6;
+  color: #fff;
+}
+
+.page-accent-awards [class*="cta"],
+.page-accent-awards [class*="primary"],
+.page-accent-awards [class*="reward"] {
+  background: linear-gradient(135deg, #9b59b6, #c896d8) !important;
+  color: #fff !important;
+}

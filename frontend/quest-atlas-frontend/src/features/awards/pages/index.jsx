@@ -5,7 +5,7 @@ import AwardsGrid from "../components/AwardsGrid/AwardsGrid";
 
 export default function AwardsPage() {
   return (
-    <main className={styles.awardsPage}>
+    <main className={`${styles.awardsPage} page-accent-awards`}>
       <AwardsHero />
       <AchievementStats />
       <AwardsGrid />

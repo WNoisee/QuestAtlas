@@ -15,8 +15,8 @@
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #2d7a4d;
-  box-shadow: 0 12px 24px rgba(45, 122, 77, 0.12);
+  border-color: #7B4F2C;
+  box-shadow: 0 12px 24px rgba(123, 79, 44, 0.15);
 }
 
 .cardHeader {
@@ -31,8 +31,8 @@
   margin: 0;
   color: var(--text-primary);
   font-size: 18px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4d 100%);
+  font-weight: 800;
+  background: linear-gradient(135deg, #7B4F2C 0%, #F4B740 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -43,9 +43,9 @@
   font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
   padding: 4px 12px;
-  background: linear-gradient(135deg, rgba(45, 122, 77, 0.1) 0%, rgba(69, 186, 109, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(107, 92, 231, 0.1) 0%, rgba(233, 230, 255, 0.05) 100%);
   border-radius: var(--radius-full);
-  border: 1px solid rgba(45, 122, 77, 0.2);
+  border: 1px solid rgba(107, 92, 231, 0.2);
 }
 
 .list {
@@ -69,23 +69,23 @@
 .listItem:hover,
 .destinationItem:hover {
   transform: translateX(4px);
-  border-color: #2d7a4d;
-  background: linear-gradient(135deg, var(--surface-2) 0%, rgba(45, 122, 77, 0.08) 100%);
-  box-shadow: 0 4px 12px rgba(45, 122, 77, 0.1);
+  border-color: #7B4F2C;
+  background: linear-gradient(135deg, var(--surface-2) 0%, rgba(123, 79, 44, 0.08) 100%);
+  box-shadow: 0 4px 12px rgba(123, 79, 44, 0.1);
 }
 
 .rank {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2d7a4d 0%, #45ba6d 100%);
+  background: linear-gradient(135deg, #7B4F2C 0%, #F4B740 100%);
   color: white;
   display: grid;
   place-items: center;
   font-weight: 800;
   font-size: 14px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(45, 122, 77, 0.2);
+  box-shadow: 0 4px 12px rgba(123, 79, 44, 0.25);
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -113,7 +113,7 @@
 
 .listItem:hover .itemContent span,
 .destinationItem:hover span {
-  color: #2d7a4d;
+  color: #7B4F2C;
 }
 
 .destinationItem {

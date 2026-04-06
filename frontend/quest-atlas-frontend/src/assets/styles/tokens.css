@@ -76,6 +76,59 @@
   /* ========== Colors - Component Specific ========== */
   --avatar-gradient: linear-gradient(135deg, #d89b2b, #e5c178);
   --achievement-gradient: linear-gradient(135deg, #e6a73c, #f0b347);
+  
+  /* ========== Explore Page - Category Colors ========== */
+  --explore-mountain: #2d5016;          /* Forest Green */
+  --explore-mountain-light: #4a7c2a;    /* Forest Green Light */
+  --explore-mountain-bg: rgba(74, 124, 42, 0.15);
+  --explore-beach: #1e5a5e;             /* Ocean Dark */
+  --explore-beach-light: #2ba39d;       /* Ocean Teal */
+  --explore-beach-bg: rgba(43, 163, 157, 0.15);
+  --explore-culture: #e07a3f;           /* Sunset Orange */
+  --explore-culture-light: #ff8c42;     /* Sunset Bright */
+  --explore-culture-bg: rgba(224, 122, 63, 0.15);
+  --explore-chill: #9b59b6;             /* Epic Purple */
+  --explore-chill-light: #c896d8;       /* Purple Light */
+  --explore-chill-bg: rgba(155, 89, 182, 0.15);
+  --explore-adventure: #e6a73c;         /* Gold */
+  --explore-adventure-light: #f0b347;   /* Gold Light */
+  --explore-adventure-bg: rgba(230, 167, 60, 0.15);
+  --explore-highlight-glow: 0 0 30px rgba(230, 167, 60, 0.3), 0 0 60px rgba(230, 167, 60, 0.15);
+  
+  /* ========== Page-Specific Accent Colors ========== */
+  --page-accent-explore: #e6a73c;      /* Gold - Adventure & Discovery */
+  --page-accent-explore-light: #f0b347;
+  --page-accent-explore-glow: 0 0 30px rgba(230, 167, 60, 0.3), 0 0 60px rgba(230, 167, 60, 0.15);
+  
+  --page-accent-community: #7B4F2C;    /* Earthy Brown - Primary Action */
+  --page-accent-community-hover: #5E3B1F;
+  --page-accent-community-light: #D6BFA7;
+  --page-accent-community-secondary: #6C5CE7;
+  --page-accent-community-secondary-hover: #5649C0;
+  --page-accent-community-secondary-light: #E9E6FF;
+  --page-accent-community-gold: #F4B740;
+  --page-accent-community-gold-glow: #FFD978;
+  --page-accent-community-gold-bg: #FFF4D6;
+  --page-accent-community-glow: 0 0 30px rgba(123, 79, 44, 0.3), 0 0 60px rgba(123, 79, 44, 0.15);
+  
+  /* Community - Background & Surfaces */
+  --community-bg: #F7F3EE;
+  --community-surface: #FFFFFF;
+  --community-surface-2: #EFE7DC;
+  --community-surface-hover: #E6DDCF;
+  --community-text-primary: #2C2C2C;
+  --community-text-secondary: #6B6B6B;
+  --community-text-disabled: #A0A0A0;
+  --community-border: #E6DDCF;
+  
+  /* Community - Status */
+  --community-info: #3BAFDA;
+  --community-success: #2ECC71;
+  --community-danger: #E74C3C;
+  
+  --page-accent-awards: #9b59b6;       /* Purple - Achievement & Prestige */
+  --page-accent-awards-light: #b370d1;
+  --page-accent-awards-glow: 0 0 30px rgba(155, 89, 182, 0.3), 0 0 60px rgba(155, 89, 182, 0.15);
 
   /* ========== Shadows ========== */
   --shadow-soft: 0 18px 50px rgba(45, 36, 29, 0.08);

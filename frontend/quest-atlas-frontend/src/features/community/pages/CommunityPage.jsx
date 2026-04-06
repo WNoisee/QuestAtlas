@@ -8,7 +8,7 @@ import ChatDock from "../components/Chat/ChatDock/ChatDock";
 
 export default function CommunityPage() {
   return (
-    <main className={styles.communityPage}>
+    <main className={`${styles.communityPage} page-accent-community`}>
       <CommunityHero />
       <CommunityTabs />
 
