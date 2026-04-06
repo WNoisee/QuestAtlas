@@ -81,14 +81,14 @@ button {
 .page-accent-community [class*="cta"],
 .page-accent-community [class*="primary"],
 .page-accent-community [class*="reward"] {
-  background: linear-gradient(135deg, #7B4F2C, #F4B740) !important;
+  background: linear-gradient(135deg, #7B4F2C 0%, #66626b 50%, #2C2C2C 100%) !important;
   color: #fff !important;
   font-weight: 700;
 }
 
 .page-accent-community [class*="cta"]:hover,
 .page-accent-community [class*="primary"]:hover {
-  background: linear-gradient(135deg, #5E3B1F, #D89A2A) !important;
+  background: linear-gradient(135deg, #7B4F2C 0%, #3f4151 50%, #2C2C2C 100%) !important;
   box-shadow: 0 8px 20px rgba(123, 79, 44, 0.4) !important;
 }
 
