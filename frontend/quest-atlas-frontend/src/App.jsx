@@ -3,14 +3,15 @@ import "./assets/styles/globals.css";
 import "./assets/styles/layout.css";
 
 import { Routes, Route, useLocation } from "react-router-dom";
+import { PAGE_TITLES } from "./constants/texts";
 
-import Header from "./components/common/Header/Header";
-import Badge from "./components/common/Badge/Badge";
+import Header from "./components/layout/Header/Header";
+import Badge from "./components/layout/Badge/Badge";
 
-import HomePage from "./components/Pages/Home/HomePage";
-import CommunityPage from "./components/Pages/Community/CommunityPage/CommunityPage";
-import ExplorePage from "../src/components/Pages/Explore/ExplorePage/ExplorePage";
-import AwardsPage from "./components/Pages/Awards/AwardsPage";
+import HomePage from "./features/home/pages/HomePage";
+import CommunityPage from "./features/community/pages/CommunityPage";
+import ExplorePage from "./features/explore/pages/ExplorePage";
+import AwardsPage from "./features/awards/pages";
 
 import styles from "./App.module.css";
 
@@ -19,10 +20,10 @@ function App() {
   const isExplorePage = location.pathname === "/explore";
 
   const getBadgeLabel = () => {
-    if (location.pathname === "/community") return "Cộng Đồng Atlas";
-    if (location.pathname === "/explore") return "Khám Phá Atlas";
-    if (location.pathname === "/awards") return "Danh Hiệu Atlas";
-    return "Phiên Bản Atlas";
+    if (location.pathname === "/community") return PAGE_TITLES.COMMUNITY;
+    if (location.pathname === "/explore") return PAGE_TITLES.EXPLORE;
+    if (location.pathname === "/awards") return PAGE_TITLES.AWARDS;
+    return PAGE_TITLES.HOME;
   };
 
   return (

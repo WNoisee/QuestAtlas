@@ -71,7 +71,7 @@
 /* variants */
 .primary {
   background: var(--gold);
-  color: #231c17;
+  color: var(--text-on-gold);
   box-shadow: var(--shadow-soft);
 }
 
@@ -133,9 +133,9 @@
 }
 
 .active {
-  background: #3a2b22;
-  color: #fff8ef;
-  border-color: #3a2b22;
+  background: var(--btn-tab-active-bg);
+  color: var(--badge-soft-text);
+  border-color: var(--btn-tab-active-bg);
 }
 
 .chip {
@@ -154,11 +154,11 @@
 }
 
 .chip:hover {
-  background: #f8efe3;
+  background: var(--surface-2);
 }
 
 .active.chip {
-  background: #e9d6bc;
+  background: var(--btn-chip-active-bg);
   border-color: #b89066;
-  color: #3a271b;
+  color: var(--btn-chip-active-text);
 }
