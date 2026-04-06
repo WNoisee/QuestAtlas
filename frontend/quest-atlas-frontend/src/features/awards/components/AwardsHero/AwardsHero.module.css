@@ -59,12 +59,6 @@
   padding: var(--space-md);
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.3);
-  transition: all var(--transition-fast);
-}
-
-.statItem:hover {
-  background: rgba(155, 89, 182, 0.15);
-  transform: translateY(-2px);
 }
 
 .statItem strong {
