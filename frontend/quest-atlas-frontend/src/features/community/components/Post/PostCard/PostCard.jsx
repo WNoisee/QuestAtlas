@@ -22,21 +22,6 @@ export default function PostCard({ post }) {
 
   return (
     <article className={`${styles.card} ${styles[`tier-${tier}`]} ${post.isHot ? styles.hot : ""}`}>
-      {/* Badges & Journey Type */}
-      <div className={styles.tieredBadges}>
-        <div className={styles.journeyBadge}>
-          {journeyTypeEmojis[post.journeyType] || "✈️"} {post.journeyTypeLabel}
-        </div>
-        {post.isHot && (
-          <div className={styles.hotBadge}>
-            <Flame size={14} /> {COMMUNITY_POST.HOT_BADGE}
-          </div>
-        )}
-        <span className={`${styles.tierBadge} ${styles[`tier-${tier}`]}`}>
-          {tier.charAt(0).toUpperCase() + tier.slice(1)}
-        </span>
-      </div>
-
       {/* Header with Explorer Info */}
       <div className={styles.header}>
         <div className={styles.user}>

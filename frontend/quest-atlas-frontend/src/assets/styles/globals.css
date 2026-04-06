@@ -51,7 +51,6 @@ button {
 
 .page-accent-community [class*="badge"] {
   background: linear-gradient(135deg, rgba(107, 92, 231, 0.15), rgba(233, 230, 255, 0.1)) !important;
-  border-color: rgba(107, 92, 231, 0.3) !important;
   color: #6C5CE7 !important;
 }
 
