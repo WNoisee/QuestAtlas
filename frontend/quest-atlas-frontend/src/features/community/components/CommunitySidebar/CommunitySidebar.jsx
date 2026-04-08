@@ -5,7 +5,7 @@ import {
 } from "../../data/communityData";
 import Button from "../../../../components/common/Button/Button";
 import Icon from "../../../../components/common/Icon/Icon";
-import Badge from "../../../../components/common/Badge/Badge";
+import Badge from "../../../../components/layout/Badge/Badge";
 import { COMMUNITY_SIDEBAR } from "../../../../constants/texts";
 
 export default function CommunitySidebar() {

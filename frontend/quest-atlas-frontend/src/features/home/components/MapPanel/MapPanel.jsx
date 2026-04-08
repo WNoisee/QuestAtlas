@@ -1,6 +1,6 @@
 import styles from "./MapPanel.module.css";
 import AdventureRouteMap from "../AdventureRouteMap/AdventureRouteMap";
-import Badge from "../../../../components/common/Badge/Badge";
+import Badge from "../../../../components/layout/Badge/Badge";
 import Text from "../../../../components/common/Text/Text";
 import { HOME_MAP } from "../../../../constants/texts";
 

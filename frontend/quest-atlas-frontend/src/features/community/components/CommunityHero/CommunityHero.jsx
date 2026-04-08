@@ -1,5 +1,5 @@
 import styles from "./CommunityHero.module.css";
-import Badge from "../../../../components/common/Badge/Badge";
+import Badge from "../../../../components/layout/Badge/Badge";
 import Text from "../../../../components/common/Text/Text";
 import { COMMUNITY_HERO, COMMUNITY_STATS } from "../../../../constants/texts";
 import { MapPin, Users, Compass } from "lucide-react";

@@ -1,5 +1,5 @@
 import CardButton from "../../../../components/common/CardButton/CardButton";
-import Badge from "../../../../components/common/Badge/Badge";
+import Badge from "../../../../components/layout/Badge/Badge";
 import styles from "./ExploreCard.module.css";
 
 const getCategoryClass = (category) => {

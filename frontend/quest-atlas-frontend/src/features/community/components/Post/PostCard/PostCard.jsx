@@ -1,6 +1,6 @@
 import Avatar from "../../../../../components/common/Avatar/Avatar";
 import Button from "../../../../../components/common/Button/Button";
-import Badge from "../../../../../components/common/Badge/Badge";
+import Badge from "../../../../../components/layout/Badge/Badge";
 import Icon from "../../../../../components/common/Icon/Icon";
 import styles from "./PostCard.module.css";
 import { Flame, MapPin, Navigation2, Clock, Award } from "lucide-react";

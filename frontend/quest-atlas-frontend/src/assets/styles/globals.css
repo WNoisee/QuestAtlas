@@ -126,3 +126,19 @@ button {
   background: linear-gradient(135deg, #9b59b6, #c896d8) !important;
   color: #fff !important;
 }
+
+/* ========== Utility Classes - Flex Layouts ========== */
+
+/** Flexbox utility for centered items (both horizontally and vertically) */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/** Flexbox utility for inline-centered items */
+.inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

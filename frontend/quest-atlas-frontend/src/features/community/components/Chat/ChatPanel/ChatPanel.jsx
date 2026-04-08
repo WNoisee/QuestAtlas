@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import styles from "./ChatPanel.module.css";
 import ChatList from "../ChatList/ChatList";
-import Badge from "../../../../../components/common/Badge/Badge";
+import Badge from "../../../../../components/layout/Badge/Badge";
 import Button from "../../../../../components/common/Button/Button";
 import Icon from "../../../../../components/common/Icon/Icon";
 import Text from "../../../../../components/common/Text/Text";

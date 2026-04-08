@@ -1,5 +1,5 @@
 import styles from "./AwardsHero.module.css";
-import Badge from "../../../../components/common/Badge/Badge";
+import Badge from "../../../../components/layout/Badge/Badge";
 import Text from "../../../../components/common/Text/Text";
 import { AWARDS_HERO, AWARDS_STATS } from "../../../../constants/texts";
 

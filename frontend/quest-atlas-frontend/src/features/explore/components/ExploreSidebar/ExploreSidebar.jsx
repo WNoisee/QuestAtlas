@@ -1,7 +1,7 @@
 import ExploreTabs from "../ExploreTabs/ExploreTabs";
 import ExploreCard from "../ExploreCard/ExploreCard";
 import styles from "./ExploreSidebar.module.css";
-import Badge from "../../../../components/common/Badge/Badge";
+import Badge from "../../../../components/layout/Badge/Badge";
 import Text from "../../../../components/common/Text/Text";
 
 function ExploreSidebar({
