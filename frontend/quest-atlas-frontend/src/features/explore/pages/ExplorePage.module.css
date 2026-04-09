@@ -38,7 +38,7 @@
   top: 130px;
   left: 18px;
   bottom: 18px;
-  width: 340px;
+  width: 360px;
   display: flex;
 }
 
@@ -98,4 +98,22 @@
     width: 100%;
     max-width: 100%;
   }
+}
+
+.toggleOpen,
+.toggleClosed {
+  position: absolute;
+  top: 25px;
+  z-index: 1;
+  transition:
+    left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s ease;
+}
+
+.toggleOpen {
+  left: 355px;
+}
+
+.toggleClosed {
+  left: -35px;
 }

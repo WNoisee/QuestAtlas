@@ -1,0 +1,54 @@
+.toggle {
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #7a7771 0%, #2f4344 100%);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.toggle:hover {
+  transform: translateY(-1px) scale(1.01);
+  filter: brightness(1.05) saturate(1.05);
+}
+
+.toggle:active {
+  transform: scale(0.98);
+}
+
+.toggle:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(228, 170, 47, 0.2),
+    0 14px 28px rgba(53, 42, 31, 0.2);
+}
+
+.chevron {
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+.right {
+  transform: rotate(45deg);
+}
+
+.left {
+  transform: rotate(-135deg);
+  margin-left: 3px;
+}
+
+.right {
+  transform: rotate(45deg);
+  margin-right: 3px;
+}

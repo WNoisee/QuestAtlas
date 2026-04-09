@@ -12,12 +12,14 @@ import {
 } from "../data/ExploreData";
 import styles from "./ExplorePage.module.css";
 import ChatDock from "../../community/components/Chat/ChatDock/ChatDock";
+import Toggle from "../../../components/common/Toggle/Toggle";
 
 function ExplorePage() {
   const [activeTab, setActiveTab] = useState("destinations");
   const [searchValue, setSearchValue] = useState("");
   const [activeFilter, setActiveFilter] = useState("");
   const [selectedItem, setSelectedItem] = useState(destinations[0] || null);
+  const [openSidebar, setOpenSidebar] = useState(true);
 
   const toolbarInitialPosition = useMemo(() => ({ x: 500, y: 300 }), []);
 
@@ -107,14 +109,22 @@ function ExplorePage() {
         </DraggableWrapper>
 
         <div className={styles.leftOverlay}>
-          <ExploreSidebar
-            tabs={exploreTabs}
-            activeTab={activeTab}
-            onTabChange={handleTabChange}
-            items={filteredItems}
-            selectedItem={selectedItem}
-            onSelectItem={setSelectedItem}
+          <Toggle
+            isOpen={openSidebar}
+            setIsOpen={setOpenSidebar}
+            className={openSidebar ? styles.toggleOpen : styles.toggleClosed}
           />
+          {openSidebar && (
+            <ExploreSidebar
+              tabs={exploreTabs}
+              activeTab={activeTab}
+              onTabChange={handleTabChange}
+              onSidebarToggle={() => setOpenSidebar(false)}
+              items={filteredItems}
+              selectedItem={selectedItem}
+              onSelectItem={setSelectedItem}
+            />
+          )}
         </div>
       </div>
       <ChatDock></ChatDock>

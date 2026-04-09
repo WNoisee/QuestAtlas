@@ -93,21 +93,3 @@
   background: linear-gradient(135deg, #73d1ed, #f0e347) !important;
   color: var(--text) !important;
 }
-
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 320px;
-    min-width: 320px;
-    padding: 20px;
-  }
-
-  .title {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-}
