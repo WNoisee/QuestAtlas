@@ -74,20 +74,20 @@ export default function Header() {
 
           {/* User Menu / Auth */}
           <div className={styles.userSection}>
-            <button className={styles.userMenuButton} onClick={toggleUserMenu}>
+            <Button variant="engagement" type="button" className={styles.userMenuButton} onClick={toggleUserMenu}>
               <div className={styles.avatar}>Q</div>
-            </button>
+            </Button>
 
             {isUserMenuOpen && (
               <div className={styles.userDropdown}>
-                <button className={styles.dropdownItem}>
+                <Button variant="tool" type="button" className={styles.dropdownItem}>
                   <Settings size={16} />
                   <span>Cài đặt</span>
-                </button>
-                <button className={styles.dropdownItem}>
+                </Button>
+                <Button variant="tool" type="button" className={styles.dropdownItem}>
                   <LogOut size={16} />
                   <span>Đăng xuất</span>
-                </button>
+                </Button>
               </div>
             )}
           </div>
@@ -105,9 +105,9 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className={styles.mobileMenuBtn} onClick={toggleMenu}>
+        <Button variant="engagement" type="button" className={styles.mobileMenuBtn} onClick={toggleMenu}>
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </Button>
       </div>
     </header>
   );

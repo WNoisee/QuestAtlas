@@ -11,7 +11,7 @@ import Badge from "./components/layout/Badge/Badge";
 import HomePage from "./features/home/pages/HomePage";
 import CommunityPage from "./features/community/pages/CommunityPage";
 import ExplorePage from "./features/explore/pages/ExplorePage";
-import AwardsPage from "./features/awards/pages";
+import AwardsPage from "./features/awards/pages/AwardsPage";
 
 import styles from "./App.module.css";
 

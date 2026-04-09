@@ -8,10 +8,19 @@
 }
 
 .list::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .list::-webkit-scrollbar-thumb {
-  background: rgba(157, 125, 101, 0.3);
+  background: rgba(230, 167, 60, 0.3);
   border-radius: var(--radius-full);
+  transition: background 0.3s ease;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: rgba(230, 167, 60, 0.6);
 }

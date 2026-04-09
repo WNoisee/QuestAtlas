@@ -1,21 +1,30 @@
 .launcher {
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #3a261b 0%, #5a3a2a 100%);
-  color: #fffaf4;
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #2d1f16 0%, #4a3124 100%);
+  color: #fff;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow:
-    0 18px 30px rgba(58, 38, 27, 0.22),
-    0 6px 12px rgba(58, 38, 27, 0.12);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+    0 24px 48px rgba(45, 31, 22, 0.3),
+    0 8px 16px rgba(45, 31, 22, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .launcher:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 32px 56px rgba(45, 31, 22, 0.35),
+    0 12px 24px rgba(45, 31, 22, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.launcher:active {
   transform: translateY(-2px);
 }

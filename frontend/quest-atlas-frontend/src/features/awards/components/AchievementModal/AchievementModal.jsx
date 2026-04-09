@@ -1,5 +1,6 @@
 import styles from "./AchievementModal.module.css";
 import Text from "../../../../components/common/Text/Text";
+import Button from "../../../../components/common/Button/Button";
 import { X } from "lucide-react";
 import { AWARDS_MODAL } from "../../../../constants/texts";
 
@@ -16,9 +17,9 @@ export default function AchievementModal({ achievement, isOpen, onClose }) {
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeBtn} onClick={onClose}>
+        <Button variant="outline" type="button" className={styles.closeBtn} onClick={onClose}>
           <X size={24} />
-        </button>
+        </Button>
 
         <div className={styles.header}>
           <div className={styles.iconLarge}>{achievement.icon}</div>
@@ -118,11 +119,11 @@ export default function AchievementModal({ achievement, isOpen, onClose }) {
         </div>
 
         <div className={styles.footer}>
-          <button className={styles.btn} onClick={onClose}>
+          <Button variant="primary" type="button" className={styles.btn} onClick={onClose}>
             {AWARDS_MODAL.CLOSE_BTN}
-          </button>
+          </Button>
           {achievement.progress === 100 && (
-            <button className={styles.btnShare}>{AWARDS_MODAL.SHARE_BTN}</button>
+            <Button variant="primary" type="button" className={styles.btnShare}>{AWARDS_MODAL.SHARE_BTN}</Button>
           )}
         </div>
       </div>

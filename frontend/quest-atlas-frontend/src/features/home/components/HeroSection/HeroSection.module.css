@@ -1,90 +1,210 @@
 .heroCopy {
-  padding-right: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInLeft 0.7s ease-out 0.1s backwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .heroCopy h1 {
-  font-size: var(--text-hero);
-  line-height: var(--leading-tight);
-  letter-spacing: normal;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+  margin: 0;
+  font-weight: 900;
 }
 
-.heroCopy p {
-  margin-top: var(--space-ml);
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 620px;
+.description {
+  margin-top: 24px !important;
+  font-size: 1.125rem !important;
+  line-height: 1.8 !important;
+  color: var(--text-muted) !important;
+  max-width: 600px !important;
+  font-weight: 400 !important;
 }
 
 .ctaRow {
   display: flex;
-  gap: var(--space-md);
-  margin-top: 30px;
+  gap: 16px;
+  margin-top: 40px;
   flex-wrap: wrap;
+  animation: fadeInUp 0.7s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ctaRow button {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ctaRow button:hover {
+  transform: translateY(-4px);
 }
 
 .stats {
   display: flex;
-  gap: var(--space-md);
-  margin-top: var(--space-2xl);
+  gap: 20px;
+  margin-top: 60px;
   flex-wrap: wrap;
+  animation: fadeInUp 0.7s ease-out 0.4s backwards;
 }
 
 .statCard {
+  flex: 1;
   min-width: 160px;
-  background: linear-gradient(
-    180deg,
-    #efe4d5 0%,
-    #e4d4bf 100%
-  );
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 16px 18px;
-  box-shadow: var(--shadow-soft);
+  background: linear-gradient(135deg, rgba(239, 228, 213, 0.8) 0%, rgba(228, 212, 191, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(215, 196, 177, 0.8);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(239, 228, 213, 0.95) 0%, rgba(228, 212, 191, 0.75) 100%);
 }
 
 .statValue {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.15rem;
-  margin-bottom: 6px;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-strong);
+  line-height: 1;
 }
 
 .statLabel {
-  color: var(--muted);
-  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .iconWrapper {
-  width: 28px;
-  height: 28px;
-  border-radius: 45%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff8f1;
+  background: linear-gradient(135deg, rgba(230, 167, 60, 0.15), rgba(215, 175, 215, 0.15));
+  border: 1px solid rgba(230, 167, 60, 0.3);
+  flex-shrink: 0;
 }
 
 .iconGlow {
-  animation: sparkle 1.3s ease-in-out infinite;
+  color: var(--gold);
+  animation: pulseGlow 2s ease-in-out infinite;
 }
 
-@keyframes sparkle {
+@keyframes pulseGlow {
   0%, 100% {
     opacity: 0.8;
-    filter: drop-shadow(10 0 3px var(--highlight));
+    filter: drop-shadow(0 0 4px rgba(230, 167, 60, 0.6));
   }
-
   50% {
     opacity: 1;
-    filter: 
-      drop-shadow(10 0 6px var(--highlight))
-      drop-shadow(10 0 10px var(--highlight));
+    filter: drop-shadow(0 0 12px rgba(230, 167, 60, 0.8));
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroCopy h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
   }
 
-  75% {
-    opacity: 0.85;
-    filter: drop-shadow(10 0 4px var(--highlight));
+  .ctaRow {
+    gap: 12px;
+  }
+
+  .stats {
+    gap: 16px;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroCopy h1 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem !important;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    margin-top: 32px;
+  }
+
+  .ctaRow button {
+    width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .statCard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroCopy h1 {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    margin-top: 16px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .ctaRow {
+    gap: 8px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .statCard {
+    padding: 16px 16px;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+    gap: 8px;
+  }
+
+  .iconWrapper {
+    width: 32px;
+    height: 32px;
   }
 }

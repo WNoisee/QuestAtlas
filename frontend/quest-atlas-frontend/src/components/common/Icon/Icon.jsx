@@ -16,6 +16,10 @@ import {
   Map,
   Compass,
   CloudSun,
+  Lock,
+  Check,
+  Trophy,
+  Coins,
 } from "lucide-react";
 
 const iconList = {
@@ -34,6 +38,10 @@ const iconList = {
   map: Map,
   compass: Compass,
   weather: CloudSun,
+  lock: Lock,
+  check: Check,
+  trophy: Trophy,
+  coins: Coins,
 };
 
 const sizeMap = {

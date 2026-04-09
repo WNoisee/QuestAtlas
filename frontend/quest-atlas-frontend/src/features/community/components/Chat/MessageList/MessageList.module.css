@@ -11,10 +11,19 @@
 }
 
 .messageList::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+}
+
+.messageList::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .messageList::-webkit-scrollbar-thumb {
-  background: rgba(157, 125, 101, 0.25);
+  background: rgba(230, 167, 60, 0.25);
   border-radius: 999px;
+  transition: background 0.3s ease;
+}
+
+.messageList::-webkit-scrollbar-thumb:hover {
+  background: rgba(230, 167, 60, 0.5);
 }

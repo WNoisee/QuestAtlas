@@ -1,6 +1,6 @@
 import styles from "./AwardCard.module.css";
 import Text from "../../../../components/common/Text/Text";
-import { Lock } from "lucide-react";
+import Icon from "../../../../components/common/Icon/Icon";
 import { AWARDS_MODAL } from "../../../../constants/texts";
 
 export default function AwardCard({ award, onClick }) {
@@ -8,20 +8,6 @@ export default function AwardCard({ award, onClick }) {
   const isCompleted = award.progress === 100;
   const isNew = award.isNew;
   const rarity = award.rarity || "common";
-
-  const difficultyColor = {
-    "Dễ": "#79ffb2",
-    "Trung bình": "#ffd700",
-    "Khó": "#ff6b6b",
-    "Rất khó": "#d46b6b",
-  };
-
-  const rarityColors = {
-    common: "#8b7355",
-    rare: "#2ba39d",
-    epic: "#9b59b6",
-    legendary: "#e6a73c",
-  };
 
   const rarityGlows = {
     common: "0 0 20px rgba(139, 115, 85, 0.2)",
@@ -49,16 +35,9 @@ export default function AwardCard({ award, onClick }) {
           <span className={`${styles.icon} ${isLocked ? styles.iconLocked : ""}`}>
             {award.icon}
           </span>
-          {isLocked && <Lock className={styles.lockIcon} size={20} />}
-          {isCompleted && <span className={styles.checkmark}>✓</span>}
+          {isLocked && <Icon symbol="lock" size="md" className={styles.lockIcon} />}
+          {isCompleted && <Icon symbol="check" size="md" className={styles.checkmark} />}
         </div>
-
-        <span
-          className={styles.difficulty}
-          style={!isLocked ? { borderColor: difficultyColor[award.difficulty] } : {}}
-        >
-          {award.difficulty}
-        </span>
       </div>
 
       <div className={styles.content}>
@@ -84,17 +63,17 @@ export default function AwardCard({ award, onClick }) {
         <div className={styles.rewardsRow}>
           {award.reward.xp && (
             <span className={styles.reward} title="Experience Points">
-              ⭐ {award.reward.xp}
+              <Icon symbol="star" size="sm" /> {award.reward.xp}
             </span>
           )}
           {award.reward.coins && (
             <span className={styles.reward} title="Coins">
-              🪙 {award.reward.coins}
+              <Icon symbol="coins" size="sm" /> {award.reward.coins}
             </span>
           )}
           {award.reward.points && (
             <span className={styles.reward} title="Points">
-              🏆 {award.reward.points}
+              <Icon symbol="trophy" size="sm" /> {award.reward.points}
             </span>
           )}
         </div>

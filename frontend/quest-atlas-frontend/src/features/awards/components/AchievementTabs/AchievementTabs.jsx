@@ -1,5 +1,5 @@
 import styles from "./AchievementTabs.module.css";
-import Text from "../../../../components/common/Text/Text";
+import Button from "../../../../components/common/Button/Button";
 import { AWARDS_TABS } from "../../../../constants/texts";
 
 export default function AchievementTabs({ activeTab, onTabChange, stats }) {
@@ -10,21 +10,20 @@ export default function AchievementTabs({ activeTab, onTabChange, stats }) {
   ];
 
   return (
-    <div className={styles.tabsContainer}>
-      <div className={styles.tabsList}>
+    <div className={styles.tabsList}>
         {tabs.map((tab) => (
-          <button
+          <Button
             key={tab.id}
-            className={`${styles.tab} ${activeTab === tab.id ? styles.active : ""}`}
+            type="button"
+            variant="tab"
+            size="sm"
+            active={activeTab === tab.id}
             onClick={() => onTabChange(tab.id)}
           >
-            <Text size="md" weight="semibold" leading="tight">
-              {tab.label}
-            </Text>
-            <span className={styles.count}>{tab.count}</span>
-          </button>
+            {tab.label}
+            {tab.count && <span className={styles.count}>{tab.count}</span>}
+          </Button>
         ))}
       </div>
-    </div>
   );
 }

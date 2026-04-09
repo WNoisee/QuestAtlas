@@ -1,26 +1,29 @@
 .awardsContainer {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
+  margin-top: var(--space-md);
 }
 
 .categorySection {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: 18px;
 }
 
 .categoryTitle {
   margin: 0;
   color: var(--text-primary);
-  padding-bottom: var(--space-md);
-  border-bottom: 2px solid var(--border-soft);
+  padding-bottom: 16px;
+  border-bottom: 2.5px solid rgba(230, 167, 60, 0.3);
+  font-weight: 900;
+  letter-spacing: -0.01em;
 }
 
 .awardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-lg);
+  gap: 20px;
 }
 
 @media (max-width: 768px) {

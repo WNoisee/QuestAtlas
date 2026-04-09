@@ -1,5 +1,6 @@
 import styles from "./EmptyState.module.css";
 import Text from "../../../../components/common/Text/Text";
+import Button from "../../../../components/common/Button/Button";
 import { AWARDS_EMPTY } from "../../../../constants/texts";
 
 export default function EmptyState({ message, action }) {
@@ -13,9 +14,9 @@ export default function EmptyState({ message, action }) {
         {message || AWARDS_EMPTY.EXPLORE_CTA}
       </Text>
       {action && (
-        <button className={styles.actionBtn}>
+        <Button variant="primary" className={styles.actionBtn}>
           {action}
-        </button>
+        </Button>
       )}
     </div>
   );

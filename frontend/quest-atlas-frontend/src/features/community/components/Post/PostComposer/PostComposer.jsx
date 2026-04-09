@@ -28,7 +28,7 @@ export default function PostComposer() {
         </Button>
 
         <Button type="button" variant="tool">
-          <Icon symbol="starIcon" size="sm" /> engagement cột mốc
+          <Icon symbol="starIcon" size="sm" /> {COMMUNITY_COMPOSER.TAG_MILESTONE}
         </Button>
       </div>
     </section>

@@ -3,16 +3,19 @@
   grid-template-columns: 48px 1fr auto;
   gap: 12px;
   align-items: center;
-  padding: 12px;
+  padding: 13px 14px;
   border-radius: 20px;
   cursor: pointer;
-  background: #fffaf5;
+  background: rgba(255, 251, 248, 0.9);
+  border: 1.5px solid rgba(215, 196, 177, 0.3);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .item:hover {
-  background: #fff;
-  border-color: #e4c8ac;
-  transform: translateY(-0.8px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(230, 167, 60, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 167, 60, 0.12);
 }
 
 .content {
@@ -50,15 +53,17 @@
 }
 
 .unread {
-  min-width: 22px;
-  height: 22px;
-  padding: 0 6px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
   border-radius: 999px;
-  background: #3a261b;
-  color: #fffaf4;
+  background: linear-gradient(135deg, #E6A73C, #F0B347);
+  color: #1a0f08;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(230, 167, 60, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }

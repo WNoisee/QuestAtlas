@@ -127,6 +127,7 @@ export const COMMUNITY_COMPOSER = {
   PLACEHOLDER: "Bạn vừa khám phá điều gì trên hành trình của mình?",
   ADD_IMAGE: "Thêm ảnh",
   TAG_LOCATION: "Gắn địa điểm",
+  TAG_MILESTONE: "Gắn cột mốc",
 };
 
 export const COMMUNITY_POST = {

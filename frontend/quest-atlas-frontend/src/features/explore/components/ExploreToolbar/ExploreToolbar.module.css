@@ -1,12 +1,19 @@
 .toolbar {
   width: fit-content;
-  max-width: 760px;
-  padding: var(--space-md) var(--space-md);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 249, 241, 0.84);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(220, 205, 183, 0.9);
-  box-shadow: 0 18px 40px rgba(62, 45, 28, 0.08);
+  max-width: 100%;
+  padding: var(--space-sm);
+  border-radius: 20px;
+  background: rgba(255, 251, 248, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(215, 196, 177, 0.6);
+  box-shadow: 0 16px 48px rgba(45, 36, 29, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.toolbar:hover {
+  background: rgba(255, 252, 249, 0.98);
+  box-shadow: 0 20px 56px rgba(45, 36, 29, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border-color: rgba(230, 167, 60, 0.3);
 }
 
 .searchWrap {
@@ -16,54 +23,67 @@
 
 .searchInput {
   width: 100%;
-  height: 42px;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-full);
-  background: var(--surface-2);
-  padding: 0 var(--space-lg);
-  font-size: var(--text-xs);
-  color: var(--text-primary);
+  height: 46px;
+  border: 1.5px solid rgba(215, 196, 177, 0.6);
+  border-radius: 14px;
+  background: rgba(255, 252, 249, 0.9);
+  padding: 0 18px;
+  font-size: 0.95rem;
+  color: var(--text);
   outline: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: inherit;
+  font-weight: 500;
+  box-shadow: inset 0 2px 6px rgba(45, 36, 29, 0.04);
 }
 
 .searchInput::placeholder {
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 .searchInput:focus {
-  border-color: #a98560;
-  box-shadow: 0 0 0 4px rgba(169, 133, 96, 0.08);
+  border-color: rgba(230, 167, 60, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(230, 167, 60, 0.2), inset 0 2px 6px rgba(230, 167, 60, 0.08), 0 4px 16px rgba(230, 167, 60, 0.15);
 }
 
 .filtersRow {
-  margin-top: var(--space-md);
+  margin-top: 14px;
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .filterChip {
-  border: 1px solid var(--border-soft);
-  background: var(--surface-2);
+  border: 1.5px solid rgba(215, 196, 177, 0.5);
+  background: rgba(255, 248, 241, 0.8);
   color: var(--text);
-  border-radius: var(--radius-full);
-  padding: var(--space-sm) var(--space-md);
-  font-size: var(--text-xs);
-  font-weight: var(--fw-semibold);
+  border-radius: 12px;
+  padding: 9px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .filterChip:hover {
-  background: var(--surface);
+  background: rgba(255, 251, 248, 0.98);
+  border-color: rgba(230, 167, 60, 0.6);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 4px 12px rgba(230, 167, 60, 0.1);
 }
 
-.filterChipActive {
-  background: #e9d6bc;
-  border-color: #b89066;
-  color: #3a271b;
+.filterChip.filterChipActive {
+  background: linear-gradient(135deg, var(--gold), #f0b347);
+  border-color: rgba(230, 167, 60, 1);
+  color: var(--text-on-gold);
+  font-weight: var(--fw-semiBold);
+  box-shadow: 0 6px 20px rgba(230, 167, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
 }
 
 .inputWrapper label,
@@ -73,27 +93,28 @@
 
 .inputWrapper input {
   width: 100%;
-  height: 42px;
-
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-full);
-
-  background: var(--surface-2);
-  padding: 0 var(--space-lg);
-
-  font-size: var(--text-xs);
-  color: var(--text-primary);
-
+  height: 46px;
+  border: 1.5px solid rgba(215, 196, 177, 0.6);
+  border-radius: 14px;
+  background: rgba(255, 252, 249, 0.9);
+  padding: 0 18px;
+  font-size: 0.95rem;
+  color: var(--text);
   outline: none;
   box-sizing: border-box;
-  transition: all var(--transition-fast);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: inherit;
+  font-weight: 500;
+  box-shadow: inset 0 2px 6px rgba(45, 36, 29, 0.04);
 }
 
 .inputWrapper input::placeholder {
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 .inputWrapper input:focus {
-  border-color: #a98560;
-  box-shadow: 0 0 0 4px rgba(169, 133, 96, 0.08);
+  border-color: rgba(230, 167, 60, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(230, 167, 60, 0.2), inset 0 2px 6px rgba(230, 167, 60, 0.08), 0 4px 16px rgba(230, 167, 60, 0.15);
 }

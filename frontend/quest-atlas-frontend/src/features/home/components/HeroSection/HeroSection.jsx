@@ -1,8 +1,49 @@
 import Button from "../../../../components/common/Button/Button";
 import Icon from "../../../../components/common/Icon/Icon";
 import Text from "../../../../components/common/Text/Text";
-import { HOME_HERO, HOME_FEATURES } from "../../../../constants/texts";
+import { HOME_HERO } from "../../../../constants/texts";
 import styles from "./HeroSection.module.css";
+
+const StatCardContent = ({ value, icon, label }) => (
+  <div className={styles.statCard}>
+    <Text
+      as="strong"
+      size="lg"
+      weight="bold"
+      className={styles.statValue}
+    >
+      {value}
+      <span className={styles.iconWrapper}>
+        <Icon
+          symbol={icon}
+          size="sm"
+          className={styles.iconGlow}
+        />
+      </span>
+    </Text>
+    <Text as="span" size="sm" color="muted" className={styles.statLabel}>
+      {label}
+    </Text>
+  </div>
+);
+
+const stats = [
+  {
+    value: "24+",
+    icon: "location",
+    label: "Điểm đến",
+  },
+  {
+    value: "12",
+    icon: "compass",
+    label: "Lộ trình",
+  },
+  {
+    value: "AI",
+    icon: "weather",
+    label: "Công nghệ",
+  },
+];
 
 export default function HeroSection() {
   return (
@@ -42,71 +83,9 @@ export default function HeroSection() {
       </div>
 
       <div className={styles.stats}>
-        <div className={styles.statCard}>
-          <Text
-            as="strong"
-            size="lg"
-            weight="bold"
-            className={styles.statValue}
-          >
-            24+
-            <span className={styles.iconWrapper}>
-              <Icon
-                symbol="location"
-                size="sm"
-                className={styles.iconGlow}
-              />
-            </span>
-          </Text>
-
-          <Text as="span" size="sm" color="muted" className={styles.statLabel}>
-            {HOME_FEATURES.DESTINATIONS}
-          </Text>
-        </div>
-
-        <div className={styles.statCard}>
-          <Text
-            as="strong"
-            size="lg"
-            weight="bold"
-            className={styles.statValue}
-          >
-            12
-            <span className={styles.iconWrapper}>
-              <Icon
-                symbol="compass"
-                size="sm"
-                className={styles.iconGlow}
-              />
-            </span>
-          </Text>
-
-          <Text as="span" size="sm" color="muted" className={styles.statLabel}>
-            {HOME_FEATURES.SMART_ROUTE}
-          </Text>
-        </div>
-
-        <div className={styles.statCard}>
-          <Text
-            as="strong"
-            size="lg"
-            weight="bold"
-            className={styles.statValue}
-          >
-            AI
-            <span className={styles.iconWrapper}>
-              <Icon
-                symbol="weather"
-                size="sm"
-                className={styles.iconGlow}
-              />
-            </span>
-          </Text>
-
-          <Text as="span" size="sm" color="muted" className={styles.statLabel}>
-            {HOME_FEATURES.WEATHER_TRACKING}
-          </Text>
-        </div>
+        {stats.map((stat) => (
+          <StatCardContent key={stat.icon} {...stat} />
+        ))}
       </div>
     </section>
   );

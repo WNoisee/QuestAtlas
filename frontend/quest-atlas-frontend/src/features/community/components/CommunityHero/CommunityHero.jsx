@@ -2,7 +2,8 @@ import styles from "./CommunityHero.module.css";
 import Badge from "../../../../components/layout/Badge/Badge";
 import Text from "../../../../components/common/Text/Text";
 import { COMMUNITY_HERO, COMMUNITY_STATS } from "../../../../constants/texts";
-import { MapPin, Users, Compass } from "lucide-react";
+import Button from "../../../../components/common/Button/Button";
+import Icon from "../../../../components/common/Icon/Icon";
 
 export default function CommunityHero() {
   return (
@@ -18,9 +19,9 @@ export default function CommunityHero() {
           {COMMUNITY_HERO.DESCRIPTION}
         </Text>
 
-        <button className={styles.ctaButton}>
+        <Button variant="primary" size="lg" icon={<Icon symbol="rocket" size="md" />} iconPosition="left">
           <span>{COMMUNITY_HERO.CTA_BUTTON}</span>
-        </button>
+        </Button>
       </div>
 
       <div className={styles.heroCard}>

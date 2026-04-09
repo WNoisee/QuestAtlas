@@ -50,8 +50,15 @@ button {
 }
 
 .page-accent-community [class*="badge"] {
-  background: linear-gradient(135deg, rgba(107, 92, 231, 0.15), rgba(233, 230, 255, 0.1)) !important;
-  color: #6C5CE7 !important;
+    background: linear-gradient(
+  135deg,
+  rgba(212, 175, 55, 0.2),
+  rgba(255, 215, 0, 0.08)
+) !important;
+
+color: #a16207 !important;
+
+border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 .page-accent-community .badge-explorer {
@@ -72,23 +79,10 @@ button {
   border-color: rgba(123, 79, 44, 0.3);
 }
 
-.page-accent-community button[type="button"]:not(:disabled):hover {
-  border-color: rgba(123, 79, 44, 0.5);
-  color: #5E3B1F;
-}
-
-.page-accent-community [class*="cta"],
-.page-accent-community [class*="primary"],
 .page-accent-community [class*="reward"] {
   background: linear-gradient(135deg, #7B4F2C 0%, #66626b 50%, #2C2C2C 100%) !important;
   color: #fff !important;
-  font-weight: 700;
-}
-
-.page-accent-community [class*="cta"]:hover,
-.page-accent-community [class*="primary"]:hover {
-  background: linear-gradient(135deg, #7B4F2C 0%, #3f4151 50%, #2C2C2C 100%) !important;
-  box-shadow: 0 8px 20px rgba(123, 79, 44, 0.4) !important;
+  font-weight: var(--fw-bold);
 }
 
 /* AWARDS PAGE - Purple accent (Achievement & Prestige) */
@@ -115,13 +109,6 @@ button {
   border-color: #9b59b6;
 }
 
-.page-accent-awards button[type="button"]:not(:disabled):hover {
-  border-color: #9b59b6;
-  color: #fff;
-}
-
-.page-accent-awards [class*="cta"],
-.page-accent-awards [class*="primary"],
 .page-accent-awards [class*="reward"] {
   background: linear-gradient(135deg, #9b59b6, #c896d8) !important;
   color: #fff !important;

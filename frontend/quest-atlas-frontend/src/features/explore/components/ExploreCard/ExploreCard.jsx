@@ -33,6 +33,7 @@ export default function ExploreCard({ item, active = false, onClick }) {
 
         {item.badge && (
           <Badge
+            className={styles.badge}
             label={item.badge}
             variant="soft"
             tone="highlight"

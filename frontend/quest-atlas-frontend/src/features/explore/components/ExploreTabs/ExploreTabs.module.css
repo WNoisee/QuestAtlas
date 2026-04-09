@@ -1,28 +1,5 @@
 .tabs {
   display: flex;
-  gap: var(--space-md);
+  gap: 10px;
   flex-wrap: wrap;
-}
-
-.tab {
-  border: 1px solid var(--border-soft);
-  background: var(--surface-2);
-  color: var(--text);
-  border-radius: var(--radius-full);
-  padding: var(--space-md) var(--space-lg);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.tab:hover {
-  border-color: #b69775;
-  background: #f7ecdd;
-}
-
-.active {
-  background: #4b3121;
-  color: #fff8ef;
-  border-color: #4b3121;
 }
