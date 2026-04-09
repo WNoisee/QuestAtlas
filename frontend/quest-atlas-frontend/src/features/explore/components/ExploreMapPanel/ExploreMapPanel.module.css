@@ -4,3 +4,103 @@
   width: 100%;
   height: 100%;
 }
+
+/* Map Marker Animations */
+.marker {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.marker:hover {
+  transform: translate(-50%, -110%) scale(1.15);
+}
+
+.markerPin {
+  width: 40px;
+  height: 48px;
+  background: linear-gradient(135deg, #FF7A00, #FFB84D);
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid white;
+}
+
+.markerPin::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.markerActive {
+  animation: markerPulse 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.markerActive .markerPin {
+  box-shadow: 0 12px 32px rgba(255, 122, 0, 0.6), 0 0 24px rgba(255, 122, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.markerRipple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.4) 0%, rgba(255, 122, 0, 0) 70%);
+  opacity: 0;
+  animation: rippleExpand 1.5s ease-out infinite;
+}
+
+@keyframes markerPulse {
+  0%, 100% {
+    transform: translate(-50%, -100%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -100%) scale(1.08);
+  }
+}
+
+@keyframes rippleExpand {
+  0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+    left: -20px;
+    top: -50px;
+  }
+  100% {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+    left: -50px;
+    top: -120px;
+  }
+}
+
+.markerLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(45, 36, 29, 0.95);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.marker:hover .markerLabel {
+  opacity: 1;
+}

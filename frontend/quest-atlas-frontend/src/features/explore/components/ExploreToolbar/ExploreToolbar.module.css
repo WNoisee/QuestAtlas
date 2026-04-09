@@ -13,7 +13,7 @@
 .toolbar:hover {
   background: rgba(255, 252, 249, 0.98);
   box-shadow: 0 20px 56px rgba(45, 36, 29, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  border-color: rgba(230, 167, 60, 0.3);
+  border-color: rgba(255, 122, 0, 0.3);
 }
 
 .searchWrap {
@@ -43,9 +43,9 @@
 }
 
 .searchInput:focus {
-  border-color: rgba(230, 167, 60, 0.9);
+  border-color: rgba(255, 122, 0, 0.9);
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 0 4px rgba(230, 167, 60, 0.2), inset 0 2px 6px rgba(230, 167, 60, 0.08), 0 4px 16px rgba(230, 167, 60, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.15), inset 0 2px 6px rgba(255, 122, 0, 0.08), 0 4px 16px rgba(255, 122, 0, 0.2);
 }
 
 .filtersRow {
@@ -72,17 +72,17 @@
 
 .filterChip:hover {
   background: rgba(255, 251, 248, 0.98);
-  border-color: rgba(230, 167, 60, 0.6);
+  border-color: rgba(255, 122, 0, 0.6);
   transform: translateY(-2px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 4px 12px rgba(230, 167, 60, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 4px 12px rgba(255, 122, 0, 0.15);
 }
 
 .filterChip.filterChipActive {
-  background: linear-gradient(135deg, var(--gold), #f0b347);
-  border-color: rgba(230, 167, 60, 1);
-  color: var(--text-on-gold);
+  background: linear-gradient(135deg, #FF7A00, #FFB84D);
+  border-color: rgba(255, 122, 0, 1);
+  color: white;
   font-weight: var(--fw-semiBold);
-  box-shadow: 0 6px 20px rgba(230, 167, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transform: translateY(-3px);
 }
 
@@ -114,7 +114,7 @@
 }
 
 .inputWrapper input:focus {
-  border-color: rgba(230, 167, 60, 0.9);
+  border-color: rgba(255, 122, 0, 0.9);
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 0 4px rgba(230, 167, 60, 0.2), inset 0 2px 6px rgba(230, 167, 60, 0.08), 0 4px 16px rgba(230, 167, 60, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.15), inset 0 2px 6px rgba(255, 122, 0, 0.08), 0 4px 16px rgba(255, 122, 0, 0.2);
 }

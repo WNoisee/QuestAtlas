@@ -186,8 +186,7 @@ export default function AdventureRouteMap({
     markersRef.current = [];
 
     stops.forEach((stop) => {
-      const isActive = stop.id === activeStopId;
-      const markerEl = createMarkerElement(stop, isActive);
+      const markerEl = createMarkerElement(stop, false);
 
       markerEl.addEventListener("click", () => {
         setInternalActiveStopId(stop.id);
@@ -204,9 +203,24 @@ export default function AdventureRouteMap({
       markersRef.current.push({
         id: stop.id,
         marker,
+        element: markerEl,
       });
     });
-  }, [stops, activeStopId, onSelectStop]);
+  }, [stops]);
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    // Update active state without recreating markers
+    markersRef.current.forEach(({ id, element }) => {
+      const isActive = id === activeStopId;
+      if (isActive) {
+        element.classList.add(styles.markerActive);
+      } else {
+        element.classList.remove(styles.markerActive);
+      }
+    });
+  }, [activeStopId]);
 
   useEffect(() => {
     if (!mapRef.current || !activeStop) return;
@@ -223,7 +237,8 @@ export default function AdventureRouteMap({
     popupRef.current = new maplibregl.Popup({
       closeButton: false,
       closeOnClick: false,
-      offset: 22,
+      anchor: 'bottom',
+      offset: [0, -16],
     })
       .setLngLat([activeStop.lng, activeStop.lat])
       .setHTML(buildPopupHtml(activeStop))

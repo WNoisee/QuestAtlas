@@ -94,12 +94,10 @@ export const routes = [
   {
     id: 104,
     name: "Phú Quốc",
-    type: "Chill",
+    category: "Chill",
     duration: "3 ngày",
     description: "Khu biển đảo du lịch hiện đại, kiến trúc Châu Âu",
-    lng: 104.01,
-    lat: 10.29,
-    weather: "sunny",
+    badge: "Thư giãn",
   },
 ];
 

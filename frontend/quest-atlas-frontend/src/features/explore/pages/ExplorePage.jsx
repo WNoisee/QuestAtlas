@@ -35,17 +35,22 @@ function ExplorePage() {
     const filter = activeFilter.trim().toLowerCase();
 
     return currentItems.filter((item) => {
+      const itemName = item.name || "";
+      const itemDescription = item.description || "";
+      const itemCategory = item.category || "";
+      const itemBadge = item.badge || "";
+
       const matchSearch =
         !search ||
-        item.name.toLowerCase().includes(search) ||
-        item.description.toLowerCase().includes(search) ||
-        item.category.toLowerCase().includes(search);
+        itemName.toLowerCase().includes(search) ||
+        itemDescription.toLowerCase().includes(search) ||
+        itemCategory.toLowerCase().includes(search);
 
       const matchFilter =
         !filter ||
-        item.category.toLowerCase().includes(filter) ||
-        item.badge?.toLowerCase().includes(filter) ||
-        item.description.toLowerCase().includes(filter);
+        itemCategory.toLowerCase().includes(filter) ||
+        itemBadge.toLowerCase().includes(filter) ||
+        itemDescription.toLowerCase().includes(filter);
 
       return matchSearch && matchFilter;
     });
