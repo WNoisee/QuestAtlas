@@ -2,6 +2,7 @@ import styles from "./ExploreToolbar.module.css";
 import Input from "../../../../components/common/Input/Input";
 import Button from "../../../../components/common/Button/Button";
 import { EXPLORE_TOOLBAR } from "../../../../constants/texts";
+import { Search } from "lucide-react";
 
 function ExploreToolbar({
   searchValue,
@@ -12,7 +13,8 @@ function ExploreToolbar({
 }) {
   return (
     <section className={styles.toolbar}>
-      <div className={styles.searchWrap}>
+      <div className={styles.searchBar}>
+        <Search size={16} className={styles.searchIcon} />
         <Input
           id="explore-search"
           type="text"

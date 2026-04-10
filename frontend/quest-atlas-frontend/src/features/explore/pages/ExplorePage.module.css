@@ -117,3 +117,20 @@
 .toggleClosed {
   left: -35px;
 }
+
+.searchIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.searchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(215, 196, 177, 0.6);
+  border-radius: 8px;
+  padding: var(--space-sm) var(--space-md);
+  transition: all 0.3s ease;
+  min-width: 200px;
+}

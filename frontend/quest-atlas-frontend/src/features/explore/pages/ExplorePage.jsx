@@ -96,7 +96,6 @@ function ExplorePage() {
           width={550}
         >
           <div className={styles.toolbarDragShell}>
-
             <ExploreToolbar
               searchValue={searchValue}
               onSearchChange={setSearchValue}
