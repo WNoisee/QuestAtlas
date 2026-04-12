@@ -20,6 +20,19 @@ import {
   Check,
   Trophy,
   Coins,
+  Eye,
+  EyeOff,
+  ArrowRight,
+  Settings,
+  LogOut,
+  Menu,
+  Share2,
+  Navigation2,
+  Clock,
+  Award,
+  Search,
+  Globe,
+  Mail,
 } from "lucide-react";
 
 const iconList = {
@@ -42,6 +55,19 @@ const iconList = {
   check: Check,
   trophy: Trophy,
   coins: Coins,
+  eye: Eye,
+  eyeOff: EyeOff,
+  arrowRight: ArrowRight,
+  settings: Settings,
+  logout: LogOut,
+  menu: Menu,
+  share: Share2,
+  navigation: Navigation2,
+  clock: Clock,
+  award: Award,
+  search: Search,
+  globe: Globe,
+  mail: Mail,
 };
 
 const sizeMap = {

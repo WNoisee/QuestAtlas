@@ -1,0 +1,37 @@
+.pageWrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 64px 20px;
+  background: var(--page-bg);
+}
+
+.frame {
+  width: min(1240px, 100%);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.brandingColumn,
+.formColumn {
+  display: grid;
+}
+
+.pageContent {
+  display: grid;
+  gap: 22px;
+  position: relative;
+}
+
+.loginBadge {
+  justify-self: end;
+  align-self: start;
+}
+
+@media (max-width: 960px) {
+  .frame {
+    grid-template-columns: 1fr;
+  }
+}

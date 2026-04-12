@@ -3,6 +3,7 @@ import styles from "./MessageInput.module.css";
 import Button from "../../../../../components/common/Button/Button";
 import Icon from "../../../../../components/common/Icon/Icon";
 import Text from "../../../../../components/common/Text/Text";
+import Textarea from "../../../../../components/common/Textarea/Textarea";
 import { COMMUNITY_CHAT } from "../../../../../constants/texts";
 
 export default function MessageInput({ onSendMessage }) {
@@ -46,13 +47,15 @@ export default function MessageInput({ onSendMessage }) {
         </div>
 
         <div className={styles.inputRow}>
-          <textarea
+          <Textarea
+            id="message-input"
             className={styles.input}
-            rows="1"
+            rows={1}
             placeholder={COMMUNITY_CHAT.INPUT_PLACEHOLDER}
             value={text}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={handleKeyDown}
+            aria-label="Type a message"
           />
 
           <Button

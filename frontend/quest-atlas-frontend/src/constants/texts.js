@@ -21,6 +21,35 @@ export const NAV_TEXTS = {
   BRAND: "QuestAtlas",
 };
 
+export const AUTH_TEXTS = {
+  BRAND: "QuestAtlas",
+  VERSION_LABEL: "QuestAtlas",
+  VERSION_VALUE: "v1",
+  PAGE_TITLE: "Bắt đầu hành trình khám phá của bạn",
+  PAGE_SUBTITLE: "Khám phá thế giới, ghi lại hành trình, kết nối những người đam mê dịch chuyển.",
+  BOTTOM_CARD: "Hành trình của bạn bắt đầu từ đây",
+  LOGIN_TITLE: "Đăng nhập",
+  LOGIN_HEADER: "Tiếp tục hành trình của bạn",
+  LOGIN_HELPER: "Đăng nhập nhanh gọn để mở khóa bản đồ khám phá và cộng đồng QuestAtlas.",
+  EMAIL_LABEL: "Email",
+  PASSWORD_LABEL: "Mật khẩu",
+  REMEMBER_ME: "Ghi nhớ đăng nhập",
+  FORGOT_PASSWORD: "Quên mật khẩu?",
+  LOGIN_BUTTON: "Bắt đầu hành trình",
+  LOGIN_LOADING: "Đang đăng nhập...",
+  EMAIL_PLACEHOLDER: "hello@email.com",
+  PASSWORD_PLACEHOLDER: "Nhập mật khẩu",
+  SOCIAL_LOGIN_GOOGLE: "Đăng nhập với Google",
+  SIGNUP_PROMPT: "Bạn chưa có tài khoản?",
+  SIGNUP_ACTION: "Tạo tài khoản",
+  OR_LABEL: "Hoặc",
+  VALIDATION_ERROR: "Vui lòng điền đầy đủ email và mật khẩu.",
+  LOGIN_ERROR: "Không thể đăng nhập. Vui lòng thử lại.",
+  FEATURE_EXPLORATION: "Khám phá điểm đến",
+  FEATURE_ROUTE: "Lên kế hoạch thông minh",
+  FEATURE_COMMUNITY: "Kết nối cộng đồng",
+};
+
 export const PAGE_TITLES = {
   COMMUNITY: "Cộng Đồng Atlas",
   EXPLORE: "Khám Phá Atlas",
@@ -152,6 +181,30 @@ export const COMMUNITY_CHAT = {
   ATTACH_SCHEDULE: "Lịch trình",
 };
 
+export const HEADER_TEXTS = {
+  SEARCH_PLACEHOLDER: "Tìm kiếm...",
+  SEARCH_ARIA: "Tìm kiếm",
+  SETTINGS: "Cài đặt",
+  LOGOUT: "Đăng xuất",
+};
+
+export const CHAT_PANEL_TEXTS = {
+  HEADER: "Hộp tin nhắn thoại",
+  TITLE: "Tin nhắn",
+  DESCRIPTION: "Kết nối với bạn đồng hành và tiếp tục những hành trình đang dang dở.",
+  SEARCH_PLACEHOLDER: "Tìm bạn đồng hành...",
+  SUGGESTION_ARIA: "Gợi ý thông minh",
+};
+
+export const CHAT_ITEM_TEXTS = {
+  DEFAULT_USER: "Người dùng",
+  NO_MESSAGE: "Chưa có tin nhắn",
+};
+
+export const CHAT_LAUNCHER_TEXTS = {
+  OPEN_ARIA: "Mở chat",
+};
+
 // ============================================
 // AWARDS FEATURE
 // ============================================
@@ -233,4 +286,9 @@ export const BADGE_TIERS = {
   RARE: "Nhà Khám Phá",
   EPIC: "Huyền Thoại",
   LEGENDARY: "Độc quyền",
+};
+
+export const TOGGLE_TEXTS = {
+  OPEN_ARIA: "open sidebar",
+  CLOSE_ARIA: "close sidebar",
 };

@@ -1,30 +1,20 @@
 import { useState } from "react";
 import Button from "../../common/Button/Button";
+import Input from "../../common/Input/Input";
+import Icon from "../../common/Icon/Icon";
 import styles from "./Header.module.css";
-import {
-  Map,
-  Menu,
-  X,
-  LogOut,
-  Settings,
-  Compass,
-  Users,
-  Award,
-  Search,
-  Globe,
-} from "lucide-react";
 import { NavLink } from "react-router-dom";
-import { NAV_TEXTS } from "../../../constants/texts";
+import { NAV_TEXTS, HEADER_TEXTS } from "../../../constants/texts";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const navItems = [
-    { label: NAV_TEXTS.HOME, path: "/", icon: Globe },
-    { label: NAV_TEXTS.EXPLORE, path: "/explore", icon: Compass },
-    { label: NAV_TEXTS.COMMUNITY, path: "/community", icon: Users },
-    { label: NAV_TEXTS.AWARDS, path: "/awards", icon: Award },
+    { label: NAV_TEXTS.HOME, path: "/", icon: "globe" },
+    { label: NAV_TEXTS.EXPLORE, path: "/explore", icon: "compass" },
+    { label: NAV_TEXTS.COMMUNITY, path: "/community", icon: "message" },
+    { label: NAV_TEXTS.AWARDS, path: "/awards", icon: "trophy" },
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -35,40 +25,39 @@ export default function Header() {
       <div className={styles.container}>
         {/* Logo Section */}
         <div className={styles.logoSection}>
-          <Map className={styles.logo} size={24} />
+          <Icon symbol="map" size="lg" className={styles.logo} />
           <span className={styles.brand}>{NAV_TEXTS.BRAND}</span>
         </div>
 
         {/* Center Navigation */}
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
-          {navItems.map((item) => {
-            const IconComponent = item.icon;
-            return (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                end={item.path === "/"}
-                className={({ isActive }) =>
-                  `${styles.navItem} ${isActive ? styles.active : ""}`
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <IconComponent size={18} className={styles.navIcon} />
-                <span className={styles.navLabel}>{item.label}</span>
-              </NavLink>
-            );
-          })}
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              end={item.path === "/"}
+              className={({ isActive }) =>
+                `${styles.navItem} ${isActive ? styles.active : ""}`
+              }
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Icon symbol={item.icon} size="md" className={styles.navIcon} />
+              <span className={styles.navLabel}>{item.label}</span>
+            </NavLink>
+          ))}
         </nav>
 
         {/* Right Section: Search + User Menu + Login */}
         <div className={styles.rightSection}>
           {/* Search Bar */}
           <div className={styles.searchBar}>
-            <Search size={16} className={styles.searchIcon} />
-            <input
+            <Icon symbol="search" size="sm" className={styles.searchIcon} />
+            <Input
+              id="header-search"
               type="text"
-              placeholder="Tìm kiếm..."
+              placeholder={HEADER_TEXTS.SEARCH_PLACEHOLDER}
               className={styles.searchInput}
+              aria-label={HEADER_TEXTS.SEARCH_ARIA}
             />
           </div>
 
@@ -81,12 +70,12 @@ export default function Header() {
             {isUserMenuOpen && (
               <div className={styles.userDropdown}>
                 <Button variant="tool" type="button" className={styles.dropdownItem}>
-                  <Settings size={16} />
-                  <span>Cài đặt</span>
+                  <Icon symbol="settings" size="sm" />
+                  <span>{HEADER_TEXTS.SETTINGS}</span>
                 </Button>
                 <Button variant="tool" type="button" className={styles.dropdownItem}>
-                  <LogOut size={16} />
-                  <span>Đăng xuất</span>
+                  <Icon symbol="logout" size="sm" />
+                  <span>{HEADER_TEXTS.LOGOUT}</span>
                 </Button>
               </div>
             )}
@@ -106,7 +95,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <Button variant="engagement" type="button" className={styles.mobileMenuBtn} onClick={toggleMenu}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <Icon symbol="close" size="lg" /> : <Icon symbol="menu" size="lg" />}
         </Button>
       </div>
     </header>

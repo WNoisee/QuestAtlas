@@ -1,6 +1,7 @@
 import Avatar from "../../../../../components/common/Avatar/Avatar";
 import Text from "../../../../../components/common/Text/Text";
 import styles from "./ChatItem.module.css";
+import { CHAT_ITEM_TEXTS } from "../../../../../constants/texts";
 
 export default function ChatItem({ chat, onClick }) {
   return (
@@ -10,7 +11,7 @@ export default function ChatItem({ chat, onClick }) {
       <div className={styles.content}>
         <div className={styles.topRow}>
           <Text className={styles.name}>
-            {chat.name || "Người dùng"}
+            {chat.name || CHAT_ITEM_TEXTS.DEFAULT_USER}
           </Text>
 
           <Text className={styles.time} color="chatItemTime">
@@ -19,7 +20,7 @@ export default function ChatItem({ chat, onClick }) {
         </div>
 
         <Text className={styles.message} color="chatItemMessage">
-          {chat.lastMessage || "Chưa có tin nhắn"}
+          {chat.lastMessage || CHAT_ITEM_TEXTS.NO_MESSAGE}
         </Text>
       </div>
 

@@ -7,7 +7,7 @@
  * fetch(API_ENDPOINTS.USERS.GET_PROFILE)
  */
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3005/api";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3005/api";
 
 export const API_ENDPOINTS = {
   // Authentication

@@ -20,7 +20,7 @@ export default function CommunityHero() {
         </Text>
 
         <Button variant="primary" size="lg" icon={<Icon symbol="rocket" size="md" />} iconPosition="left">
-          <span>{COMMUNITY_HERO.CTA_BUTTON}</span>
+          {COMMUNITY_HERO.CTA_BUTTON}
         </Button>
       </div>
 

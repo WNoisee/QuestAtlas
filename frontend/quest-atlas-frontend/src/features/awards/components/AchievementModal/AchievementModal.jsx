@@ -1,7 +1,7 @@
 import styles from "./AchievementModal.module.css";
 import Text from "../../../../components/common/Text/Text";
 import Button from "../../../../components/common/Button/Button";
-import { X } from "lucide-react";
+import Icon from "../../../../components/common/Icon/Icon";
 import { AWARDS_MODAL } from "../../../../constants/texts";
 
 export default function AchievementModal({ achievement, isOpen, onClose }) {
@@ -18,7 +18,7 @@ export default function AchievementModal({ achievement, isOpen, onClose }) {
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <Button variant="outline" type="button" className={styles.closeBtn} onClick={onClose}>
-          <X size={24} />
+          <Icon symbol="close" size="lg" />
         </Button>
 
         <div className={styles.header}>

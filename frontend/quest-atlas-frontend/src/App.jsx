@@ -12,12 +12,14 @@ import HomePage from "./features/home/pages/HomePage";
 import CommunityPage from "./features/community/pages/CommunityPage";
 import ExplorePage from "./features/explore/pages/ExplorePage";
 import AwardsPage from "./features/awards/pages/AwardsPage";
+import LoginPage from "./features/auth/pages/LoginPage";
 
 import styles from "./App.module.css";
 
 function App() {
   const location = useLocation();
   const isExplorePage = location.pathname === "/explore";
+  const isAuthPage = location.pathname === "/login";
 
   const getBadgeLabel = () => {
     if (location.pathname === "/community") return PAGE_TITLES.COMMUNITY;
@@ -32,7 +34,7 @@ function App() {
         <div className={`${styles.questApp} ${isExplorePage ? styles.exploreShell : ""}`}>
           <div className="quest-grid" />
 
-          <div className={isExplorePage ? styles.exploreHeaderLayer : styles.OthersHeaderLayer}>
+          <div className={isExplorePage || isAuthPage ? styles.HeaderLayer : styles.OthersHeaderLayer}>
             <Header />
             <Badge
               label={getBadgeLabel()}
@@ -51,6 +53,7 @@ function App() {
               <Route path="/community" element={<CommunityPage />} />
               <Route path="/explore" element={<ExplorePage />} />
               <Route path="/awards" element={<AwardsPage />} />
+              <Route path="/login" element={<LoginPage />} />
             </Routes>
           </main>
         </div>

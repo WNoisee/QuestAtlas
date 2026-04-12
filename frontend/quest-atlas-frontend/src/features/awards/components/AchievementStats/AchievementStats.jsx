@@ -1,6 +1,6 @@
 import styles from "./AchievementStats.module.css";
 import Text from "../../../../components/common/Text/Text";
-import { AWARDS_STATS_PERSONAL } from "../../../../constants/texts";
+import { AWARDS_STATS_PERSONAL, COMMON_UI } from "../../../../constants/texts";
 
 export default function AchievementStats() {
   const userStats = {
@@ -19,7 +19,7 @@ export default function AchievementStats() {
       <div className={styles.profileCard}>
         <div className={styles.levelBadge}>
           <div className={styles.levelNumber}>{userStats.level}</div>
-          <span className={styles.levelLabel}>Level</span>
+          <span className={styles.levelLabel}>{COMMON_UI.LEVEL}</span>
         </div>
 
         <div className={styles.profileInfo}>

@@ -1,5 +1,6 @@
 import CardButton from "../../../../components/common/CardButton/CardButton";
 import Badge from "../../../../components/layout/Badge/Badge";
+import Text from "../../../../components/common/Text/Text";
 import styles from "./ExploreCard.module.css";
 
 const getCategoryClass = (category) => {
@@ -25,10 +26,10 @@ export default function ExploreCard({ item, active = false, onClick }) {
     >
       <div className={styles.cardTop}>
         <div>
-          <h3 className={styles.title}>{item.name}</h3>
-          <p className={styles.meta}>
+          <Text as="h3" size="md" weight="bold" className={styles.title}>{item.name}</Text>
+          <Text as="p" size="sm" color="muted" className={styles.meta}>
             {item.category} • {item.duration}
-          </p>
+          </Text>
         </div>
 
         {item.badge && (
@@ -41,7 +42,7 @@ export default function ExploreCard({ item, active = false, onClick }) {
         )}
       </div>
 
-      <p className={styles.description}>{item.description}</p>
+      <Text as="p" size="sm" className={styles.description}>{item.description}</Text>
 
       {item.weather && (
         <div className={styles.weather}>

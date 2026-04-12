@@ -9,6 +9,9 @@ export default function Input({
   variant = "primary",
   size = "md",
   fullWidth = false,
+  startIcon,
+  endIcon,
+  onEndIconClick,
   className = "",
   containerClassName = "",
   ...props
@@ -23,19 +26,34 @@ export default function Input({
         </label>
       )}
 
-      <input
-        id={id}
+      <div
         className={clsx(
-          styles.input,
+          styles.inputWrapper,
           styles[variant],
           styles[size],
           {
             [styles.error]: error,
-          },
-          className
+          }
         )}
-        {...props}
-      />
+      >
+        {startIcon && <span className={styles.startIcon}>{startIcon}</span>}
+
+        <input
+          id={id}
+          className={clsx(styles.input, className)}
+          {...props}
+        />
+
+        {endIcon && (
+          onEndIconClick ? (
+            <button type="button" className={styles.endIconButton} onClick={onEndIconClick}>
+              {endIcon}
+            </button>
+          ) : (
+            <span className={styles.endIcon}>{endIcon}</span>
+          )
+        )}
+      </div>
 
       {error ? (
         <p className={styles.errorText}>{error}</p>

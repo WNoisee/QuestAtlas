@@ -6,6 +6,7 @@ import {
 import Button from "../../../../components/common/Button/Button";
 import Icon from "../../../../components/common/Icon/Icon";
 import Badge from "../../../../components/layout/Badge/Badge";
+import Text from "../../../../components/common/Text/Text";
 import { COMMUNITY_SIDEBAR } from "../../../../constants/texts";
 
 export default function CommunitySidebar() {
@@ -13,8 +14,8 @@ export default function CommunitySidebar() {
     <div className={styles.sidebar}>
       <section className={styles.card}>
         <div className={styles.cardHeader}>
-          <h3>{COMMUNITY_SIDEBAR.TOP_TRAVELERS_TITLE}</h3>
-          <span>{COMMUNITY_SIDEBAR.TOP_TRAVELERS_PERIOD}</span>
+          <Text as="h3" size="md" weight="bold">{COMMUNITY_SIDEBAR.TOP_TRAVELERS_TITLE}</Text>
+          <Text as="span" size="xs" color="muted">{COMMUNITY_SIDEBAR.TOP_TRAVELERS_PERIOD}</Text>
         </div>
 
         <div className={styles.list}>
@@ -23,7 +24,7 @@ export default function CommunitySidebar() {
               <div className={styles.rank}>{index + 1}</div>
 
               <div className={styles.itemContent}>
-                <strong>{traveler.name}</strong>
+                <Text as="strong" size="sm" weight="bold">{traveler.name}</Text>
 
                 <div className={styles.meta}>
                   <Badge
@@ -44,16 +45,16 @@ export default function CommunitySidebar() {
 
       <section className={styles.card}>
         <div className={styles.cardHeader}>
-          <h3>{COMMUNITY_SIDEBAR.TRENDING_DESTINATIONS}</h3>
-          <span>{COMMUNITY_SIDEBAR.TRENDING_HOT}</span>
+          <Text as="h3" size="md" weight="bold">{COMMUNITY_SIDEBAR.TRENDING_DESTINATIONS}</Text>
+          <Text as="span" size="xs" color="muted">{COMMUNITY_SIDEBAR.TRENDING_HOT}</Text>
         </div>
 
         <div className={styles.list}>
           {trendingDestinations.map((destination) => (
             <div key={destination.id} className={styles.destinationItem}>
               <div>
-                <strong>{destination.name}</strong>
-                <span>{destination.weather}</span>
+                <Text as="strong" size="sm" weight="bold">{destination.name}</Text>
+                <Text as="span" size="xs" color="muted">{destination.weather}</Text>
               </div>
 
               <Button type="button" variant="engagement">

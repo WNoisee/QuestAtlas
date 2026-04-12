@@ -15,6 +15,8 @@ export default function PostComposer() {
           id="post-composer"
           placeholder={COMMUNITY_COMPOSER.PLACEHOLDER}
           containerClassName={styles.inputWrapper}
+          fullWidth
+          aria-label="Create a new post"
         />
       </div>
 
