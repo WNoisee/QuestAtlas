@@ -8,22 +8,23 @@ import ChatDock from "../components/Chat/ChatDock/ChatDock";
 
 export default function CommunityPage() {
   return (
-    <main className={`${styles.communityPage} page-accent-community`}>
-      <CommunityHero />
-      <CommunityTabs />
+    <div>
+      <main className={`${styles.communityPage} page-accent-community`}>
+        <CommunityHero />
+        <CommunityTabs />
 
-      <section className={styles.communityBody}>
-        <div className={styles.feedColumn}>
-          <PostComposer />
-          <PostFeed />
-        </div>
+        <section className={styles.communityBody}>
+          <div className={styles.feedColumn}>
+            <PostComposer />
+            <PostFeed />
+          </div>
 
-        <aside className={styles.sidebarColumn}>
-          <CommunitySidebar />
-        </aside>
-      </section>
-
+          <aside className={styles.sidebarColumn}>
+            <CommunitySidebar />
+          </aside>
+        </section>
+      </main>
       <ChatDock />
-    </main>
+    </div>
   );
 }

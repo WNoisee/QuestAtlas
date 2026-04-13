@@ -15,18 +15,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 18px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(102, 81, 62, 0.16);
-  box-shadow: 0 12px 28px rgba(95, 65, 43, 0.08);
+  border-radius: 999px;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.inputWrapper:focus-within {
-  border-color: rgba(214, 168, 90, 0.8);
-  box-shadow: 0 16px 36px rgba(214, 168, 90, 0.16);
-  transform: translateY(-1px);
 }
 
 .startIcon,
@@ -38,13 +28,8 @@
 }
 
 .endIconButton {
-  width: 42px;
-  height: 42px;
-  border: none;
   border-radius: 18px;
-  display: grid;
   place-items: center;
-  background: rgba(239, 226, 210, 0.72);
   color: #7e644f;
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.25s ease;

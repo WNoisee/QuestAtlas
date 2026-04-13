@@ -55,6 +55,7 @@ export default function Header() {
             <Input
               id="header-search"
               type="text"
+              variant=""
               placeholder={HEADER_TEXTS.SEARCH_PLACEHOLDER}
               className={styles.searchInput}
               aria-label={HEADER_TEXTS.SEARCH_ARIA}

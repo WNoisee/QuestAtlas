@@ -79,55 +79,57 @@ function ExplorePage() {
   };
 
   return (
-    <section className={styles.page}>
-      <div className={styles.mapLayer}>
-        <ExploreMapPanel
-          items={destinations}
-          selectedItem={selectedItem}
-          onSelectItem={setSelectedItem}
-        />
-      </div>
-
-      <div className={styles.overlay} ref={overlayCanvasRef}>
-        <DraggableWrapper
-          initialPosition={toolbarInitialPosition}
-          bounds={{ left: 0, top: 0, right: 900, bottom: 850 }}
-          handleRef={toolbarHandleRef}
-          width={550}
-        >
-          <div className={styles.toolbarDragShell}>
-            <ExploreToolbar
-              searchValue={searchValue}
-              onSearchChange={setSearchValue}
-              filters={filterChips}
-              activeFilter={activeFilter}
-              onFilterChange={handleFilterChange}
-              ref={toolbarHandleRef}
-            />
-          </div>
-        </DraggableWrapper>
-
-        <div className={styles.leftOverlay}>
-          <Toggle
-            isOpen={openSidebar}
-            setIsOpen={setOpenSidebar}
-            className={openSidebar ? styles.toggleOpen : styles.toggleClosed}
-          />
-          {openSidebar && (
-            <ExploreSidebar
-              tabs={exploreTabs}
-              activeTab={activeTab}
-              onTabChange={handleTabChange}
-              onSidebarToggle={() => setOpenSidebar(false)}
-              items={filteredItems}
+    <div>
+        <section className={styles.page}>
+          <div className={styles.mapLayer}>
+            <ExploreMapPanel
+              items={destinations}
               selectedItem={selectedItem}
               onSelectItem={setSelectedItem}
             />
-          )}
-        </div>
-      </div>
-      <ChatDock></ChatDock>
-    </section>
+          </div>
+
+          <div className={styles.overlay} ref={overlayCanvasRef}>
+            <DraggableWrapper
+              initialPosition={toolbarInitialPosition}
+              bounds={{ left: 0, top: 0, right: 900, bottom: 850 }}
+              handleRef={toolbarHandleRef}
+              width={550}
+            >
+              <div className={styles.toolbarDragShell}>
+                <ExploreToolbar
+                  searchValue={searchValue}
+                  onSearchChange={setSearchValue}
+                  filters={filterChips}
+                  activeFilter={activeFilter}
+                  onFilterChange={handleFilterChange}
+                  ref={toolbarHandleRef}
+                />
+              </div>
+            </DraggableWrapper>
+
+            <div className={styles.leftOverlay}>
+              <Toggle
+                isOpen={openSidebar}
+                setIsOpen={setOpenSidebar}
+                className={openSidebar ? styles.toggleOpen : styles.toggleClosed}
+              />
+              {openSidebar && (
+                <ExploreSidebar
+                  tabs={exploreTabs}
+                  activeTab={activeTab}
+                  onTabChange={handleTabChange}
+                  onSidebarToggle={() => setOpenSidebar(false)}
+                  items={filteredItems}
+                  selectedItem={selectedItem}
+                  onSelectItem={setSelectedItem}
+                />
+              )}
+            </div>
+          </div>
+        </section>
+        <ChatDock />
+    </div>
   );
 }
 

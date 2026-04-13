@@ -15,7 +15,7 @@
 .heading {
   margin: 0 0 12px;
   font-size: clamp(36px, 4.5vw, 58px);
-  line-height: 1.05;
+  line-height: var(--leading-tight);
   color: #2C2C2C;
   background: linear-gradient(135deg, #7B4F2C 0%, #66626b 50%, #2C2C2C 100%);
   -webkit-background-clip: text;
