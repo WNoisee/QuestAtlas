@@ -12,12 +12,12 @@ services:
 
   app:
     build:
-      context: ../backend/quest-atlas-api
+      context: ../backend-java
     ports:
-      - "8000:8000"
+      - "8080:8080"
     volumes:
-      - ../backend/quest-atlas-api:/var/www
-      - /var/www/vendor
+      - ../backend-java:/app
+      - /app/target
     depends_on:
       - postgres
     networks:
